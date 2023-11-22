@@ -29,8 +29,8 @@ class Menu extends Component
                     ),
                     Menu::item(
                         label: 'Role i uprawnienia',
-                        url: route('dashboard'),
-                        active: Menu::isCurrentRoute('dashboard')
+                        url: route('login'),
+                        active: Menu::isCurrentRoute('login')
                     ),
                 ],
             ),
@@ -53,7 +53,13 @@ class Menu extends Component
         array  $items = null,
     ): array
     {
-        $item = [
+        foreach ($items ?? [] as $item) {
+            if ($item['active']) {
+                $active = true;
+            }
+        }
+
+        return [
             'id' => "menu_" . Str::random(),
             'label' => $label ?? false,
             'icon' => $icon ?? false,
@@ -61,14 +67,6 @@ class Menu extends Component
             'active' => $active ?? false,
             'items' => $items ?? [],
         ];
-
-        foreach ($item['items'] as $subitem) {
-            if ($subitem['active']) {
-                $item['active'] = true;
-            }
-        }
-
-        return $item;
     }
 
     private static function isCurrentRoute(string $name): bool
