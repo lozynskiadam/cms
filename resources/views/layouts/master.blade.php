@@ -21,7 +21,7 @@
                     <div class="font-weight-bold">Adam Łożyński</div>
                     <small>admin@infirsoft.pl</small>
                 </div>
-                @include('layouts.sidebar')
+                <x-menu/>
             </div>
         </nav>
         <div class="main">
