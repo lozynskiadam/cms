@@ -1,3 +1,6 @@
+@if($root ?? false)
+    <ul class="sidebar-nav">
+@endif
 @foreach($items as $item)
     <li class="sidebar-item @if($item['active']) active @endif ">
         <a
@@ -20,8 +23,11 @@
         </a>
         @if(!empty($item['items'] ?? []))
             <ul id="{{ $item['id'] }}" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                <x-menu-items :items="$item['items']" :root="false"/>
+                <x-menu-items :items="$item['items']"/>
             </ul>
         @endif
     </li>
 @endforeach
+@if($root ?? false)
+    </ul>
+@endif
