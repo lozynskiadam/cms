@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="{{ asset('/assets/css/modern.css') }}">
-    <script src="{{ asset('/assets/js/app.js') }}" defer></script>
+    @livewireStyles
 </head>
 <body>
 <div id="root">
@@ -56,14 +56,18 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="header">
-                        <h1 class="header-title">Title</h1>
-
+                        <h1 class="header-title">{{ $title ?? '' }}</h1>
                         <nav class="breadcrumbs-container" aria-label="breadcrumb">
-                            <ol class="breadcrumb"><li class="breadcrumb-item"><a href="/">Strona domowa</a></li>
-                                <li class="breadcrumb-item active">Mails</li>
+                            <ol class="breadcrumb">
+                                @foreach($breadcrumbs ?? [] as $label => $url)
+                                    @empty($url)
+                                        <li class="breadcrumb-item active">{{ $label }}</li>
+                                    @else
+                                        <li class="breadcrumb-item"><a href="{{ $url }}">{{ $label }}</a></li>
+                                    @endempty
+                                @endforeach
                             </ol>
                         </nav>
-
                         <div class="buttons-container"></div>
                         <div class="alerts-container"></div>
 
@@ -76,5 +80,8 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('/assets/js/app.js') }}" defer></script>
+@livewireScripts
 </body>
 </html>
