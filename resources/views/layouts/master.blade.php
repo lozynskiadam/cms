@@ -18,8 +18,8 @@
                 </a>
                 <div class="sidebar-user">
                     <img src="https://avatars.githubusercontent.com/u/58483602?v=4" class="img-fluid rounded-circle mb-2" alt="avatar">
-                    <div class="font-weight-bold">Adam Łożyński</div>
-                    <small>admin@infirsoft.pl</small>
+                    <div class="font-weight-bold">{{ auth()->user()->name }}</div>
+                    <small>{{ auth()->user()->email }}</small>
                 </div>
                 <x-menu/>
             </div>
@@ -39,7 +39,7 @@
                     <li class="nav-item ms-1 dropdown">
                         <a class="nav-link dropdown-toggle position-relative" href="#" id="user-dropdown" data-bs-toggle="dropdown">
                             <i class="fa fa-user"></i>
-                            <span class="d-none d-md-inline-block">adam.lozynski</span>
+                            <span class="d-none d-md-inline-block">{{ auth()->user()->email }}</span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">

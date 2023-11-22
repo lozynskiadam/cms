@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect(route(Auth::check() ? 'dashboard' : 'login'));
-});
+Route::get('/', fn () => redirect(route(Auth::check() ? 'dashboard' : 'login')));
 
-Route::get('/login', fn() => view('pages.welcome'))->name('login');
+Route::get('/login', fn() => view('pages.login'))->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::any('/logout', [AuthController::class, 'logout']);
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', fn() => view('pages.welcome'))->name('dashboard');
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
 });

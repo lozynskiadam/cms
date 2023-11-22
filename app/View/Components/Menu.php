@@ -15,8 +15,8 @@ class Menu extends Component
             Menu::item(
                 label: 'Home',
                 icon: 'fas fa-home',
-                url: route('login'),
-                active: Menu::isCurrentRoute('login')
+                url: route('dashboard'),
+                active: Menu::isCurrentRoute('dashboard')
             ),
             Menu::item(
                 label: 'Użytkownicy',
@@ -24,13 +24,8 @@ class Menu extends Component
                 items: [
                     Menu::item(
                         label: 'Lista użytkowników',
-                        url: route('dashboard'),
-                        active: Menu::isCurrentRoute('dashboard')
-                    ),
-                    Menu::item(
-                        label: 'Role i uprawnienia',
-                        url: route('login'),
-                        active: Menu::isCurrentRoute('login')
+                        url: route('users.index'),
+                        active: Menu::isCurrentRoute('users.index')
                     ),
                 ],
             ),
