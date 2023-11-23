@@ -10,19 +10,21 @@
             @if(empty($item['items'] ?? []))
                 class="sidebar-link"
             @else
-                class="sidebar-link collapsed"
+                class="sidebar-link @unless($item['active']) collapsed @endunless"
                 data-bs-target="#{{ $item['id'] }}"
                 data-bs-toggle="collapse"
-                aria-expanded="false"
+                aria-expanded="@if($item['active']) true @else false @endif"
             @endif
         >
             @if($item['icon'])
                 <i class="align-middle {{ $item['icon'] }}" style="font-size: 18px;"></i>
+            @else
+                <i class="align-middle fas fa-circle" style="font-size: 8px;"></i>
             @endif
             <span class="align-middle">{{ $item['label'] }}</span>
         </a>
         @if(!empty($item['items'] ?? []))
-            <ul id="{{ $item['id'] }}" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+            <ul id="{{ $item['id'] }}" class="sidebar-dropdown list-unstyled collapse @if($item['active']) show @endif" data-bs-parent="#sidebar">
                 <x-menu-items :items="$item['items']"/>
             </ul>
         @endif

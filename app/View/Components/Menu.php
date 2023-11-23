@@ -13,7 +13,7 @@ class Menu extends Component
     {
         return [
             Menu::item(
-                label: 'Home',
+                label: 'Dashboard',
                 icon: 'fas fa-home',
                 url: route('dashboard'),
                 active: Menu::isCurrentRoute('dashboard')
@@ -25,7 +25,7 @@ class Menu extends Component
                     Menu::item(
                         label: 'Lista użytkowników',
                         url: route('users.index'),
-                        active: Menu::isCurrentRoute('users.index')
+                        active: Menu::isCurrentRoute(['users.index', 'users.view'])
                     ),
                 ],
             ),
@@ -64,8 +64,8 @@ class Menu extends Component
         ];
     }
 
-    private static function isCurrentRoute(string $name): bool
+    private static function isCurrentRoute(array|string $names): bool
     {
-        return $name === app('request')->route()->getName();
+        return in_array(app('request')->route()->getName(), (array)$names);
     }
 }

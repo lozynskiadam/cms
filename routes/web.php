@@ -23,6 +23,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::any('/logout', [AuthController::class, 'logout']);
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', fn() => view('pages.welcome'))->name('dashboard');
+    Route::get('/dashboard', fn() => view('pages.dashboard'))->name('dashboard');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/{user}', [UserController::class, 'view'])->name('users.view');
 });

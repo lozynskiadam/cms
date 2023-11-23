@@ -12,4 +12,11 @@ class UserController extends Controller
             'models' => User::all()
         ]);
     }
+
+    public function view(User $user)
+    {
+        return view('pages.users.view', [
+            'model' => $user
+        ]);
+    }
 }

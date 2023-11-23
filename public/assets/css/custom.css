@@ -1,0 +1,24 @@
+.power-grid-table {
+    background: #ffffff;
+}
+.sidebar-dropdown .sidebar-link {
+    font-size: inherit;
+    margin: 0 .5rem;
+    padding: .65rem .75rem;
+}
+.sidebar-link .bi, .sidebar-link .fab, .sidebar-link .fal, .sidebar-link .far, .sidebar-link .fas, .sidebar-link svg, a.sidebar-link .bi, a.sidebar-link .fab, a.sidebar-link .fal, a.sidebar-link .far, a.sidebar-link .fas, a.sidebar-link svg {
+    color: #b1b9c1;
+}
+.sidebar-link:hover .fab, .sidebar-link:hover .fal, .sidebar-link:hover .far, .sidebar-link:hover .fas, .sidebar-link:hover svg {
+    color: #b1b9c1;
+}
+#sidebar .sidebar-dropdown .sidebar-item > .sidebar-link > i {
+    margin-right: .5rem;
+    text-align: center;
+    width: 22px;
+    vertical-align: middle;
+}
+.sidebar-item > .sidebar-link:hover {
+    background: #e9ecef;
+    color: #212529;
+}

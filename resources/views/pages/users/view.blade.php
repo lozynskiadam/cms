@@ -1,4 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.master', [
+    'title' => $model->name,
+    'breadcrumbs' => [
+        'Strona domowa' => route('dashboard'),
+        'Lista użytkowników' => route('users.index'),
+        $model->name => false,
+    ]
+])
 
 @section('content')
     <div class="col-lg-7">

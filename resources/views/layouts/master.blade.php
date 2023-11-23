@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ env('APP_NAME') }}</title>
-    <link rel="stylesheet" href="{{ asset('/assets/css/modern.css') }}">
+    <title>{{ env('APP_NAME') . (isset($title) ? " - $title" : '') }}</title>
+    <link rel="stylesheet" href="{{ asset('/assets/css/spark.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
     @livewireStyles
+    <script src="{{ asset('/assets/js/spark.js') }}" defer></script>
 </head>
 <body>
 <div id="root">
@@ -80,8 +82,6 @@
         </div>
     </div>
 </div>
-
-<script src="{{ asset('/assets/js/app.js') }}" defer></script>
 @livewireScripts
 </body>
 </html>

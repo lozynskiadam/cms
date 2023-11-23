@@ -44,13 +44,16 @@ final class UserTable extends PowerGridComponent
             ->addColumn('id')
             ->addColumn('name')
             ->addColumn('email')
-            ->addColumn('created_at_formatted', fn (User $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
+            ->addColumn('created_at_formatted', fn (User $model) => Carbon::parse($model->created_at)->format('Y-m-d H:i'));
     }
 
     public function columns(): array
     {
         return [
-            Column::make('Id', 'id'),
+            Column::make('Id', 'id')
+                ->headerAttribute(styleAttr: 'width: 10px;')
+                ->sortable(),
+
             Column::make('Name', 'name')
                 ->sortable()
                 ->searchable(),
@@ -74,14 +77,7 @@ final class UserTable extends PowerGridComponent
                 ->dataSource(User::all())
                 ->optionValue('email')
                 ->optionLabel('email'),
-            Filter::datepicker('created_at'),
         ];
-    }
-
-    #[\Livewire\Attributes\On('edit')]
-    public function edit($rowId): void
-    {
-        $this->js('alert('.$rowId.')');
     }
 
     public function actions(\App\Models\User $row): array
@@ -89,9 +85,8 @@ final class UserTable extends PowerGridComponent
         return [
             Button::add('edit')
                 ->slot('Edit')
-                ->id()
                 ->class('btn btn-primary')
-                ->dispatch('edit', ['rowId' => $row->id])
+                ->route('users.view', ['user' => $row->id]),
         ];
     }
 }
