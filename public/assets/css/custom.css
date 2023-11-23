@@ -12,13 +12,37 @@
 .sidebar-link:hover .fab, .sidebar-link:hover .fal, .sidebar-link:hover .far, .sidebar-link:hover .fas, .sidebar-link:hover svg {
     color: #b1b9c1;
 }
+#sidebar .sidebar-dropdown .sidebar-item.active > .sidebar-link > i {
+    color: #696cff;
+    text-shadow: 0 0 4px #696cff;
+}
 #sidebar .sidebar-dropdown .sidebar-item > .sidebar-link > i {
     margin-right: .5rem;
     text-align: center;
     width: 22px;
     vertical-align: middle;
 }
-.sidebar-item > .sidebar-link:hover {
-    background: #e9ecef;
+
+.sidebar-item.active > .sidebar-link > i {
+    color: rgb(105, 108, 255) !important;
+    /*color: #323842 !important;*/
+}
+
+.sidebar-item.active > .sidebar-link {
+    background: rgba(105, 108, 255, 0.16);
+    color: rgb(105, 108, 255);
+    /*background: rgba(50, 56, 66, 0.10);*/
+    /*color: #323842;*/
+}
+#sidebar .sidebar-dropdown .sidebar-item.active > .sidebar-link {
+    color: #414856;
+    font-weight: 700;
+}
+
+.sidebar-item > .sidebar-link:hover,
+.sidebar-item:not(.active) > .sidebar-link[aria-expanded="true"],
+.sidebar-dropdown > .sidebar-item > .sidebar-link:hover {
+    background: rgba(233, 236, 239, 0.5);
     color: #212529;
 }
+
