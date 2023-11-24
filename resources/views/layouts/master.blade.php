@@ -71,9 +71,12 @@
                                 @endforeach
                             </ol>
                         </nav>
-                        <div class="buttons-container"></div>
+                        <div class="buttons-container">
+                            @foreach($buttons ?? [] as $button)
+                                {{ $button }}
+                            @endforeach
+                        </div>
                         <div class="alerts-container"></div>
-
                     </div>
                     <div id="content-container" class="position-relative row">
                         @yield('content')

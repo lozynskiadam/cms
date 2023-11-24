@@ -59,7 +59,7 @@ final class UserTable extends PowerGridComponent
                 ->headerAttribute(styleAttr: 'width: 10px;')
                 ->sortable(),
 
-            Column::make('Name', 'name')
+            Column::make('Nazwa', 'name')
                 ->sortable()
                 ->searchable(),
 
@@ -71,7 +71,7 @@ final class UserTable extends PowerGridComponent
                 ->toggleable(true, 'yes', 'no')
                 ->searchable(),
 
-            Column::make('Created at', 'created_at_formatted', 'created_at')
+            Column::make('Data utworzenia', 'created_at_formatted', 'created_at')
                 ->sortable()
                 ->searchable(),
 
