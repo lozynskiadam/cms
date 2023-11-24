@@ -64,10 +64,12 @@ final class UserTable extends PowerGridComponent
                 ->searchable(),
 
             Column::make('Email', 'email')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
 
             Column::make('Email zweryfikowany', 'email_verified')
-                ->toggleable(true, 'yes', 'no'),
+                ->toggleable(true, 'yes', 'no')
+                ->searchable(),
 
             Column::make('Created at', 'created_at_formatted', 'created_at')
                 ->sortable()
@@ -88,14 +90,8 @@ final class UserTable extends PowerGridComponent
     {
         return [
             Filter::inputText('name')->operators(['contains']),
-
-            Filter::select('email')
-                ->dataSource(User::all())
-                ->optionValue('email')
-                ->optionLabel('email'),
-
+            Filter::inputText('email')->operators(['contains']),
             Filter::datepicker('created_at'),
-
             Filter::boolean('email_verified')
                 ->label('Tak', 'Nie')
                 ->builder(function (Builder $query, string $value) {
@@ -114,9 +110,6 @@ final class UserTable extends PowerGridComponent
                 ->slot('Edit')
                 ->class('btn btn-primary')
                 ->route('users.view', ['user' => $row->id]),
-            Button::add('delete')
-                ->slot('Delete')
-                ->class('btn btn-primary')
         ];
     }
 }
