@@ -28,8 +28,9 @@ final class UserTable extends PowerGridComponent
             Exportable::make('export')
                 ->striped()
                 ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
-            Header::make()->showSearchInput(),
+
             Header::make(),
+
             Footer::make()
                 ->showPerPage()
                 ->showRecordCount(),
@@ -39,11 +40,6 @@ final class UserTable extends PowerGridComponent
     public function datasource(): Builder
     {
         return User::query();
-    }
-
-    public function relationSearch(): array
-    {
-        return [];
     }
 
     public function addColumns(): PowerGridColumns
@@ -92,11 +88,22 @@ final class UserTable extends PowerGridComponent
     {
         return [
             Filter::inputText('name')->operators(['contains']),
+
             Filter::select('email')
                 ->dataSource(User::all())
                 ->optionValue('email')
                 ->optionLabel('email'),
+
             Filter::datepicker('created_at'),
+
+            Filter::boolean('email_verified')
+                ->label('Tak', 'Nie')
+                ->builder(function (Builder $query, string $value) {
+                    if ($value === 'true') {
+                        return $query->whereNot('email_verified_at', '=', null);
+                    }
+                    return $query->where('email_verified_at', '=', null);
+                }),
         ];
     }
 
