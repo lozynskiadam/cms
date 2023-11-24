@@ -1,7 +1,7 @@
 @extends('layouts.master', [
     'title' => 'Dashboard',
     'breadcrumbs' => [
-        'Strona domowa' => false,
+        ['label' => 'Strona domowa'],
     ]
 ])
 

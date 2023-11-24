@@ -1,8 +1,8 @@
 @extends('layouts.master', [
     'title' => 'Użytkownicy',
     'breadcrumbs' => [
-        'Strona domowa' => route('dashboard'),
-        'Lista użytkowników' => false,
+        ['label' => 'Strona domowa', 'url' => route('dashboard')],
+        ['label' => 'Lista użytkowników'],
     ]
 ])
 

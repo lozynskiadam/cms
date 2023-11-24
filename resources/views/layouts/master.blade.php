@@ -62,18 +62,18 @@
                         <h1 class="header-title">{{ $title ?? '' }}</h1>
                         <nav class="breadcrumbs-container" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                @foreach($breadcrumbs ?? [] as $label => $url)
-                                    @empty($url)
-                                        <li class="breadcrumb-item active">{{ $label }}</li>
+                                @foreach($breadcrumbs ?? [] as $breadcrumb)
+                                    @empty($breadcrumb['url'])
+                                        <li class="breadcrumb-item active">{{ $breadcrumb['label'] }}</li>
                                     @else
-                                        <li class="breadcrumb-item"><a href="{{ $url }}">{{ $label }}</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ $breadcrumb['url'] }}">{{ $breadcrumb['label'] }}</a></li>
                                     @endempty
                                 @endforeach
                             </ol>
                         </nav>
                         <div class="buttons-container">
                             @foreach($buttons ?? [] as $button)
-                                {{ $button }}
+                                {!! $button !!}
                             @endforeach
                         </div>
                         <div class="alerts-container"></div>

@@ -1,9 +1,9 @@
 @extends('layouts.master', [
     'title' => $model->name,
     'breadcrumbs' => [
-        'Strona domowa' => route('dashboard'),
-        'Lista użytkowników' => route('users.index'),
-        $model->name => false,
+        ['label' => 'Strona domowa', 'url' => route('dashboard')],
+        ['label' => 'Lista użytkowników', 'url' => route('users.index')],
+        ['label' => $model->name],
     ]
 ])
 
