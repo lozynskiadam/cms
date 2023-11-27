@@ -35,11 +35,13 @@ class EditUser extends Component
 
         $this->user->save();
 
-        $this->js('$(".header-title").text("' . $this->user->name . '");');
-        $this->js('$(".breadcrumb-item.active").text("' . $this->user->name . '");');
-        $this->js("toastr['success']('Użytkownik został zaaktualizowany.', null, {
-            positionClass: 'toast-bottom-right',
-            progressBar: true,
-        });");
+        $this->js("
+            $('.header-title').text('{$this->user->name}');
+            $('.breadcrumb-item.active').text('{$this->user->name}');
+            toastr['success']('Użytkownik został zaaktualizowany.', null, {
+                positionClass: 'toast-bottom-right',
+                progressBar: true,
+            });
+        ");
     }
 }
