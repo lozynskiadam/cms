@@ -76,7 +76,7 @@
                             @foreach($buttons ?? [] as $button)
                                 <form action="{{ $button['url'] }}" method="{{ $button['method'] ?? 'GET' }}">
                                     @csrf
-                                    <button class="btn btn-secondary">{{ $button['label'] }}</button>
+                                    <button class="btn btn-primary">{{ $button['label'] }}</button>
                                 </form>
                             @endforeach
                         </div>

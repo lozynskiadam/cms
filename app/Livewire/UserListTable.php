@@ -15,7 +15,7 @@ use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridColumns;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
-class UserTable extends PowerGridComponent
+class UserListTable extends PowerGridComponent
 {
     public function setUp(): array
     {

@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
-use App\Livewire\EditUser;
+use App\Livewire\UserEditForm;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +29,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/users/factory', [UserController::class, 'factory'])->name('users.factory');
     Route::get('/users/{user}', [UserController::class, 'view'])->name('users.view');
     Route::post('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
-    Route::get('/users/{user}/edit', EditUser::class)->name('users.edit');
+    Route::get('/users/{user}/edit', UserEditForm::class)->name('users.edit');
 });

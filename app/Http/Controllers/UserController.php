@@ -16,13 +16,6 @@ class UserController extends Controller
         ]);
     }
 
-    public function view(User $user): View
-    {
-        return view('pages.users.view', [
-            'model' => $user
-        ]);
-    }
-
     public function factory(): RedirectResponse
     {
         $user = User::factory()->createOne();
@@ -30,6 +23,13 @@ class UserController extends Controller
         Alert::success("Successfully created user \"{$user->name}\".");
 
         return redirect(route('users.index'));
+    }
+
+    public function view(User $user): View
+    {
+        return view('pages.users.view', [
+            'model' => $user
+        ]);
     }
 
     public function delete(User $user): RedirectResponse

@@ -5,12 +5,12 @@
         ['label' => 'Lista użytkowników'],
     ],
     'buttons' => [
-        ['label' => 'Dodaj', 'url' => route('users.factory'), 'method' => 'POST'],
+        ['label' => 'Generuj', 'url' => route('users.factory'), 'method' => 'POST'],
     ]
 ])
 
 @section('content')
     <div class="col-lg-12">
-        <livewire:user-table/>
+        <livewire:user-list-table/>
     </div>
 @endsection
