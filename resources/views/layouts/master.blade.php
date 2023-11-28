@@ -20,7 +20,8 @@
                     <span class="align-middle">{{ env('APP_NAME') }}</span>
                 </a>
                 <div class="sidebar-user">
-                    <img src="https://avatars.githubusercontent.com/u/58483602?v=4" class="img-fluid rounded-circle mb-2" alt="avatar">
+                    <i class="fas fa-circle-user fa-4x" style="line-height: 72px;"></i>
+{{--                    <img src="https://avatars.githubusercontent.com/u/58483602?v=4" class="img-fluid rounded-circle mb-2" alt="avatar">--}}
                     <div class="font-weight-bold">{{ auth()->user()->name }}</div>
                     <small>{{ auth()->user()->email }}</small>
                 </div>
@@ -112,6 +113,5 @@
     </div>
 </div>
 @livewireScripts
-@livewire('wire-elements-modal')
 </body>
 </html>

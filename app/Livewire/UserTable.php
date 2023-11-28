@@ -117,9 +117,14 @@ class UserTable extends PowerGridComponent
                 'route' => route('users.view', ['user' => $row->id]),
             ]),
 
+            Button::add()->bladeComponent('button-edit', [
+                'model' => $row,
+                'route' => route('users.edit', ['user' => $row->id]),
+            ]),
+
             Button::add()->bladeComponent('button-delete', [
                 'model' => $row,
-                'route' => route('users.view', ['user' => $row->id]),
+                'route' => route('users.delete', ['user' => $row->id]),
             ]),
         ];
     }
