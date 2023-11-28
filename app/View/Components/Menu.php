@@ -21,13 +21,8 @@ class Menu extends Component
             Menu::item(
                 label: 'Użytkownicy',
                 icon: 'fas fa-users',
-                items: [
-                    Menu::item(
-                        label: 'Lista użytkowników',
-                        url: route('users.index'),
-                        active: Menu::isCurrentRoute(['users.index', 'users.view'])
-                    ),
-                ],
+                url: route('users.index'),
+                active: Menu::isCurrentRoute(['users.index', 'users.view', 'users.edit'])
             ),
         ];
     }

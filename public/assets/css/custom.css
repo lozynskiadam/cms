@@ -1,6 +1,18 @@
 .power-grid-table {
     background: #ffffff;
 }
+.pg-actions {
+    gap: 0 !important;
+    justify-content: center;
+}
+.dt--top-section {
+    display: none;
+}
+.table-responsive {
+    margin: 0 !important;
+}
+
+/*
 .sidebar-dropdown .sidebar-link {
     font-size: inherit;
     margin: 0 .5rem;
@@ -25,14 +37,20 @@
 
 .sidebar-item.active > .sidebar-link > i {
     color: rgb(105, 108, 255) !important;
-    /*color: #323842 !important;*/
+
+    lub
+
+    color: #323842 !important;
 }
 
 .sidebar-item.active > .sidebar-link {
     background: rgba(105, 108, 255, 0.16);
     color: rgb(105, 108, 255);
-    /*background: rgba(50, 56, 66, 0.10);*/
-    /*color: #323842;*/
+
+    lub
+
+    background: rgba(50, 56, 66, 0.10);
+    color: #323842;
 }
 #sidebar .sidebar-dropdown .sidebar-item.active > .sidebar-link {
     color: #414856;
@@ -45,8 +63,4 @@
     background: rgba(233, 236, 239, 0.5);
     color: #212529;
 }
-
-.pg-actions {
-    gap: 0 !important;
-    justify-content: center;
-}
+*/
