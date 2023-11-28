@@ -73,10 +73,35 @@
                         </nav>
                         <div class="buttons-container">
                             @foreach($buttons ?? [] as $button)
-                                {!! $button !!}
+                                <form action="{{ $button['url'] }}" method="{{ $button['method'] ?? 'GET' }}">
+                                    @csrf
+                                    <button class="btn btn-secondary">{{ $button['label'] }}</button>
+                                </form>
                             @endforeach
                         </div>
-                        <div class="alerts-container"></div>
+                        <div class="alerts-container">
+                            @foreach(\App\Services\Alert::getAlerts() as $type => $messages)
+                                <div class="alert alert-{{ $type }} alert-dismissible" role="alert">
+                                    <div class="alert-icon">
+                                        <i class="far fa-fw fa-bell"></i>
+                                    </div>
+                                    <div class="alert-message">
+                                        @if (count($messages) > 1)
+                                            <ul class="mb-0">
+                                        @endif
+                                        @foreach($messages as $message)
+                                            @if (count($messages) > 1) <li> @endif
+                                            {{ $message }}
+                                            @if (count($messages) > 1) </li> @endif
+                                        @endforeach
+                                        @if (count($messages) > 1)
+                                            </ul>
+                                        @endif
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                     <div id="content-container" class="position-relative row">
                         @yield('content')
@@ -87,5 +112,6 @@
     </div>
 </div>
 @livewireScripts
+@livewire('wire-elements-modal')
 </body>
 </html>

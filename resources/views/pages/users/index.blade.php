@@ -3,6 +3,9 @@
     'breadcrumbs' => [
         ['label' => 'Strona domowa', 'url' => route('dashboard')],
         ['label' => 'Lista użytkowników'],
+    ],
+    'buttons' => [
+        ['label' => 'Dodaj', 'url' => route('users.factory'), 'method' => 'POST'],
     ]
 ])
 

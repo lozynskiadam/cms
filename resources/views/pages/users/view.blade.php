@@ -11,41 +11,31 @@
     <div class="col-lg-7">
         <div class="card">
             <div class="card-header"><h5 class="card-title">Informacje ogólne</h5></div>
-            <table id="w0" class="table table-striped table-bordered detail-view">
+            <table class="table table-striped table-bordered detail-view">
                 <tbody>
                 <tr>
                     <th>ID</th>
-                    <td>1</td>
+                    <td>{{ $model->id }}</td>
                 </tr>
                 <tr>
-                    <th>Klient</th>
-                    <td><span class="not-set">(brak wartości)</span></td>
+                    <th>Name</th>
+                    <td>{{ $model->name }}</td>
                 </tr>
                 <tr>
-                    <th>Treść</th>
-                    <td>Czy potrzebujesz pomocy w uzyskaniu pozwolenia o pracę w lokalizacji, w której obecnie szukasz
-                        zatrudnienia?
-                    </td>
+                    <th>Email</th>
+                    <td>{{ $model->email }}</td>
                 </tr>
                 <tr>
-                    <th>Znaczenie biznesowe</th>
-                    <td>Pozwolenie na pracę</td>
+                    <th>Mail potwierdzony dnia</th>
+                    <td>{{ $model->email_verified_at }}</td>
                 </tr>
                 <tr>
-                    <th>Typ odpowiedzi</th>
-                    <td>Pojedynczy wybór</td>
+                    <th>Data utworzenia</th>
+                    <td>{{ $model->created_at }}</td>
                 </tr>
                 <tr>
-                    <th>Status</th>
-                    <td>Aktywne</td>
-                </tr>
-                <tr>
-                    <th>Zmodyfikowano</th>
-                    <td>22 wrz 2023, 15:11:55</td>
-                </tr>
-                <tr>
-                    <th>Utworzono</th>
-                    <td>22 wrz 2023, 15:11:55</td>
+                    <th>Data ostatniej modyfikacji</th>
+                    <td>{{ $model->updated_at }}</td>
                 </tr>
                 </tbody>
             </table>

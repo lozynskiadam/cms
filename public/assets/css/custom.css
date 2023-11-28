@@ -46,3 +46,7 @@
     color: #212529;
 }
 
+.pg-actions {
+    gap: 0 !important;
+    justify-content: center;
+}
