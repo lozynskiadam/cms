@@ -11,9 +11,7 @@ class UserController extends Controller
 {
     public function index(): View
     {
-        return view('pages.users.index', [
-            'models' => User::all()
-        ]);
+        return view('pages.users.index');
     }
 
     public function factory(): RedirectResponse
