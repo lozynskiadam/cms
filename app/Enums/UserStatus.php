@@ -21,4 +21,13 @@ enum UserStatus: int
     {
         return UserStatus::map()[$this->value];
     }
+
+    public function render(): string
+    {
+        return match ($this) {
+            UserStatus::ACTIVE => "<span class='badge bg-success'>" . $this->label() . "</span>",
+            UserStatus::INACTIVE => "<span class='badge bg-danger'>" . $this->label() . "</span>",
+            UserStatus::BLOCKED => "<span class='badge bg-black'>" . $this->label() . "</span>",
+        };
+    }
 }

@@ -8,10 +8,8 @@
 ])
 
 @section('content')
-    <x-card title="Informacje ogólne" size="4">
-        <h6>Details</h6>
-        <hr/>
-        <table class="table table-striped table-bordered detail-view">
+    <x-card title="Informacje ogólne" size="4" narrow>
+        <table class="table detail-view">
             <tbody>
             <tr>
                 <th>ID</th>
@@ -24,6 +22,10 @@
             <tr>
                 <th>Email</th>
                 <td>{{ $model->email }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{!! $model->status->render() !!}</td>
             </tr>
             <tr>
                 <th>Mail potwierdzony dnia</th>

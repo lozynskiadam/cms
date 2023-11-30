@@ -45,11 +45,7 @@ class UserListTable extends PowerGridComponent
                 return implode('<br/>', $html);
             })
             ->addColumn('email')
-            ->addColumn('status_label', fn(User $model) => match ($model->status) {
-                UserStatus::ACTIVE => "<span class='badge bg-success'>" . $model->status->label() . "</span>",
-                UserStatus::INACTIVE => "<span class='badge bg-danger'>" . $model->status->label() . "</span>",
-                UserStatus::BLOCKED => "<span class='badge bg-black'>" . $model->status->label() . "</span>",
-            })
+            ->addColumn('status_label', fn(User $model) => $model->status->render())
             ->addColumn('email_verified', fn(User $model) => $model->hasVerifiedEmail())
             ->addColumn('created_at_formatted', fn(User $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
