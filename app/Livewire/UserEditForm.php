@@ -2,7 +2,9 @@
 
 namespace App\Livewire;
 
+use App\Enums\UserStatus;
 use App\Models\User;
+use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
 class UserEditForm extends Component
@@ -14,6 +16,7 @@ class UserEditForm extends Component
         return [
             'user.name' => 'required|min:5',
             'user.email' => 'required|email',
+            'user.status' => [new Enum(UserStatus::class)],
         ];
     }
 

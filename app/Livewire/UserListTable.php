@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Enums\UserStatus;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -44,6 +45,11 @@ class UserListTable extends PowerGridComponent
                 return implode('<br/>', $html);
             })
             ->addColumn('email')
+            ->addColumn('status_label', fn(User $model) => match ($model->status) {
+                UserStatus::ACTIVE => "<span class='badge bg-success'>" . $model->status->label() . "</span>",
+                UserStatus::INACTIVE => "<span class='badge bg-danger'>" . $model->status->label() . "</span>",
+                UserStatus::BLOCKED => "<span class='badge bg-black'>" . $model->status->label() . "</span>",
+            })
             ->addColumn('email_verified', fn(User $model) => $model->hasVerifiedEmail())
             ->addColumn('created_at_formatted', fn(User $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
@@ -56,6 +62,9 @@ class UserListTable extends PowerGridComponent
                 ->sortable(),
 
             Column::make('Nazwa', 'full_name')
+                ->searchable(),
+
+            Column::make('Status', 'status_label')
                 ->searchable(),
 
             Column::make('Email zweryfikowany', 'email_verified')

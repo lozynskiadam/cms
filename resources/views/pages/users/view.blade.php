@@ -8,7 +8,9 @@
 ])
 
 @section('content')
-    <x-card title="Informacje ogólne" size="7" narrow>
+    <x-card title="Informacje ogólne" size="4">
+        <h6>Details</h6>
+        <hr/>
         <table class="table table-striped table-bordered detail-view">
             <tbody>
             <tr>
@@ -38,7 +40,7 @@
             </tbody>
         </table>
     </x-card>
-    <x-card size="5">
+    <x-card size="8">
         <livewire:user-edit-form :user="$model"/>
     </x-card>
 @endsection

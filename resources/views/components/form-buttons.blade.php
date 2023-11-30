@@ -1,4 +1,4 @@
-<div class=" offset-lg-2">
+<div class="offset-lg-2 ps-1">
     <div class="d-inline-block">
         <button type="submit" class="btn btn-primary">Zapisz</button>
     </div>
