@@ -24,4 +24,3 @@
 @if ($size ?? false)
     </div>
 @endif
-v
