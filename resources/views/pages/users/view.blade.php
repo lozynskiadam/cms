@@ -38,4 +38,7 @@
             </tbody>
         </table>
     </x-card>
+    <x-card size="5">
+        <livewire:user-edit-form :user="$model"/>
+    </x-card>
 @endsection

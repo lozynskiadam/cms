@@ -56,7 +56,6 @@ class UserListTable extends PowerGridComponent
                 ->sortable(),
 
             Column::make('Nazwa', 'full_name')
-                ->sortable()
                 ->searchable(),
 
             Column::make('Email zweryfikowany', 'email_verified')
@@ -109,11 +108,6 @@ class UserListTable extends PowerGridComponent
             Button::add()->bladeComponent('button-view', [
                 'model' => $row,
                 'route' => route('users.view', ['user' => $row->id]),
-            ]),
-
-            Button::add()->bladeComponent('button-edit', [
-                'model' => $row,
-                'route' => route('users.edit', ['user' => $row->id]),
             ]),
 
             Button::add()->bladeComponent('button-delete', [
