@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
+use Livewire\Attributes\On;
 use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
@@ -17,6 +18,11 @@ use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
 class UserListTable extends PowerGridComponent
 {
+    public function datasource(): Builder
+    {
+        return User::query();
+    }
+
     public function setUp(): array
     {
         return [
@@ -26,11 +32,6 @@ class UserListTable extends PowerGridComponent
                 ->showPerPage()
                 ->showRecordCount(),
         ];
-    }
-
-    public function datasource(): Builder
-    {
-        return User::query();
     }
 
     public function addColumns(): PowerGridColumns
@@ -73,13 +74,6 @@ class UserListTable extends PowerGridComponent
             Column::action('Akcje')
                 ->headerAttribute(styleAttr: 'width: 0;')
         ];
-    }
-
-    public function onUpdatedToggleable($id, $field, $value): void
-    {
-        $user = User::findOrFail($id);
-        $user->email_verified_at = $value ? Carbon::now() : null;
-        $user->save();
     }
 
     public function filters(): array
@@ -127,5 +121,28 @@ class UserListTable extends PowerGridComponent
                 'route' => route('users.delete', ['user' => $row->id]),
             ]),
         ];
+    }
+
+    public function onUpdatedToggleable($id, $field, $value): void
+    {
+        if ($field === 'email_verified') {
+            $user = User::findOrFail($id);
+            $user->email_verified_at = $value ? Carbon::now() : null;
+            $user->save();
+        }
+    }
+
+    #[On('factory')]
+    public function factory(): void
+    {
+        $user = User::factory()->createOne();
+
+        $this->dispatch('pg:eventRefresh-default')->to(UserListTable::class);
+        $this->js("
+            toastr['success']('Użytkownik \"{$user->name}\" został wygenerowany.', null, {
+                positionClass: 'toast-bottom-right',
+                progressBar: true,
+            });
+        ");
     }
 }

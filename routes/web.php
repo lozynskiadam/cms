@@ -26,7 +26,6 @@ Route::any('/logout', [AuthController::class, 'logout']);
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', fn() => view('pages.dashboard'))->name('dashboard');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::post('/users/factory', [UserController::class, 'factory'])->name('users.factory');
     Route::get('/users/{user}', [UserController::class, 'view'])->name('users.view');
     Route::post('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
     Route::get('/users/{user}/edit', UserEditForm::class)->name('users.edit');

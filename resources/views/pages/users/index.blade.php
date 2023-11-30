@@ -5,7 +5,7 @@
         ['label' => 'Lista użytkowników'],
     ],
     'buttons' => [
-        ['label' => 'Generuj', 'url' => route('users.factory'), 'method' => 'POST'],
+        ['label' => 'Generuj', 'dispatch' => 'factory'],
     ]
 ])
 

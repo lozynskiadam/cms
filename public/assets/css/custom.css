@@ -1,15 +1,18 @@
-.power-grid-table {
-    background: #ffffff;
-}
-.pg-actions {
-    gap: 0 !important;
-    justify-content: center;
-}
 .dt--top-section {
     display: none;
 }
-.table > :not(caption) > * > * {
+.power-grid-table {
+    background: #ffffff;
+}
+.power-grid-table .pg-actions {
+    gap: 0 !important;
+    justify-content: center;
+}
+.power-grid-table > :not(caption) > * > * {
     padding: 0.5rem 0.75rem !important;
+}
+.table tbody, .table td, .table tfoot, .table th, .table thead, .table tr {
+    line-height: 1.25rem !important;
 }
 /*
 .sidebar-dropdown .sidebar-link {

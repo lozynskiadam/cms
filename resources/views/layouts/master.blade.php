@@ -74,10 +74,30 @@
                         </nav>
                         <div class="buttons-container">
                             @foreach($buttons ?? [] as $button)
-                                <form action="{{ $button['url'] }}" method="{{ $button['method'] ?? 'GET' }}">
+                                @if (!($button['attributes']['class'] ?? false))
+                                    @php
+                                        $button['attributes']['class'] = 'btn btn-primary'
+                                    @endphp
+                                @endif
+                                @if ($button['dispatch'] ?? false)
+                                    @php
+                                        $button['attributes']['onclick'] = "Livewire.dispatch('{$button['dispatch']}')";
+                                    @endphp
+                                @endif
+                                @if ($button['url'] ?? false)
+                                    <form action="{{ $button['url'] }}" method="{{ $button['method'] ?? 'GET' }}">
                                     @csrf
-                                    <button class="btn btn-primary">{{ $button['label'] }}</button>
-                                </form>
+                                @endif
+                                    <button
+                                        @foreach($button['attributes'] ?? [] as $attr => $value)
+                                            {{ $attr }}="{{ $value }}"
+                                        @endforeach
+                                    >
+                                        {{ $button['label'] ?? '' }}
+                                    </button>
+                                @if ($button['url'] ?? false)
+                                    </form>
+                                @endif
                             @endforeach
                         </div>
                         <div class="alerts-container">

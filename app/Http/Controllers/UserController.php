@@ -14,15 +14,6 @@ class UserController extends Controller
         return view('pages.users.index');
     }
 
-    public function factory(): RedirectResponse
-    {
-        $user = User::factory()->createOne();
-
-        Alert::success("Successfully created user \"{$user->name}\".");
-
-        return redirect(route('users.index'));
-    }
-
     public function view(User $user): View
     {
         return view('pages.users.view', [
