@@ -4,9 +4,9 @@
         <select class="form-control" wire:model="{{ $field }}">
             @foreach($options as $key => $option)
                 @if ($option instanceof UnitEnum)
-                    <option value="{{ $option->value }}">@if (method_exists($option, 'label')) {{ $option->label() }}@else {{ $option->$key }}@endif</option>
+                    <option value="{{ $option->value }}" @selected($option->value == ($value ?? false))>@if (method_exists($option, 'label')) {{ $option->label() }}@else {{ $option->$key }}@endif</option>
                 @else
-                    <option value="{{ $key }}">{{ $option }}</option>
+                    <option value="{{ $key }}" @selected($key == ($value ?? false))>{{ $option }}</option>
                 @endif
             @endforeach
         </select>

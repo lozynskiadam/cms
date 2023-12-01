@@ -6,6 +6,7 @@
     <title>{{ env('APP_NAME') . (isset($title) ? " - $title" : '') }}</title>
     <link rel="stylesheet" href="{{ asset('/assets/css/spark.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
     @vite(["resources/js/app.js", "resources/css/app.css"])
     @livewireStyles
     <script src="{{ asset('/assets/js/spark.js') }}" defer></script>

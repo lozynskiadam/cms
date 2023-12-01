@@ -40,9 +40,12 @@ class UserListTable extends PowerGridComponent
         return PowerGrid::columns()
             ->addColumn('id')
             ->addColumn('full_name', function (User $model) {
-                $html[] = $model->name;
-                $html[] = "<small>$model->email</small>";
-                return implode('<br/>', $html);
+                $html[] = "<div class='d-flex flex-column'>";
+                $html[] = "<div style='font-weight: 500;'>" .$model->name . "</div>";
+                $html[] = "<small class='text-muted'>$model->email</small>";
+                $html[] = "</div>";
+
+                return implode("\r\n", $html);
             })
             ->addColumn('email')
             ->addColumn('status_label', fn(User $model) => $model->status->render())
