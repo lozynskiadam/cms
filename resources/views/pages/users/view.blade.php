@@ -8,17 +8,12 @@
 ])
 
 @section('content')
-    <x-card title="Informacje ogólne" size="4" narrow>
+    <x-card size="4" narrow>
+        <div class="text-center p-4">
+            <h3 class="mb-0">{{ $model->name }} <small class="text-muted">#{{ $model->id }}</small></h3>
+        </div>
         <table class="table detail-view">
             <tbody>
-            <tr>
-                <th>ID</th>
-                <td>{{ $model->id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ $model->name }}</td>
-            </tr>
             <tr>
                 <th>Email</th>
                 <td>{{ $model->email }}</td>
@@ -41,6 +36,10 @@
             </tr>
             </tbody>
         </table>
+        <div class="text-center p-4">
+            <button type="button" class="btn btn-primary mx-1">Edytuj</button>
+            <button type="button" class="btn btn-danger mx-1">Usuń</button>
+        </div>
     </x-card>
     <x-card size="8">
         <livewire:user-edit-form :user="$model"/>
