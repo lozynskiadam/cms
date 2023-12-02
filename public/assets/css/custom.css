@@ -3,6 +3,7 @@
 }
 .power-grid-table {
     background: #ffffff;
+    box-shadow: rgba(50, 71, 92, 0.06) 0px 2px 9px -2px, rgba(50, 71, 92, 0.04) 0px 4px 9px 1px, rgba(50, 71, 92, 0.02) 0px 2px 6px 4px;
 }
 .power-grid-table .pg-actions {
     gap: 0 !important;
@@ -17,22 +18,33 @@
 .detail-view {
     border-top: 1px solid #dee2e6 !important;
 }
-
+.content {
+    margin-top: 1.5rem;
+}
+.card {
+    box-shadow: rgba(50, 71, 92, 0.06) 0px 2px 9px -2px, rgba(50, 71, 92, 0.04) 0px 4px 9px 1px, rgba(50, 71, 92, 0.02) 0px 2px 6px 4px;
+    border-radius: 0.5rem;
+}
 .btn {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: 500;
     font-size: 0.9rem;
     padding: .35rem .7rem;
     letter-spacing: 0.4px;
 }
 .nav-pills .nav-link {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: 500;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
-    letter-spacing: 0.4px;
+    letter-spacing: 1px;
+    color: rgba(50, 71, 92, 0.6);
+    border-radius: 0.4rem;
+    margin-right: 5px;
 }
-
+.nav-pills .nav-link:hover:not(.active) {
+    background-color: rgba(50, 71, 92, 0.1);
+}
 /*
 .sidebar-dropdown .sidebar-link {
     font-size: inherit;
