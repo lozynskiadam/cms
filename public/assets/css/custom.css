@@ -26,18 +26,16 @@
     border-radius: 0.5rem;
 }
 .btn {
-    /*text-transform: uppercase;*/
     font-weight: 500;
     font-size: 0.9rem;
     padding: .35rem .7rem;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.05rem;
 }
 .nav-pills .nav-link {
-    /*text-transform: uppercase;*/
     font-weight: 500;
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.05rem;
     color: rgba(50, 71, 92, 0.6);
     border-radius: 0.4rem;
     margin-right: 5px;
@@ -45,7 +43,7 @@
 .nav-pills .nav-link:hover:not(.active) {
     background-color: rgba(50, 71, 92, 0.1);
 }
-/*
+
 .sidebar-dropdown .sidebar-link {
     font-size: inherit;
     margin: 0 .5rem;
@@ -70,20 +68,11 @@
 
 .sidebar-item.active > .sidebar-link > i {
     color: rgb(105, 108, 255) !important;
-
-    lub
-
-    color: #323842 !important;
 }
 
 .sidebar-item.active > .sidebar-link {
     background: rgba(105, 108, 255, 0.16);
     color: rgb(105, 108, 255);
-
-    lub
-
-    background: rgba(50, 56, 66, 0.10);
-    color: #323842;
 }
 #sidebar .sidebar-dropdown .sidebar-item.active > .sidebar-link {
     color: #414856;
@@ -96,4 +85,3 @@
     background: rgba(233, 236, 239, 0.5);
     color: #212529;
 }
-*/
