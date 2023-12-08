@@ -50,7 +50,7 @@ function getCurrentTheme() {
     return queryParameter;
   }
 
-  return cookie ? cookie : "modern";
+  return cookie ? cookie : "light";
 }
 
 // Append theme style-tag to <head>

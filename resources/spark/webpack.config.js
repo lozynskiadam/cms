@@ -16,8 +16,6 @@ module.exports = {
   entry: {
     app: "./src/js/app",
     settings: "./src/js/settings",
-    modern: "./src/scss/modern.scss",
-    classic: "./src/scss/classic.scss",
     dark: "./src/scss/dark.scss",
     light: "./src/scss/light.scss"
   },

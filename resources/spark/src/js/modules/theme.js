@@ -1,13 +1,12 @@
 /*
  * Add the right theme colors to the window object
  * so this can be used by the charts and vector maps
- * - modern/light (default)
- * - classic
+ * - light (default)
  * - dark
  */
 
 let theme = {
-  primary: "#3B7DDD",
+  primary: "#696cff",
   secondary: "#6f42c1",
   tertiary: "#669ae5",
   success: "#28a745",
@@ -25,20 +24,6 @@ $("link[href]").each(function() {
     .pop();
 
   switch (item) {
-    // Overwrite theme var if classic theme is found
-    case "classic.css":
-      theme = {
-        primary: "#38C485",
-        secondary: "#5C59ED",
-        tertiary: "#41D492",
-        success: "#a877b5",
-        info: "#00bcd4",
-        warning: "#F2B51D",
-        danger: "#F26666",
-        dark: "#203A45"
-      };
-      break;
-    // Overwrite theme var if dark theme is found
     case "dark.css":
       theme = {
         primary: "#687ae8",
