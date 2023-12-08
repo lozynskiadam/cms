@@ -1,0 +1,202 @@
+.file-icon {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+
+  &::before {
+    content: '';
+  }
+
+  &.pdf::before {
+    content: '';
+  }
+
+  &.png::before,
+  &.jpg::before,
+  &.jpeg::before,
+  &.gif::before,
+  &.svg::before,
+  &.heic::before,
+  &.heif::before,
+  &.tiff::before,
+  &.psd::before,
+  &.bmp::before {
+    content: '';
+  }
+
+  &.zip::before,
+  &.rar::before,
+  &.tar::before,
+  &.gz::before,
+  &.tgz::before {
+    content: '';
+  }
+
+  &.csv::before {
+    content: '';
+  }
+
+  &.xls::before,
+  &.xlsx::before {
+    content: '';
+  }
+
+  &.txt::before,
+  &.md::before,
+  &.doc::before,
+  &.docx::before {
+    content: '';
+  }
+
+  &.mp3::before,
+  &.wav::before {
+    content: '';
+  }
+
+  &.mp4::before,
+  &.ogg::before,
+  &.avi::before,
+  &.webm::before,
+  &.mkv::before,
+  &.mov::before,
+  &.rmvb::before,
+  &.flv::before {
+    content: '';
+  }
+
+  &.htm::before,
+  &.html::before,
+  &.yml::before,
+  &.css::before,
+  &.scss::before,
+  &.php::before,
+  &.js::before,
+  &.tsx::before,
+  &.vue::before,
+  &.sh::before,
+  &.bat::before,
+  &.cpp::before,
+  &.py::before,
+  &.obj::before,
+  &.java::before,
+  &.class::before,
+  &.json::before {
+    content: '';
+  }
+}
+
+.flag-icon {
+  font-style: normal;
+
+  &.al::before {
+    content: '🇦🇱';
+  }
+  &.am::before {
+    content: '🇦🇲';
+  }
+  &.de::before {
+    content: '🇩🇪';
+  }
+  &.en::before {
+    content: '🇬🇧';
+  }
+  &.gb::before {
+    content: '🇬🇧';
+  }
+  &.fr::before {
+    content: '🇫🇷';
+  }
+  &.by::before {
+    content: '🇧🇾';
+  }
+  &.bg::before {
+    content: '🇧🇬';
+  }
+  &.hr::before {
+    content: '🇭🇷';
+  }
+  &.gr::before {
+    content: '🇬🇷';
+  }
+  &.tr::before {
+    content: '🇹🇷';
+  }
+  &.me::before {
+    content: '🇲🇪';
+  }
+  &.cz::before {
+    content: '🇨🇿';
+  }
+  &.dk::before {
+    content: '🇩🇰';
+  }
+  &.ee::before {
+    content: '🇪🇪';
+  }
+  &.fi::before {
+    content: '🇫🇮';
+  }
+  &.se::before {
+    content: '🇸🇪';
+  }
+  &.gu::before {
+    content: '🇬🇪';
+  }
+  &.es::before {
+    content: '🇪🇸';
+  }
+  &.nl::before {
+    content: '🇳🇱';
+  }
+  &.ie::before {
+    content: '🇮🇪';
+  }
+  &.is::before {
+    content: '🇮🇸';
+  }
+  &.rs::before {
+    content: '🇷🇸';
+  }
+  &.lt::before {
+    content: '🇱🇹';
+  }
+  &.lv::before {
+    content: '🇱🇻';
+  }
+  &.mk::before {
+    content: '🇲🇰';
+  }
+  &.md::before {
+    content: '🇲🇩';
+  }
+  &.ru::before {
+    content: '🇷🇺';
+  }
+  &.no::before {
+    content: '🇳🇴';
+  }
+  &.pl::before {
+    content: '🇵🇱';
+  }
+  &.pt::before {
+    content: '🇵🇹';
+  }
+  &.ro::before {
+    content: '🇷🇴';
+  }
+  &.it::before {
+    content: '🇮🇹';
+  }
+  &.sk::before {
+    content: '🇸🇰';
+  }
+  &.si::before {
+    content: '🇸🇮';
+  }
+  &.ua::before {
+    content: '🇺🇦';
+  }
+  &.hu::before {
+    content: '🇭🇺';
+  }
+}

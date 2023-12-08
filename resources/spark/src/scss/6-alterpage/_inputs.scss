@@ -1,0 +1,60 @@
+select.form-control:not(.select2) {
+
+  &[disabled] {
+    background-color: $gray-200;
+    color: $gray-500;
+  }
+
+  &:not([multiple]) {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFAgMAAAAF/0XGAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFdHR0iIiIAAAARYnjeQAAAAN0Uk5T//8A18oNQQAAABdJREFUeJxjEA1haA1iWOjFsEKLYdUqABtgBFIElp/QAAAAAElFTkSuQmCC') !important;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center right 10px;
+    background-size: auto;
+
+    &:focus {
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAA4SURBVHjafIyxDQAgDIB4qQ/4Xg/w1s44aTQaByYIRJat+ySyJLJ4RZGlCnpHU6oAZ7TLdfgxBgBPR2vsLb5AIgAAAABJRU5ErkJggg==') !important;
+    }
+  }
+}
+
+.select2-results__option:empty {
+  min-height: 34px;
+}
+
+.select2.select2-container .select2-selection.select2-selection--single {
+  height: 33px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 100%;
+  top: -1px;
+  right: 0px;
+}
+
+.ck-origin-control {
+  resize: none;
+  border-image-slice: 40 2 2 2;
+  border-image-width: 40px 2px 2px 2px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch repeat;
+  border-image-source: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAA7CAYAAAC36pAFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAUklEQVQ4jWM8d+XW/28fXjGgAy4BMQYWBgYGBjMzMwzJK7ceMDBhiCKBUclRyVHJUUlkwMLAACk5cEoaaqtiSJy/envweWVUknaSLAwMkFjHBgCs9RI2lWKd1gAAAABJRU5ErkJggg==');
+  border-style: solid;
+  padding-top: 43px;
+}
+
+.ck.ck-editor__main > .ck.ck-content {
+  min-height: 100px;
+  padding-bottom: 9px;
+  --ck-color-base-border: #ced4da;
+  --ck-border-radius: .2rem;
+}
+
+input[type="color"] {
+  padding: 2px;
+  width: 40px;
+  height: 40px;
+}

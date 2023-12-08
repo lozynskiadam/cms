@@ -1,0 +1,46 @@
+:root {
+  --ck-z-default: 10000 !important;
+}
+
+.object-fit-contain {
+  object-fit: contain;
+}
+
+.root-only::after {
+  content: '🔒';
+  margin-left: 0.2rem;
+}
+
+.buttons-container {
+  margin-bottom: 1.5rem;
+
+  .btn {
+    margin-right: 0.25rem;
+  }
+}
+
+// Custom styles for pickr - https://github.com/Simonwep/pickr
+
+.pcr-app .pcr-selection .pcr-color-preview .pcr-current-color::before,
+.pcr-app .pcr-swatches > button::before {
+  background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="silver" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>') !important;
+  background-size: 0.7em !important;
+}
+
+.pickr .pcr-button::before,
+.pcr-app .pcr-selection .pcr-color-palette .pcr-palette::before {
+  background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="silver" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>') !important;
+  background-size: 0.8em !important;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity .pcr-slider {
+  background: linear-gradient(to right, transparent, black), url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" d="M1,0H2V1H1V0ZM0,1H1V2H0V1Z"/><path fill="silver" d="M0,0H1V1H0V0ZM1,1H2V2H1V1Z"/></svg>') !important;
+  background-size: auto !important;
+}
+
+// Wysiwyg color dropdown in modal
+
+.modal div.ck.ck-dropdown.ck-color-ui-dropdown div.ck.ck-reset.ck-dropdown__panel.ck-dropdown__panel_se.ck-dropdown__panel-visible {
+  right: 0;
+  left: auto;
+}

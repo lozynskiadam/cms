@@ -1,0 +1,91 @@
+.card > .grid-view > .table {
+  box-shadow: none;
+  border: 0;
+  border-top: 1px solid #dfdfdf;
+  margin-bottom: 0;
+}
+
+.grid-view {
+
+  > table {
+    border: 1px solid #ebedf2;
+    font-size: 0.85rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px rgba(125, 125, 125, 0.2);
+
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+      border-color: #ebedf2;
+    }
+
+    > :not(caption) > * > * {
+      padding: 0.40rem 0.50rem;
+    }
+
+    > thead > tr {
+      border: 0 !important;
+      background-color: #ffffff;
+
+      > th,
+      > th > a {
+        color: #575962;
+      }
+
+      > th > a {
+        display: block;
+      }
+
+      > td {
+        vertical-align: top;
+        border-bottom: 2px solid #CCCCCC !important;
+      }
+    }
+
+    > tbody > tr > td.action-column {
+      text-align: center;
+      white-space: nowrap;
+      width: 0;
+
+      > .btn {
+        padding: 0.25rem 0.5rem;
+      }
+    }
+
+    ol, ul {
+      margin-bottom: 0;
+    }
+
+    tr.success td,
+    tr.warning td,
+    tr.danger td,
+    tr.info td {
+      box-shadow: unset;
+    }
+    tr.success td {
+      background: #00ff0025;
+    }
+    tr.danger td {
+      background: #ff000025;
+    }
+    tr.warning td {
+      background: #ffaa0025;
+    }
+    tr.info td {
+      background: #00c3ff25;
+    }
+  }
+
+  > .summary {
+    display: inline;
+    font-size: 0.85rem;
+  }
+
+  > .pager {
+    float: right;
+    text-align: right;
+  }
+}

@@ -50,3 +50,6 @@
 .navbar .nav-item {
     line-height: 2.5rem;
 }
+.header-title {
+    color: rgba(50, 71, 92, 0.87);
+}
