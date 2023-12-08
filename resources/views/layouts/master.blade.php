@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ (isset($title) ? "$title - " : '') . env('APP_NAME') }}</title>
-    <link rel="stylesheet" href="{{ asset('/assets/css/spark.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
