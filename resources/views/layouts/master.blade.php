@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ env('APP_NAME') . (isset($title) ? " - $title" : '') }}</title>
     <link rel="stylesheet" href="{{ asset('/assets/css/spark.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
     @vite(["resources/js/app.js", "resources/css/app.css"])
     @livewireStyles
     <script src="{{ asset('/assets/js/spark.js') }}" defer></script>
