@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ env('APP_NAME') . (isset($title) ? " - $title" : '') }}</title>
+    <title>{{ (isset($title) ? "$title - " : '') . env('APP_NAME') }}</title>
     <link rel="stylesheet" href="{{ asset('/assets/css/spark.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
