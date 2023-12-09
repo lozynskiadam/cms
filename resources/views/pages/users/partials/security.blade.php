@@ -1,1 +1,3 @@
-security
+<x-card>
+    security
+</x-card>
