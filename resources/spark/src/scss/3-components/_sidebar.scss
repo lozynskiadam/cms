@@ -11,19 +11,20 @@
 .sidebar-brand,
 .sidebar-brand:hover {
   padding: $sidebar-brand-padding;
-  background: $sidebar-brand-bg;
   font-size: $sidebar-brand-font-size;
   font-weight: $sidebar-brand-font-weight;
   color: $sidebar-brand-color;
   width: 100%;
   display: block;
   text-decoration: none;
+  text-transform: lowercase;
 
-  svg {
-    height: 32px;
-    width: 32px;
-    margin-right: .25rem;
-    fill: $sidebar-brand-icon-color;
+  i {
+      scale: 1.2;
+      transform: rotate(-10deg);
+      background: -webkit-linear-gradient(top left, #afb1ff, #696cff, #3e3f91);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
   }
 }
 
@@ -123,7 +124,6 @@ a.sidebar-link {
   color: $sidebar-link-child-color;
   background: $sidebar-link-child-bg;
   font-weight: $sidebar-link-child-font-weight;
-  font-size: $sidebar-link-child-font-size;
 }
 
 .sidebar-dropdown .sidebar-item .sidebar-link:hover {
@@ -135,7 +135,7 @@ a.sidebar-link {
 .sidebar-dropdown .sidebar-item.active .sidebar-link {
   color: $sidebar-link-child-active-color;
   background: $sidebar-link-child-active-bg;
-  font-weight: $sidebar-link-active-font-weight;
+  font-weight: $sidebar-link-child-active-font-weight;
 }
 
 // Chevron
