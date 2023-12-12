@@ -16,7 +16,7 @@
             @include('pages.users.partials.activity')
         </x-tab>
         <x-tab title="Bezpieczeństwo" icon="fa fa-key">
-            <livewire:user-edit-form :user="$model"/>
+            @include('pages.users.partials.security')
         </x-tab>
         <x-tab title="Historia logowań" icon="fa fa-history">
             @include('pages.users.partials.login-history')
