@@ -41,9 +41,6 @@
             <div class="modal-body">
                 <livewire:user-edit-form :user="$model"/>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Zapisz</button>
-            </div>
         </div>
     </div>
 </div>
