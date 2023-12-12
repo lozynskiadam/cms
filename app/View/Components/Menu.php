@@ -14,15 +14,15 @@ class Menu extends Component
         return [
             Menu::item(
                 label: 'Dashboard',
-                icon: 'fas fa-home',
+                icon: 'ti ti-home',
                 url: route('dashboard'),
                 active: Menu::isCurrentRoute('dashboard')
             ),
             Menu::item(
                 label: 'Użytkownicy',
-                icon: 'fas fa-users',
+                icon: 'ti ti-users',
                 url: route('users.index'),
-                active: Menu::isCurrentRoute(['users.index', 'users.view', 'users.edit'])
+                active: Menu::isCurrentRoute(['users.index', 'users.view', 'users.edit']),
             ),
         ];
     }

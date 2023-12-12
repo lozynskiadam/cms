@@ -332,18 +332,18 @@ $sidebar-link-font-weight: 400 !default;
 $sidebar-link-color: $gray-600 !default;
 $sidebar-link-bg: $sidebar-bg !default;
 $sidebar-link-hover-color: $gray-900 !default;
-$sidebar-link-hover-bg: $white !default;
+$sidebar-link-hover-bg: rgba(233, 236, 239, 0.5) !default;
 $sidebar-link-hover-font-weight: $font-weight-normal !default;
-$sidebar-link-active-color: $gray-900 !default;
-$sidebar-link-active-bg: $gray-200 !default;
+$sidebar-link-active-color: #696CFF !default;
+$sidebar-link-active-bg: rgba(105, 108, 255, 0.16) !default;
 $sidebar-link-active-font-weight: $font-weight-normal !default;
 
 // Sidebar child link
-$sidebar-link-child-padding: .35rem 1.5rem .35rem 2.75rem !default;
+$sidebar-link-child-padding: 0.65rem 0.75rem 0.65rem 2.74rem !default;
 $sidebar-link-child-margin: 0 1rem !default;
 $sidebar-link-child-font-weight: 400 !default;
 $sidebar-link-child-color: $gray-600 !default;
-$sidebar-link-child-bg: $white !default;
+$sidebar-link-child-bg: transparent !default;
 $sidebar-link-child-hover-color: rgba(50, 71, 92, 0.87) !default;
 $sidebar-link-child-hover-bg: $white !default;
 $sidebar-link-child-active-color: rgba(50, 71, 92, 0.87) !default;
@@ -351,9 +351,9 @@ $sidebar-link-child-active-bg: $white !default;
 $sidebar-link-child-active-font-weight: 700 !default;
 
 // Sidebar link icon
-$sidebar-link-icon-color: $dark !default;
-$sidebar-link-icon-hover-color: $dark !default;
-$sidebar-link-icon-active-color: $dark !default;
+$sidebar-link-icon-color: $gray-600 !default;
+$sidebar-link-icon-hover-color: $gray-600 !default;
+$sidebar-link-icon-active-color: #696CFF !default;
 
 // Sidebar bottom
 $sidebar-bottom-color: $gray-200 !default;

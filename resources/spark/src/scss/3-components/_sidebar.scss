@@ -75,14 +75,26 @@ a.sidebar-link {
   text-decoration: none;
   cursor: pointer;
 
-  svg,
-  .fas,
-  .far,
-  .fal,
-  .fab,
-  .bi {
-    margin-right: .75rem;
-    color: $sidebar-link-icon-color;
+  > i {
+      display: inline-block;
+      width: 18px;
+      text-align: center;
+      margin-right: 0.6rem;
+      color: $sidebar-link-icon-color;
+
+      &.ti {
+          font-size: 1.4rem;
+      }
+
+      &svg,
+      &.bi,
+      &.fa,
+      &.fas,
+      &.fal,
+      &.fab,
+      &.far {
+          font-size: 18px;
+      }
   }
 }
 
@@ -95,6 +107,9 @@ a.sidebar-link {
   background: $sidebar-link-hover-bg;
 
   svg,
+  .ti,
+  .bi,
+  .fa,
   .fas,
   .far,
   .fal,
@@ -109,6 +124,9 @@ a.sidebar-link {
   background: $sidebar-link-active-bg;
 
   svg,
+  .ti,
+  .bi,
+  .fa,
   .fas,
   .far,
   .fal,
@@ -136,6 +154,24 @@ a.sidebar-link {
   color: $sidebar-link-child-active-color;
   background: $sidebar-link-child-active-bg;
   font-weight: $sidebar-link-child-active-font-weight;
+}
+
+// Children bullet
+.sidebar-dropdown .sidebar-item .sidebar-link::before {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #d0d0d0;
+    border-radius: 50%;
+    margin-top: 9px;
+    margin-left: -24px;
+    border: 4px solid transparent;
+}
+.sidebar-dropdown .sidebar-item.active .sidebar-link::before {
+    border: 4px solid #696cff;
+    background: #696cff;
+    box-shadow: 0 0 4px #696cff;
 }
 
 // Chevron

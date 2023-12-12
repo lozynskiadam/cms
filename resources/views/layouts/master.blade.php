@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ (isset($title) ? "$title - " : '') . env('APP_NAME') }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/sidebar.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
     @vite(["resources/js/app.js", "resources/css/app.css"])
@@ -32,13 +32,13 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item ms-1">
                         <a class="nav-icon nav-link" href="http://champ.dev.alterpage.pl" target="_blank">
-                            <i class="fa fa-earth"></i>
+                            <i class="ti ti-world"></i>
                             <span class="d-none d-md-inline-block">WebSite</span>
                         </a>
                     </li>
                     <li class="nav-item ms-1 dropdown">
                         <a class="nav-link dropdown-toggle position-relative" href="#" id="user-dropdown" data-bs-toggle="dropdown">
-                            <i class="fa fa-user"></i>
+                            <i class="ti ti-user-circle"></i>
                             <span class="d-none d-md-inline-block">{{ auth()->user()->email }}</span>
                             <i class="fa fa-angle-down"></i>
                         </a>

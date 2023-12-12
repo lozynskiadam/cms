@@ -17,9 +17,7 @@
             @endif
         >
             @if($item['icon'])
-                <i class="align-middle {{ $item['icon'] }}" style="font-size: 18px;"></i>
-            @else
-                <i class="align-middle fas fa-circle" style="font-size: 8px;"></i>
+                <i class="align-middle {{ $item['icon'] }}"></i>
             @endif
             <span class="align-middle">{{ $item['label'] }}</span>
         </a>
