@@ -9,7 +9,7 @@
 
 @section('content')
     <x-card size="4" narrow>
-        @include('pages.users.partials.overview')
+        <livewire:user-overview :user="$model"/>
     </x-card>
     <x-tabs size="8">
         <x-tab title="Aktywność" icon="fa fa-calendar" active="true">

@@ -26,9 +26,15 @@ class UserEditForm extends Component
 
         $this->user->save();
 
+        $this->dispatch('$refresh')->to(UserOverview::class);
+
         $this->js("
             $('.header-title').text('{$this->user->name}');
             $('.breadcrumb-item.active').text('{$this->user->name}');
+
+            const modal = document.getElementById('user-edit-modal');
+            bootstrap.Modal.getInstance(modal).hide();
+
             toastr['success']('Użytkownik został zaaktualizowany.', null, {
                 positionClass: 'toast-bottom-right',
                 progressBar: true,
