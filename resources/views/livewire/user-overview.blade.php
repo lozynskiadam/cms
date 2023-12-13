@@ -38,18 +38,11 @@
             <x-input label="Nazwa" field="user.name" value="{{ $user->name }}"/>
             <x-input label="Email" field="user.email" value="{{ $user->email }}"/>
             <x-select label="Status" field="user.status" value="{{ $user->status }}" :options="\App\Enums\UserStatus::cases()"/>
-            <div class="text-end">
+            <div class="modal-buttons">
                 <button type="submit" class="btn btn-primary">Zapisz</button>
             </div>
         </form>
     </x-modal>
 
-    <x-modal title="Usuń" id="user-delete-modal">
-        <form wire:submit="delete">
-            Czy na pewno chcesz usunąć tego użytkownika?
-            <div class="text-end">
-                <button type="submit" class="btn btn-danger">Usuń</button>
-            </div>
-        </form>
-    </x-modal>
+    <x-confirm id="user-delete-modal" :route="route('users.delete', ['user' => $user->id])"/>
 </div>

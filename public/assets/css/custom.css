@@ -17,6 +17,7 @@
 }
 .detail-view {
     border-top: 1px solid #dee2e6 !important;
+    margin-bottom: 0;
 }
 .content {
     margin-top: 1.5rem;
@@ -40,4 +41,15 @@
 }
 .header-title {
     color: rgba(50, 71, 92, 0.87);
+}
+
+.modal-buttons {
+    text-align: end;
+    margin: 1rem -1rem -1rem -1rem;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.modal-buttons .btn {
+    margin-left: 0.5rem;
 }
