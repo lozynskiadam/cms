@@ -1,6 +1,3 @@
-<form action="{{ $route }}" method="POST">
-    @csrf
-    <button type="submit" class="btn btn-default text-danger">
-        <i class="fas fa-trash"></i>
-    </button>
-</form>
+<button type="submit" class="btn btn-default text-danger" wire:click="$dispatch('confirm', {url: '{{ $route }}'})">
+    <i class="fas fa-trash"></i>
+</button>

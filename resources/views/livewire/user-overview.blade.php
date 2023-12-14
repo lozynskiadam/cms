@@ -30,7 +30,11 @@
 
     <div class="text-center p-4">
         <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">Edytuj</button>
-        <button type="button" class="btn btn-danger mx-1" data-bs-toggle="modal" data-bs-target="#user-delete-modal">Usuń</button>
+        <button type="button" class="btn btn-danger mx-1" wire:click="$dispatch('confirm', {
+            url: '{{ route('users.delete', ['user' => $user->id]) }}',
+            message: 'Czy na pewno chcesz usunąć tego użytkownika?',
+            submitLabel: 'Usuń'
+        })">Usuń</button>
     </div>
 
     <x-modal title="Edytuj" id="user-edit-modal">
@@ -44,5 +48,4 @@
         </form>
     </x-modal>
 
-    <x-confirm id="user-delete-modal" :route="route('users.delete', ['user' => $user->id])"/>
 </div>

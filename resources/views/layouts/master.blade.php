@@ -128,7 +128,9 @@
         </div>
     </div>
 </div>
-<div id="modals"></div>
+<div id="modals">
+    <livewire:confirmation/>
+</div>
 @livewireScripts
 </body>
 </html>

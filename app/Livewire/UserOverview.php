@@ -39,17 +39,4 @@ class UserOverview extends Component
             });
         ");
     }
-
-    public function delete()
-    {
-        $this->js("
-            const modal = document.getElementById('user-delete-modal');
-            bootstrap.Modal.getInstance(modal).hide();
-
-            toastr['success']('Użytkownik został usunięty.', null, {
-                positionClass: 'toast-bottom-right',
-                progressBar: true,
-            });
-        ");
-    }
 }
