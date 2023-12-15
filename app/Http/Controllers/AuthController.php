@@ -16,7 +16,7 @@ class AuthController extends Controller
         }
 
         return redirect()->route('login')
-            ->withErrors((new MessageBag)->add('LoginError', 'Email or password is incorrect'))
+            ->withErrors((new MessageBag)->add('login-error', 'Email or password is incorrect.'))
             ->withInput();
     }
 
