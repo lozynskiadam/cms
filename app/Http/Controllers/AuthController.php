@@ -12,7 +12,15 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         if (Auth::attempt($request->only('email', 'password'), true)) {
-            return redirect()->route('dashboard');
+            if (Auth::user()->hasRole('admin')) {
+                return redirect()->route('dashboard');
+            }
+            Auth::logout();
+            Session::flush();
+
+            return redirect()->route('login')
+                ->withErrors((new MessageBag)->add('login-error', 'Not enough privileges.'))
+                ->withInput();
         }
 
         return redirect()->route('login')

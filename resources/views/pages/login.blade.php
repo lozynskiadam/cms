@@ -38,15 +38,16 @@
                     <span class="align-middle">{{ env('APP_NAME') }}</span>
                 </div>
 
-                @error('login-error')
+                <form action="" method="post" class="p-3">
+
+                    @error('login-error')
                     <div class="alert alert-danger">
                         <div class="alert-message">
                             {{ $message }}
                         </div>
                     </div>
-                @enderror
+                    @enderror
 
-                <form action="" method="post" class="p-3">
                     @csrf
                     <div class="mb-3">
                         <label for="email">Email</label>
