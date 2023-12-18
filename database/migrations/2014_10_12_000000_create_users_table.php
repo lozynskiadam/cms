@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->tinyInteger('status')->unsigned()->default(1);
+            $table->timestamp('last_active_at')->nullable();
             $table->timestamps();
         });
     }

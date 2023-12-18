@@ -1,10 +1,10 @@
 @php use \App\Enums\UserStatus; @endphp
-@php use \Spatie\Permission\Models\Role; @endphp
+@php use \App\Enums\UserRole; @endphp
 
 <div>
     <div class="text-center p-4">
         <h3 class="mb-0">
-            {{ $user->name }} <small class="text-muted h6">#{{ $user->id }}</small>
+            {{ $user->name }} <small class="badge badge-info rounded-pill text-muted">#{{ $user->id }}</small>
         </h3>
 
         @unless($user->getRoleNames()->isEmpty())
@@ -27,16 +27,20 @@
             <td>{!! $user->status->render() !!}</td>
         </tr>
         <tr>
-            <th>Mail potwierdzony dnia</th>
-            <td>{{ $user->email_verified_at }}</td>
-        </tr>
-        <tr>
             <th>Data utworzenia</th>
             <td>{{ $user->created_at }}</td>
         </tr>
         <tr>
             <th>Data ostatniej modyfikacji</th>
             <td>{{ $user->updated_at }}</td>
+        </tr>
+        <tr>
+            <th>Data ostatniej aktywności</th>
+            <td>{{ $user->last_active_at }}</td>
+        </tr>
+        <tr>
+            <th>Data potwierdzenia maila</th>
+            <td>{{ $user->email_verified_at }}</td>
         </tr>
         </tbody>
     </table>
@@ -55,7 +59,7 @@
             <x-inputs.text label="Nazwa" field="name"/>
             <x-inputs.text label="Email" field="email"/>
             <x-inputs.select label="Status" field="status" :options="UserStatus::cases()"/>
-            <x-inputs.checkbox-list label="Role" field="roles" :options="Role::pluck('name')->toArray() "/>
+            <x-inputs.checkbox-list label="Role" field="roles" :options="UserRole::cases() "/>
 
             <div class="modal-buttons">
                 <button type="submit" class="btn btn-primary">Zapisz</button>

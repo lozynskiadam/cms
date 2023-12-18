@@ -3,8 +3,13 @@
     <div class="col-sm-10 mt-1">
         @foreach($options as $key => $option)
             <div class="form-check form-switch">
-                <input type="checkbox" wire:model="{{ $field }}" class="form-check-input" id="{{ Str::of($label)->slug() }}-{{ Str::of($option)->slug() }}" value="{{ $option }}"/>
-                <label for="{{ Str::of($label)->slug() }}-{{ Str::of($option)->slug() }}" class="form-check-label">{{ $option }}</label>
+                @if ($option instanceof UnitEnum)
+                    <input type="checkbox" wire:model="{{ $field }}" class="form-check-input" id="{{ Str::of($label)->slug() }}-{{ Str::of($option->value)->slug() }}" value="{{ $option->value }}"/>
+                    <label for="{{ Str::of($label)->slug() }}-{{ Str::of($option->value)->slug() }}" class="form-check-label">{{ $option->value }}</label>
+                @else
+                    <input type="checkbox" wire:model="{{ $field }}" class="form-check-input" id="{{ Str::of($label)->slug() }}-{{ Str::of($option)->slug() }}" value="{{ $option }}"/>
+                    <label for="{{ Str::of($label)->slug() }}-{{ Str::of($option)->slug() }}" class="form-check-label">{{ $option }}</label>
+                @endif
             </div>
         @endforeach
     </div>

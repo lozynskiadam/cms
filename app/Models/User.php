@@ -19,6 +19,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string $password
  * @property string|null $remember_token
  * @property UserStatus $status
+ * @property Carbon|null $last_active_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
@@ -32,6 +33,7 @@ class User extends Authenticatable
     ];
 
     protected $casts = [
+        'last_active_at' => 'datetime',
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
         'status' => UserStatus::class
