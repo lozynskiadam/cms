@@ -27,20 +27,12 @@
             <td>{!! $user->status->render() !!}</td>
         </tr>
         <tr>
-            <th>Data utworzenia</th>
-            <td>{{ $user->created_at }}</td>
-        </tr>
-        <tr>
-            <th>Data ostatniej modyfikacji</th>
-            <td>{{ $user->updated_at }}</td>
-        </tr>
-        <tr>
             <th>Data ostatniej aktywności</th>
             <td>{{ $user->last_active_at }}</td>
         </tr>
         <tr>
-            <th>Data potwierdzenia maila</th>
-            <td>{{ $user->email_verified_at }}</td>
+            <th>Data ostatniej modyfikacji</th>
+            <td>{{ $user->updated_at }}</td>
         </tr>
         </tbody>
     </table>

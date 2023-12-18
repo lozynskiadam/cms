@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/timeline.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
     @vite(["resources/js/app.js", "resources/css/app.css"])
     @livewireStyles
@@ -125,6 +126,13 @@
                     </div>
                 </div>
             </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="text-muted text-center">
+                        <a href="#">✨infirsoft</a> © {{ env('APP_NAME') }} {{ date('Y') }}
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
 </div>
