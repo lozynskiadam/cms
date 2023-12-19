@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Files;
 
 use App\Models\File;
 use Illuminate\Database\Eloquent\Builder;
@@ -15,7 +15,7 @@ use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridColumns;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
-final class FileListTable extends PowerGridComponent
+final class Listing extends PowerGridComponent
 {
     public function datasource(): Builder
     {

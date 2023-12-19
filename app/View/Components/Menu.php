@@ -9,39 +9,15 @@ use Illuminate\View\Component;
 
 class Menu extends Component
 {
-    public function getItems(): array
-    {
-        return [
-            Menu::item(
-                label: 'Dashboard',
-                icon: 'ti ti-home',
-                url: route('dashboard'),
-                active: Menu::isCurrentRoute('dashboard')
-            ),
-            Menu::item(
-                label: 'Użytkownicy',
-                icon: 'ti ti-users',
-                url: route('users.index'),
-                active: Menu::isCurrentRoute(['users.index', 'users.view']),
-            ),
-            Menu::item(
-                label: 'Pliki',
-                icon: 'ti ti-files',
-                url: route('files.index'),
-                active: Menu::isCurrentRoute(['files.index', 'files.view']),
-            ),
-        ];
-    }
-
     public function render(): View|Closure|string
     {
         return view('components.menu-items', [
-            'items' => $this->getItems(),
+            'items' => config('menu')(),
             'root' => true,
         ]);
     }
 
-    private static function item(
+    public static function item(
         string $label = null,
         string $icon = null,
         string $url = null,
@@ -65,7 +41,7 @@ class Menu extends Component
         ];
     }
 
-    private static function isCurrentRoute(array|string $names): bool
+    public static function isCurrentRoute(array|string $names): bool
     {
         return in_array(app('request')->route()->getName(), (array)$names);
     }

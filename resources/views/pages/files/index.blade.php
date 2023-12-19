@@ -11,6 +11,6 @@
 
 @section('content')
     <div class="col-lg-12">
-        <livewire:file-list-table/>
+        <livewire:files.listing/>
     </div>
 @endsection

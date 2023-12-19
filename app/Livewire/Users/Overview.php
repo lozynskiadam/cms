@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Users;
 
 use App\Enums\UserStatus;
 use App\Models\User;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
-class UserOverview extends Component
+class Overview extends Component
 {
     public User $user;
 

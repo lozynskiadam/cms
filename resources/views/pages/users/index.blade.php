@@ -5,12 +5,13 @@
         ['label' => 'Użytkownicy'],
     ],
     'buttons' => [
+        ['label' => 'Dodaj'],
         ['label' => 'Generuj', 'dispatch' => 'factory'],
     ]
 ])
 
 @section('content')
     <div class="col-lg-12">
-        <livewire:user-list-table/>
+        <livewire:users.listing/>
     </div>
 @endsection
