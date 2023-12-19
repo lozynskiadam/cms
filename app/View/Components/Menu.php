@@ -22,7 +22,13 @@ class Menu extends Component
                 label: 'Użytkownicy',
                 icon: 'ti ti-users',
                 url: route('users.index'),
-                active: Menu::isCurrentRoute(['users.index', 'users.view', 'users.edit']),
+                active: Menu::isCurrentRoute(['users.index', 'users.view']),
+            ),
+            Menu::item(
+                label: 'Pliki',
+                icon: 'ti ti-files',
+                url: route('files.index'),
+                active: Menu::isCurrentRoute(['files.index', 'files.view']),
             ),
         ];
     }

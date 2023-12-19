@@ -110,7 +110,7 @@ class UserListTable extends PowerGridComponent
         ];
     }
 
-    public function actions(\App\Models\User $row): array
+    public function actions(User $row): array
     {
         return [
             Button::add()->bladeComponent('button-view', [
@@ -139,7 +139,7 @@ class UserListTable extends PowerGridComponent
     {
         $user = User::factory()->createOne();
 
-        $this->dispatch('pg:eventRefresh-default')->to(UserListTable::class);
+        $this->dispatch('pg:eventRefresh-default')->to(self::class);
         $this->js("
             toastr['success']('Użytkownik \"{$user->name}\" został wygenerowany.', null, {
                 positionClass: 'toast-bottom-right',
