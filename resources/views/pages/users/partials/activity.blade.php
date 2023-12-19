@@ -1,4 +1,4 @@
-<x-card>
+<x-card size="12">
     <div class="timeline" id="timeline-6580660d7674f">
         <div class="timeline-event mx-4">
             <form action="/event/event-crud/comment?modelId=32&amp;modelClassId=18&amp;redirect=%2Fshop%2Forder-crud%2Fview%3Fid%3D32" method="POST">

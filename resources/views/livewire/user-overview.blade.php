@@ -38,8 +38,8 @@
     </table>
 
     <div class="text-center p-4">
-        <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">Edytuj</button>
-        <button type="button" class="btn btn-danger mx-1" wire:click="$dispatch('confirm', {
+        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">Edytuj</button>
+        <button type="button" class="btn btn-danger" wire:click="$dispatch('confirm', {
             url: '{{ route('users.delete', ['user' => $user->id]) }}',
             message: 'Czy na pewno chcesz usunąć tego użytkownika?',
             submitLabel: 'Usuń'

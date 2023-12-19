@@ -1,5 +1,7 @@
 <div class="tab-pane fade @if($active ?? false) show active @endif" id="tab-{{ Str::of($title)->slug() }}" role="tabpanel">
-    {{ $slot }}
+    <div class="row">
+        {{ $slot }}
+    </div>
 </div>
 @php
 \App\View\Components\Tabs::push([
