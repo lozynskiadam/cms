@@ -2,7 +2,7 @@
     'title' => $model->name,
     'breadcrumbs' => [
         ['label' => 'Strona domowa', 'url' => route('dashboard')],
-        ['label' => 'Lista użytkowników', 'url' => route('users.index')],
+        ['label' => 'Użytkownicy', 'url' => route('users.index')],
         ['label' => $model->name],
     ]
 ])

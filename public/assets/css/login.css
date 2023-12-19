@@ -1,0 +1,36 @@
+
+body {
+    background-color: #cfd0f4;
+}
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/images/clouds.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.form-control-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    width: 315px;
+    border-radius: 4px;
+    border: 0;
+    outline: 1px solid #ced4da;
+    transition: outline-color 150ms;
+}
+.form-control-lg:focus {
+    outline: 2px solid #696cff;
+}
+.form-check {
+    line-height: 25px;
+}
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}

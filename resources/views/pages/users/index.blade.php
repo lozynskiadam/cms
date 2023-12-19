@@ -2,7 +2,7 @@
     'title' => 'Użytkownicy',
     'breadcrumbs' => [
         ['label' => 'Strona domowa', 'url' => route('dashboard')],
-        ['label' => 'Lista użytkowników'],
+        ['label' => 'Użytkownicy'],
     ],
     'buttons' => [
         ['label' => 'Generuj', 'dispatch' => 'factory'],
