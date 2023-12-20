@@ -11,7 +11,6 @@ use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
 use PowerComponents\LivewirePowerGrid\Footer;
-use PowerComponents\LivewirePowerGrid\Header;
 use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridColumns;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
@@ -26,11 +25,7 @@ class Listing extends PowerGridComponent
     public function setUp(): array
     {
         return [
-            Header::make(),
-
-            Footer::make()
-                ->showPerPage()
-                ->showRecordCount(),
+            Footer::make()->showPerPage()->showRecordCount(),
         ];
     }
 
@@ -49,7 +44,7 @@ class Listing extends PowerGridComponent
             ->addColumn('email')
             ->addColumn('status_label', fn(User $model) => $model->status->render())
             ->addColumn('email_verified', fn(User $model) => $model->hasVerifiedEmail())
-            ->addColumn('created_at_formatted', fn(User $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
+            ->addColumn('created_at', fn(User $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
 
     public function columns(): array
@@ -71,7 +66,7 @@ class Listing extends PowerGridComponent
                 ->toggleable(true, 'yes', 'no')
                 ->searchable(),
 
-            Column::make('Data utworzenia', 'created_at_formatted', 'created_at')
+            Column::make('Data utworzenia', 'created_at')
                 ->headerAttribute(styleAttr: 'width: 200px;')
                 ->bodyAttribute(classAttr: 'text-center')
                 ->sortable()

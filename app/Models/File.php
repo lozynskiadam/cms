@@ -23,4 +23,14 @@ class File extends Model
     protected $casts = [
         'is_private' => 'boolean'
     ];
+
+    public function getFormattedSize(): string
+    {
+        return match (true) {
+            $this->size > 1000000000 => round($this->size/1000000000, 2) . ' GB',
+            $this->size > 1000000 => round($this->size/1000000, 2) . ' MB',
+            $this->size > 1000 => round($this->size/1000, 2) . ' KB',
+            default => $this->size . ' B',
+        };
+    }
 }

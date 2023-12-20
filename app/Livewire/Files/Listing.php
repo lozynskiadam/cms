@@ -10,12 +10,11 @@ use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
 use PowerComponents\LivewirePowerGrid\Footer;
-use PowerComponents\LivewirePowerGrid\Header;
 use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridColumns;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
-final class Listing extends PowerGridComponent
+class Listing extends PowerGridComponent
 {
     public function datasource(): Builder
     {
@@ -25,11 +24,7 @@ final class Listing extends PowerGridComponent
     public function setUp(): array
     {
         return [
-            Header::make()->showSearchInput(),
-
-            Footer::make()
-                ->showPerPage()
-                ->showRecordCount(),
+            Footer::make()->showPerPage()->showRecordCount(),
         ];
     }
 
@@ -38,38 +33,48 @@ final class Listing extends PowerGridComponent
         return PowerGrid::columns()
             ->addColumn('id')
             ->addColumn('name')
-            ->addColumn('name_lower', fn (File $model) => strtolower(e($model->name)))
-            ->addColumn('created_at')
-            ->addColumn('created_at_formatted', fn (File $model) => Carbon::parse($model->created_at)->format('d/m/Y H:i:s'));
+            ->addColumn('size', fn(File $model) => $model->getFormattedSize())
+            ->addColumn('created_at', fn(File $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
 
     public function columns(): array
     {
         return [
             Column::make('ID', 'id')
-                ->searchable()
+                ->headerAttribute(styleAttr: 'width: 0;')
                 ->sortable(),
 
             Column::make('Name', 'name')
                 ->searchable()
                 ->sortable(),
 
-            Column::make('Created at', 'created_at')
-                ->hidden(),
+            Column::make('Waga', 'size')
+                ->headerAttribute(styleAttr: 'width: 150px;')
+                ->bodyAttribute(classAttr: 'text-end')
+                ->sortable(),
 
-            Column::make('Created at', 'created_at_formatted', 'created_at')
+            Column::make('Data utworzenia', 'created_at')
+                ->headerAttribute(styleAttr: 'width: 200px;')
+                ->bodyAttribute(classAttr: 'text-center')
+                ->sortable()
                 ->searchable(),
 
-            Column::action('Action')
+            Column::action('Akcje')
+                ->headerAttribute(styleAttr: 'width: 0;')
         ];
     }
 
     public function filters(): array
     {
         return [
+            Filter::inputText('id')
+                ->placeholder(' ')
+                ->operators(['contains']),
+
             Filter::inputText('name')
                 ->operators(['contains']),
-            Filter::datepicker('created_at_formatted', 'created_at'),
+
+            Filter::datepicker('created_at'),
         ];
     }
 
