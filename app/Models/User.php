@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\UserStatus;
+use App\Contracts\HasFiles;
+use App\Contracts\InteractsWithFiles;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,9 +25,13 @@ use Spatie\Permission\Traits\HasRoles;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  */
-class User extends Authenticatable
+class User extends Authenticatable implements InteractsWithFiles
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use HasRoles;
+    use HasFiles;
 
     protected $hidden = [
         'password',

@@ -33,4 +33,9 @@ class File extends Model
             default => $this->size . ' B',
         };
     }
+
+    public function users()
+    {
+        return $this->morphedByMany(User::class, 'file_to_model');
+    }
 }
