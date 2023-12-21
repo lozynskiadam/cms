@@ -33,4 +33,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/files', [FileController::class, 'index'])->name('files.index');
     Route::get('/files/{file}', [FileController::class, 'view'])->name('files.view');
     Route::post('/files/{file}/delete', [FileController::class, 'delete'])->name('files.delete');
+    Route::get('/files/{file}/get', [FileController::class, 'get'])->name('files.get');
+    Route::get('/files/{file}/download', [FileController::class, 'download'])->name('files.download');
 });

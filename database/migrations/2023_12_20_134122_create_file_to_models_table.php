@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('file_to_models', function (Blueprint $table) {
             $table->unsignedBigInteger('file_id');
-            $table->unsignedBigInteger('file_to_model_id');
-            $table->string('file_to_model_type');
+            $table->morphs('file_to_model');
+            $table->string('relation');
 
             $table->foreign('file_id')->references('id')->on('files')->onDelete('cascade');
         });

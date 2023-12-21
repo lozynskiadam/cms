@@ -1,6 +1,9 @@
-@php use \App\Enums\UserStatus; @endphp
-@php use \App\Enums\UserRole; @endphp
-
+@php
+    use App\Enums\UserStatus;
+    use App\Enums\UserRole;
+    use App\Models\User;
+    /** @var $user User; */
+@endphp
 <div>
     <div class="text-center p-4">
         <h3 class="mb-0">
@@ -38,12 +41,15 @@
     </table>
 
     <div class="text-center p-4">
-        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">Edytuj</button>
+        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">
+            Edytuj
+        </button>
         <button type="button" class="btn btn-danger" onclick="Livewire.dispatch('confirm', {
             url: '{{ route('users.delete', ['user' => $user->id]) }}',
             message: 'Czy na pewno chcesz usunąć tego użytkownika?',
             submitLabel: 'Usuń'
-        })">Usuń</button>
+        })">Usuń
+        </button>
     </div>
 
     <x-modal title="Edytuj" id="user-edit-modal">

@@ -22,6 +22,11 @@ enum UserStatus: int
         return UserStatus::map()[$this->value];
     }
 
+    public function labelPowergridFilter(): string
+    {
+        return $this->label();
+    }
+
     public function render(): string
     {
         return match ($this) {

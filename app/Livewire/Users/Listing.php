@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Users;
 
+use App\Enums\UserStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
@@ -32,7 +33,6 @@ class Listing extends PowerGridComponent
     public function addColumns(): PowerGridColumns
     {
         return PowerGrid::columns()
-            ->addColumn('id')
             ->addColumn('full_name', function (User $model) {
                 $html[] = "<div class='d-flex flex-column'>";
                 $html[] = "<div style='font-weight: 500;'>" .$model->name . "</div>";
@@ -41,10 +41,9 @@ class Listing extends PowerGridComponent
 
                 return implode("\r\n", $html);
             })
-            ->addColumn('email')
             ->addColumn('status_label', fn(User $model) => $model->status->render())
             ->addColumn('email_verified', fn(User $model) => $model->hasVerifiedEmail())
-            ->addColumn('created_at', fn(User $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
+            ->addColumn('created_at_formatted', fn(User $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
 
     public function columns(): array
@@ -54,19 +53,22 @@ class Listing extends PowerGridComponent
                 ->headerAttribute(styleAttr: 'width: 0;')
                 ->sortable(),
 
-            Column::make('Nazwa', 'full_name')
+            Column::make('Nazwa', 'full_name', 'name')
+                ->sortable()
                 ->searchable(),
 
-            Column::make('Status', 'status_label')
+            Column::make('Status', 'status_label', 'status')
+                ->sortable()
                 ->searchable(),
 
-            Column::make('Email zweryfikowany', 'email_verified')
+            Column::make('Email zweryfikowany', 'email_verified', 'email_verified_at')
                 ->headerAttribute(styleAttr: 'width: 0;')
                 ->bodyAttribute(classAttr: 'text-center')
                 ->toggleable(true, 'yes', 'no')
+                ->sortable()
                 ->searchable(),
 
-            Column::make('Data utworzenia', 'created_at')
+            Column::make('Data utworzenia', 'created_at_formatted', 'created_at')
                 ->headerAttribute(styleAttr: 'width: 200px;')
                 ->bodyAttribute(classAttr: 'text-center')
                 ->sortable()
@@ -84,7 +86,7 @@ class Listing extends PowerGridComponent
                 ->placeholder(' ')
                 ->operators(['contains']),
 
-            Filter::inputText('full_name')
+            Filter::inputText('name')
                 ->placeholder('Nazwa lub email')
                 ->operators(['contains'])
                 ->builder(function (Builder $query, mixed $value) {
@@ -93,7 +95,11 @@ class Listing extends PowerGridComponent
 
             Filter::datepicker('created_at'),
 
-            Filter::boolean('email_verified')
+            Filter::enumSelect('status')
+                ->dataSource(UserStatus::cases())
+                ->optionLabel('name'),
+
+            Filter::boolean('email_verified_at')
                 ->label('Tak', 'Nie')
                 ->builder(function (Builder $query, string $value) {
                     if ($value === 'true') {

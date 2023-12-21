@@ -24,6 +24,16 @@ class File extends Model
         'is_private' => 'boolean'
     ];
 
+    public function getUrl(): string
+    {
+        return route('files.get', ['file' => $this->id]);
+    }
+
+    public function getDownloadUrl(): string
+    {
+        return route('files.download', ['file' => $this->id]);
+    }
+
     public function getFormattedSize(): string
     {
         return match (true) {
@@ -32,10 +42,5 @@ class File extends Model
             $this->size > 1000 => round($this->size/1000, 2) . ' KB',
             default => $this->size . ' B',
         };
-    }
-
-    public function users()
-    {
-        return $this->morphedByMany(User::class, 'file_to_model');
     }
 }

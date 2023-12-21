@@ -2,13 +2,19 @@
 
 namespace App\Contracts;
 
+use App\Enums\FileRelation;
 use App\Models\File;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 trait HasFiles
 {
-    public function files(): MorphToMany
+    public function files(FileRelation $relation = null): MorphToMany
     {
-        return $this->morphToMany(File::class, 'file_to_model');
+        $query = $this->morphToMany(File::class, 'file_to_model')->withPivot('relation');
+        if ($relation !== null) {
+            $query->wherePivot('relation', $relation->value);
+        }
+
+        return $query;
     }
 }

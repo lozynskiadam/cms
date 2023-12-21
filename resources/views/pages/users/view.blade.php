@@ -1,3 +1,8 @@
+@php
+    use App\Models\User;
+    /** @var User $model **/
+@endphp
+
 @extends('layouts.master', [
     'title' => $model->name,
     'breadcrumbs' => [

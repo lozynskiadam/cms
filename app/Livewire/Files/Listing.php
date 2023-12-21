@@ -31,10 +31,12 @@ class Listing extends PowerGridComponent
     public function addColumns(): PowerGridColumns
     {
         return PowerGrid::columns()
-            ->addColumn('id')
-            ->addColumn('name')
+            ->addColumn('is_private_formatted', fn(File $model) => $model->is_private
+                ? '<i class="fa fa-lock"></i> Prywatny'
+                : '<i class="fa fa-earth"></i> Publiczny'
+            )
             ->addColumn('size', fn(File $model) => $model->getFormattedSize())
-            ->addColumn('created_at', fn(File $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
+            ->addColumn('created_at_formatted', fn(File $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
 
     public function columns(): array
@@ -44,7 +46,11 @@ class Listing extends PowerGridComponent
                 ->headerAttribute(styleAttr: 'width: 0;')
                 ->sortable(),
 
-            Column::make('Name', 'name')
+            Column::make('Nazwa', 'name')
+                ->searchable()
+                ->sortable(),
+
+            Column::make('Typ', 'type')
                 ->searchable()
                 ->sortable(),
 
@@ -53,7 +59,13 @@ class Listing extends PowerGridComponent
                 ->bodyAttribute(classAttr: 'text-end')
                 ->sortable(),
 
-            Column::make('Data utworzenia', 'created_at')
+            Column::make('Widoczność', 'is_private_formatted', 'is_private')
+                ->headerAttribute(styleAttr: 'width: 170px;')
+                ->bodyAttribute(classAttr: 'text-center')
+                ->searchable()
+                ->sortable(),
+
+            Column::make('Data utworzenia', 'created_at_formatted', 'created_at')
                 ->headerAttribute(styleAttr: 'width: 200px;')
                 ->bodyAttribute(classAttr: 'text-center')
                 ->sortable()
@@ -73,6 +85,12 @@ class Listing extends PowerGridComponent
 
             Filter::inputText('name')
                 ->operators(['contains']),
+
+            Filter::inputText('type')
+                ->operators(['contains']),
+
+            Filter::boolean('is_private')
+                ->label('Prywatny', 'Publiczny'),
 
             Filter::datepicker('created_at'),
         ];
