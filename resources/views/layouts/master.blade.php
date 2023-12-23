@@ -76,6 +76,12 @@
                                         $button['attributes']['class'] = 'btn btn-primary'
                                     @endphp
                                 @endif
+                                @if ($button['modal'] ?? false)
+                                    @php
+                                        $button['attributes']['data-bs-toggle'] = "modal";
+                                        $button['attributes']['data-bs-target'] = $button['modal'];
+                                    @endphp
+                                @endif
                                 @if ($button['dispatch'] ?? false)
                                     @php
                                         $button['attributes']['onclick'] = "Livewire.dispatch('{$button['dispatch']}')";
