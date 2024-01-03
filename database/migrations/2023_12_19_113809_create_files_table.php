@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('type', 128);
             $table->integer('size');
-            $table->string('checksum');
+            $table->string('checksum')->nullable();
             $table->boolean('is_private');
             $table->timestamps();
         });

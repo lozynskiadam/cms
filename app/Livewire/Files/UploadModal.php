@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Files;
 
+use App\Models\File;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
@@ -23,8 +24,15 @@ class UploadModal extends Component
     {
         $this->validate();
 
-        $this->file->store();
+        $file = new File;
+        $file->name = $this->file->getClientOriginalName();
+        $file->type = $this->file->getMimeType();
+        $file->size = $this->file->getSize();
+        $file->is_private = false;
+        $file->checksum = md5_file($this->file->getRealPath());
+        $file->save();
 
+        $this->file->storeAs('uploads', $file->id);
         $this->file = null;
 
         $this->closeModal();
