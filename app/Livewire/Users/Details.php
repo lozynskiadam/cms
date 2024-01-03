@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
-class Overview extends Component
+class Details extends Component
 {
     public User $user;
 

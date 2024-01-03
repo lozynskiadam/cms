@@ -1,9 +1,3 @@
-@php
-    use App\Enums\UserStatus;
-    use App\Enums\UserRole;
-    use App\Models\User;
-    /** @var $user User; */
-@endphp
 <div>
     <div class="text-center p-4">
         <h3 class="mb-0">
@@ -56,13 +50,12 @@
         <form wire:submit="update">
             <x-inputs.text label="Nazwa" field="name"/>
             <x-inputs.text label="Email" field="email"/>
-            <x-inputs.select label="Status" field="status" :options="UserStatus::cases()"/>
-            <x-inputs.checkbox-list label="Role" field="roles" :options="UserRole::cases() "/>
+            <x-inputs.select label="Status" field="status" :options="\App\Enums\UserStatus::cases()"/>
+            <x-inputs.checkbox-list label="Role" field="roles" :options="\App\Enums\UserRole::cases() "/>
 
             <div class="modal-buttons">
                 <button type="submit" class="btn btn-primary">Zapisz</button>
             </div>
         </form>
     </x-modal>
-
 </div>

@@ -11,7 +11,5 @@
 ])
 
 @section('content')
-    <div class="col-lg-12">
-        <livewire:users.listing/>
-    </div>
+    <livewire:users.listing/>
 @endsection

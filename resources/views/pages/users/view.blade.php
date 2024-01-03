@@ -1,8 +1,3 @@
-@php
-    use App\Models\User;
-    /** @var User $model **/
-@endphp
-
 @extends('layouts.master', [
     'title' => $model->name,
     'breadcrumbs' => [
@@ -14,7 +9,7 @@
 
 @section('content')
     <x-card size="4" narrow>
-        <livewire:users.overview :user="$model"/>
+        <livewire:users.details :user="$model"/>
     </x-card>
     <x-tabs size="8">
         <x-tab title="Aktywność" icon="fa fa-calendar" active="true">

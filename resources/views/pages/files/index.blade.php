@@ -11,8 +11,6 @@
 ])
 
 @section('content')
-    <div class="col-lg-12">
-        <livewire:files.listing/>
-        <livewire:files.upload-modal/>
-    </div>
+    <livewire:files.listing/>
+    <livewire:files.upload-modal/>
 @endsection
