@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Services\Alert;
+use App\Services\UserService;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -23,12 +25,13 @@ class UserController extends Controller
 
     public function delete(User $user): RedirectResponse
     {
-        if (auth()->user()->id == $user->id) {
-            Alert::danger('Nie możesz usunąć użytkownika, na którym jesteś aktualnie zalogowany.');
+        try {
+            (new UserService($user))->delete();
+        } catch (Exception $exception) {
+            Alert::danger($exception->getMessage());
             return redirect(route('users.index'));
         }
 
-        $user->delete();
         Alert::success("User \"{$user->name}\" has been deleted successfully.");
 
         return redirect(route('users.index'));

@@ -33,12 +33,12 @@ class FileController extends Controller
 
     public function get(File $file): Response
     {
-        if (!Storage::disk('local')->exists($file->id)) {
+        if (!Storage::disk('uploads')->exists($file->id)) {
             abort(404, 'File not found.');
         }
 
-        $response = new Response(Storage::disk('local')->get($file->id));
-        $response->header('Content-Type', Storage::mimeType($file->name));
+        $response = new Response(Storage::disk('uploads')->get($file->id));
+        $response->header('Content-Type', $file->type);
         $response->header('Content-Disposition', 'inline; filename="' . $file->name . '"');
 
         return $response;
@@ -46,12 +46,12 @@ class FileController extends Controller
 
     public function download(File $file): Response
     {
-        if (!Storage::disk('local')->exists($file->id)) {
+        if (!Storage::disk('uploads')->exists($file->id)) {
             abort(404, 'File not found.');
         }
 
-        $response = new Response(Storage::disk('local')->get($file->id));
-        $response->header('Content-Type', Storage::mimeType($file->name));
+        $response = new Response(Storage::disk('uploads')->get($file->id));
+        $response->header('Content-Type', $file->type);
         $response->header('Content-Disposition', 'attachment; filename="' . $file->name . '"');
 
         return $response;

@@ -16,7 +16,7 @@ class UploadModal extends Component
     public function rules(): array
     {
         return [
-            'file' => 'required|image|max:1024', // 1MB Max
+            'file' => 'required|max:100000', // 100MB Max
         ];
     }
 
@@ -36,7 +36,9 @@ class UploadModal extends Component
         $this->file = null;
 
         $this->closeModal();
-        $this->toast('OK');
+        $this->toast(message: "Pomyślnie wgrano plik \"{$file->name}\".", type: 'success');
+
+        $this->dispatch('pg:eventRefresh-default')->to(Listing::class);
     }
 
     protected function closeModal(): void
@@ -44,10 +46,10 @@ class UploadModal extends Component
         $this->js("bootstrap.Modal.getInstance(document.querySelector('#file-upload-modal')).hide();");
     }
 
-    protected function toast(string $value): void
+    protected function toast(string $message, string $type): void
     {
         $this->js("
-            toastr['success']('{$value}', null, {
+            toastr['{$type}']('{$message}', null, {
                 positionClass: 'toast-bottom-right',
                 progressBar: true,
             });

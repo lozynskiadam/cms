@@ -48,7 +48,7 @@ class Details extends Component
 
         $this->updateHeader($this->name);
         $this->updateBreadcrumb($this->name);
-        $this->toast('Użytkownik został zaaktualizowany');
+        $this->toast(message: 'Użytkownik został zaktualizowany', type: 'success');
         $this->closeModal();
     }
 
@@ -67,10 +67,10 @@ class Details extends Component
         $this->js("bootstrap.Modal.getInstance(document.querySelector('#user-edit-modal')).hide();");
     }
 
-    protected function toast(string $value): void
+    protected function toast(string $message, string $type): void
     {
         $this->js("
-            toastr['success']('{$value}', null, {
+            toastr['$type']('{$message}', null, {
                 positionClass: 'toast-bottom-right',
                 progressBar: true,
             });

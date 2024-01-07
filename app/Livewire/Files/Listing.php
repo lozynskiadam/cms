@@ -35,6 +35,7 @@ class Listing extends PowerGridComponent
                 ? '<i class="fa fa-lock"></i> Prywatny'
                 : '<i class="fa fa-earth"></i> Publiczny'
             )
+            ->addColumn('preview', fn(File $model) => $model->getPreview())
             ->addColumn('size', fn(File $model) => $model->getFormattedSize())
             ->addColumn('created_at_formatted', fn(File $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }
@@ -45,6 +46,10 @@ class Listing extends PowerGridComponent
             Column::make('ID', 'id')
                 ->headerAttribute(styleAttr: 'width: 0;')
                 ->sortable(),
+
+            Column::make('Podgląd', 'preview')
+                ->headerAttribute(styleAttr: 'width: 75px;')
+                ->bodyAttribute(classAttr: 'text-center'),
 
             Column::make('Nazwa', 'name')
                 ->searchable()

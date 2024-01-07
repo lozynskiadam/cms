@@ -24,6 +24,11 @@ class File extends Model
         'is_private' => 'boolean'
     ];
 
+    public function isImage(): bool
+    {
+        return str_contains($this->type, 'image/');
+    }
+
     public function getUrl(): string
     {
         return route('files.get', ['file' => $this->id]);
@@ -32,6 +37,15 @@ class File extends Model
     public function getDownloadUrl(): string
     {
         return route('files.download', ['file' => $this->id]);
+    }
+
+    public function getPreview(int $width = null, int $height = null): string
+    {
+        return view('components.file-preview', [
+            'file' => $this,
+            'width' => $width,
+            'height' => $height
+        ])->render();
     }
 
     public function getFormattedSize(): string
