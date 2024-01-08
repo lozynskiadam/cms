@@ -2,15 +2,12 @@
 
 namespace App\View\Components;
 
-use App\Contracts\SendsToasts;
 use Illuminate\Support\Str;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 abstract class ModalComponent extends Component
 {
-    use SendsToasts;
-
     public static function getModalId(): string
     {
         return Str::slug(Str::kebab(static::class));
