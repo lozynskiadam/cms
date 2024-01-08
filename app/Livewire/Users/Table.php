@@ -18,6 +18,10 @@ use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
 class Table extends PowerGridComponent
 {
+    protected $listeners = [
+        '$refresh'
+    ];
+
     public function datasource(): Builder
     {
         return User::query();

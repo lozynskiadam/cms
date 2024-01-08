@@ -35,33 +35,10 @@
     </table>
 
     <div class="text-center p-4">
-        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">
-            Edytuj
-        </button>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#user-delete-modal">
-            Usuń
-        </button>
+        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">Edytuj</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#user-delete-modal">Usuń</button>
     </div>
 
-    <x-modal title="Edytuj" id="user-edit-modal">
-        <form wire:submit="update">
-            <x-inputs.text label="Nazwa" field="formUser.name"/>
-            <x-inputs.text label="Email" field="formUser.email"/>
-            <x-inputs.select label="Status" field="formUser.status" :options="\App\Enums\UserStatus::cases()"/>
-            <x-inputs.checkbox-list label="Role" field="roles" :options="\App\Enums\UserRole::cases() "/>
-
-            <div class="modal-buttons">
-                <button type="submit" class="btn btn-primary">Zapisz</button>
-            </div>
-        </form>
-    </x-modal>
-
-    <x-modal title="Usuń" id="user-delete-modal" size="sm">
-        <form wire:submit="delete">
-            Czy na pewno usunąć tego użytkownika?
-            <div class="modal-buttons">
-                <button type="submit" class="btn btn-danger">Usuń</button>
-            </div>
-        </form>
-    </x-modal>
+    <livewire:users.edit-modal :user="$user"/>
+    <livewire:users.delete-modal :user="$user"/>
 </div>

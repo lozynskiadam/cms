@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\UserStatus;
 use App\Contracts\HasFiles;
 use App\Contracts\InteractsWithFiles;
@@ -36,6 +35,10 @@ class User extends Authenticatable implements InteractsWithFiles
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $attributes = [
+        'status' => UserStatus::INACTIVE,
     ];
 
     protected $casts = [

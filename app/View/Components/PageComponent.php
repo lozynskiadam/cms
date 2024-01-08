@@ -7,6 +7,10 @@ use Livewire\Component;
 
 abstract class PageComponent extends Component
 {
+    protected $listeners = [
+        '$refresh'
+    ];
+
     public function render()
     {
         return $this->getView()
