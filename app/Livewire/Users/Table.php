@@ -16,7 +16,7 @@ use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridColumns;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
-class Listing extends PowerGridComponent
+class Table extends PowerGridComponent
 {
     public function datasource(): Builder
     {
@@ -115,7 +115,7 @@ class Listing extends PowerGridComponent
         return [
             Button::add()->bladeComponent('button-view', [
                 'model' => $row,
-                'route' => route('users.view', ['user' => $row->id]),
+                'route' => route('users.preview', ['user' => $row->id]),
             ]),
 
             Button::add()->bladeComponent('button-delete', [

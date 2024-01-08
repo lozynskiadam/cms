@@ -13,7 +13,7 @@ return fn() => [
         label: 'Użytkownicy',
         icon: 'ti ti-users',
         url: route('users.index'),
-        active: Menu::isCurrentRoute(['users.index', 'users.view']),
+        active: Menu::isCurrentRoute(['users.index', 'users.preview']),
     ),
     Menu::item(
         label: 'Pliki',

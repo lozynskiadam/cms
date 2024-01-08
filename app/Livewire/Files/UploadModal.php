@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Files;
 
+use App\Livewire\Users\Table;
 use App\Models\File;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -38,7 +39,7 @@ class UploadModal extends Component
         $this->closeModal();
         $this->toast(message: "Pomyślnie wgrano plik \"{$file->name}\".", type: 'success');
 
-        $this->dispatch('pg:eventRefresh-default')->to(Listing::class);
+        $this->dispatch('pg:eventRefresh-default')->to(Table::class);
     }
 
     protected function closeModal(): void

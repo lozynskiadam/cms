@@ -7,14 +7,14 @@
                 <button type="submit" class="btn btn-primary btn-sm mt-1 rounded act-save" style="display: none;">Zapisz</button>
             </form>
         </div>
-        @if ($model->email_verified_at)
+        @if ($user->email_verified_at)
             <div class="timeline-event mx-4 severity-info">
-                <small class="text-muted mb-1">{{ $model->email_verified_at->format('d M Y H:i') }}</small>
+                <small class="text-muted mb-1">{{ $user->email_verified_at->format('d M Y H:i') }}</small>
                 <p class="mb-0"><span class="timeline-event-title">Potwierdzenie adresu mailowego</span></p>
             </div>
         @endif
         <div class="timeline-event mx-4 severity-info">
-            <small class="text-muted mb-1">{{ $model->created_at->format('d M Y H:i') }}</small>
+            <small class="text-muted mb-1">{{ $user->created_at->format('d M Y H:i') }}</small>
             <p class="mb-0"><span class="timeline-event-title">Utworzenie użytkownika</span></p>
         </div>
     </div>

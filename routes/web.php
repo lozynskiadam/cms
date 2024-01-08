@@ -26,8 +26,8 @@ Route::any('/logout', [AuthController::class, 'logout']);
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/dashboard', fn() => view('pages.dashboard'))->name('dashboard');
 
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/{user}', [UserController::class, 'view'])->name('users.view');
+    Route::get('/users', \App\Livewire\Users\Index::class)->name('users.index');
+    Route::get('/users/{user}', \App\Livewire\Users\Preview::class)->name('users.preview');
     Route::post('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
 
     Route::get('/files', [FileController::class, 'index'])->name('files.index');
