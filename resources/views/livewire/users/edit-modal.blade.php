@@ -1,5 +1,5 @@
-<x-modal title="Edytuj" id="user-edit-modal">
-    <form wire:submit="update">
+<x-modal title="Edytuj" :id="$this::getModalId()">
+    <form wire:submit="submit">
         <x-inputs.text label="Nazwa" field="user.name"/>
         <x-inputs.text label="Email" field="user.email"/>
         <x-inputs.select label="Status" field="user.status" :options="\App\Enums\UserStatus::cases()"/>

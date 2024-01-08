@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', fn () => redirect(route(Auth::check() ? 'dashboard' : 'login')));
-
 Route::get('/login', fn() => view('pages.login'))->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::any('/logout', [AuthController::class, 'logout']);
@@ -28,7 +26,6 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
     Route::get('/users', \App\Livewire\Users\Index::class)->name('users.index');
     Route::get('/users/{user}', \App\Livewire\Users\Preview::class)->name('users.preview');
-    Route::post('/users/{user}/delete', [UserController::class, 'delete'])->name('users.delete');
 
     Route::get('/files', [FileController::class, 'index'])->name('files.index');
     Route::get('/files/{file}', [FileController::class, 'view'])->name('files.view');

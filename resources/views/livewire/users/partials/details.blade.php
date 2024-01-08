@@ -35,8 +35,8 @@
     </table>
 
     <div class="text-center p-4">
-        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#user-edit-modal">Edytuj</button>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#user-delete-modal">Usuń</button>
+        <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#{{ \App\Livewire\Users\EditModal::getModalId() }}">Edytuj</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{ \App\Livewire\Users\DeleteModal::getModalId() }}">Usuń</button>
     </div>
 
     <livewire:users.edit-modal :user="$user"/>

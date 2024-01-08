@@ -79,7 +79,7 @@
                                 @if ($button['modal'] ?? false)
                                     @php
                                         $button['attributes']['data-bs-toggle'] = "modal";
-                                        $button['attributes']['data-bs-target'] = $button['modal'];
+                                        $button['attributes']['data-bs-target'] = '#' . $button['modal'];
                                     @endphp
                                 @endif
                                 @if ($button['dispatch'] ?? false)

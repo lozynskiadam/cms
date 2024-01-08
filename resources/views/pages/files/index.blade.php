@@ -5,7 +5,7 @@
         ['label' => 'Pliki'],
     ],
     'buttons' => [
-        ['label' => 'Wgraj', 'modal' => '#file-upload-modal'],
+        ['label' => 'Wgraj', 'modal' => 'file-upload-modal'],
         ['label' => 'Generuj', 'dispatch' => 'factory'],
     ]
 ])

@@ -2,16 +2,33 @@
 
 namespace App\View\Components;
 
+use App\Contracts\SendsToasts;
+use Illuminate\Support\Str;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 abstract class ModalComponent extends Component
 {
-    protected function closeModal(string $selector): void
+    use SendsToasts;
+
+    public static function getModalId(): string
     {
-        $this->js("bootstrap.Modal.getInstance(document.querySelector('$selector')).hide();");
+        return Str::slug(Str::kebab(static::class));
     }
 
-    protected function toast(string $message, string $type): void
+    #[On('open')]
+    public function open(): void
+    {
+        $this->js("(new bootstrap.Modal(document.querySelector('#" . static::getModalId() . "'))).show();");
+    }
+
+    #[On('close')]
+    public function close(): void
+    {
+        $this->js("bootstrap.Modal.getInstance(document.querySelector('#" . static::getModalId() . "')).hide();");
+    }
+
+    public function toast(string $message, string $type): void
     {
         $this->js("
             toastr['$type']('{$message}', null, {

@@ -12,15 +12,15 @@ class DeleteModal extends ModalComponent
 {
     public User $user;
 
-    public function delete(): void
+    public function submit(): void
     {
         try {
             (new UserService($this->user))->delete();
             Alert::success("User \"{$this->user->name}\" has been deleted successfully.");
             $this->redirect(route('users.index'));
         } catch (Exception $exception) {
-            $this->toast(message: $exception->getMessage(), type: 'error');
-            $this->closeModal('#user-delete-modal');
+            $this->toast($exception->getMessage(), 'error');
+            $this->close();
         }
     }
 }

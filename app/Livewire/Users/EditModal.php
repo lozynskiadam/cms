@@ -27,7 +27,7 @@ class EditModal extends ModalComponent
         $this->roles = $this->user->getRoleNames()->toArray();
     }
 
-    public function update(): void
+    public function submit(): void
     {
         $this->validate();
 
@@ -35,6 +35,6 @@ class EditModal extends ModalComponent
         $this->user->syncRoles($this->roles);
 
         $this->dispatch('$refresh');
-        $this->closeModal('#user-edit-modal');
+        $this->close();
     }
 }
