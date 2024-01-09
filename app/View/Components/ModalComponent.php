@@ -2,9 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use ReflectionClass;
 
 abstract class ModalComponent extends Component
 {
@@ -44,11 +45,22 @@ abstract class ModalComponent extends Component
 
     private function resolveSetupArguments($data): array
     {
-        $user = isset($data['user']) ? User::find($data['user']) : new User;
+        foreach ((new ReflectionClass(static::class))->getMethod('setup')->getParameters() as $parameter) {
+            $property = $parameter->getName();
+            $class = $parameter->getType()->getName();
+            $isBuiltIn = $parameter->getType()->isBuiltin();
+            $value = $data[$property] ?? null;
 
-        return [
-            'user' => $user,
-        ];
+            $arguments[$property] = match (true) {
+                !is_null($value) && is_subclass_of($class, Model::class) => $class::find($value),
+                !is_null($value) => $value,
+                $parameter->isDefaultValueAvailable() => $parameter->getDefaultValue(),
+                !$isBuiltIn => new $class,
+                default => null
+            };
+        }
+
+        return $arguments ?? [];
     }
 
     public function toast(string $message, string $type): void
