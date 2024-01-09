@@ -25,7 +25,7 @@ class DeleteModal extends ModalComponent
             $this->redirect(route('users.index'));
         } catch (Exception $exception) {
             $this->toast($exception->getMessage(), 'error');
-            $this->close();
         }
+        $this->close();
     }
 }

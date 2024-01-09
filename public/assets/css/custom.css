@@ -53,3 +53,7 @@
 .modal-buttons .btn {
     margin-left: 0.5rem;
 }
+
+.sidebar-link {
+    transition: background 0.2s !important;
+}

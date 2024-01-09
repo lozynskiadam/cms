@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ (isset($title) ? "$title - " : '') . env('APP_NAME') }}</title>
+    <title>{{ (isset($title) ? "$title - " : '') . config('app.name') }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
@@ -13,6 +13,7 @@
     @livewireStyles
     <script src="{{ asset('/assets/js/spark.js') }}" defer></script>
     <script src="{{ asset('/assets/js/livewire-modal.js') }}" defer></script>
+    <script src="{{ asset('/assets/js/custom.js') }}" defer></script>
 </head>
 <body>
 <div id="root">

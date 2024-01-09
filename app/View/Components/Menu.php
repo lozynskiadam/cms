@@ -12,7 +12,26 @@ class Menu extends Component
     public function render(): View|Closure|string
     {
         return view('components.menu-items', [
-            'items' => config('menu')(),
+            'items' => [
+                Menu::item(
+                    label: 'Dashboard',
+                    icon: 'ti ti-home',
+                    url: route('dashboard'),
+                    active: Menu::isCurrentRoute('dashboard')
+                ),
+                Menu::item(
+                    label: 'Użytkownicy',
+                    icon: 'ti ti-users',
+                    url: route('users.index'),
+                    active: Menu::isCurrentRoute(['users.index', 'users.preview']),
+                ),
+                Menu::item(
+                    label: 'Pliki',
+                    icon: 'ti ti-files',
+                    url: route('files.index'),
+                    active: Menu::isCurrentRoute(['files.index', 'files.preview']),
+                ),
+            ],
             'root' => true,
         ]);
     }
