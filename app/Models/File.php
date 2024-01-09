@@ -31,12 +31,12 @@ class File extends Model
 
     public function getUrl(): string
     {
-        return route('files.get', ['file' => $this->id]);
+        return route('api.files.get', ['file' => $this->id]);
     }
 
     public function getDownloadUrl(): string
     {
-        return route('files.download', ['file' => $this->id]);
+        return route('api.files.download', ['file' => $this->id]);
     }
 
     public function getPreview(int $width = null, int $height = null): string

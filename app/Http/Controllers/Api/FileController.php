@@ -1,23 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\File;
-use App\Services\Alert;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
-    public function delete(File $file): RedirectResponse
-    {
-        $file->delete();
-        Alert::success("File \"{$file->name}\" has been deleted successfully.");
-
-        return redirect(route('files.index'));
-    }
-
     public function get(File $file): Response
     {
         if (!Storage::disk('uploads')->exists($file->id)) {

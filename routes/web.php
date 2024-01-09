@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +28,4 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
 
     Route::get('/files', \App\Livewire\Files\Index::class)->name('files.index');
     Route::get('/files/{file}', \App\Livewire\Files\Preview::class)->name('files.preview');
-
-    Route::post('/files/{file}/delete', [FileController::class, 'delete'])->name('files.delete');
-    Route::get('/files/{file}/get', [FileController::class, 'get'])->name('files.get');
-    Route::get('/files/{file}/download', [FileController::class, 'download'])->name('files.download');
 });
