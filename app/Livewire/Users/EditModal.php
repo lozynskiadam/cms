@@ -22,8 +22,9 @@ class EditModal extends ModalComponent
         ];
     }
 
-    public function mount(): void
+    public function setup(User $user): void
     {
+        $this->user = $user;
         $this->roles = $this->user->getRoleNames()->toArray();
     }
 
@@ -34,6 +35,7 @@ class EditModal extends ModalComponent
         $this->user->save();
         $this->user->syncRoles($this->roles);
 
+        $this->toast("User \"{$this->user->name}\" has been updated successfully.", 'success');
         $this->dispatch('$refresh');
         $this->close();
     }

@@ -31,7 +31,7 @@ class Index extends PageComponent
     public function getButtons(): array
     {
         return [
-            ['label' => 'Dodaj', 'modal' => EditModal::getModalId()],
+            ['label' => 'Dodaj', 'modal' => 'users.edit-modal'],
             ['label' => 'Generuj', 'dispatch' => 'factory'],
         ];
     }

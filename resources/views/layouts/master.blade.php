@@ -12,6 +12,7 @@
     @vite(["resources/js/app.js", "resources/css/app.css"])
     @livewireStyles
     <script src="{{ asset('/assets/js/spark.js') }}" defer></script>
+    <script src="{{ asset('/assets/js/livewire-modal.js') }}" defer></script>
 </head>
 <body>
 <div id="root">
@@ -78,8 +79,7 @@
                                 @endif
                                 @if ($button['modal'] ?? false)
                                     @php
-                                        $button['attributes']['data-bs-toggle'] = "modal";
-                                        $button['attributes']['data-bs-target'] = '#' . $button['modal'];
+                                        $button['attributes']['onclick'] = "Livewire.modal.open('{$button['modal']}', {user: 1})";
                                     @endphp
                                 @endif
                                 @if ($button['dispatch'] ?? false)

@@ -123,8 +123,8 @@ class Table extends PowerGridComponent
             ]),
 
             Button::add()->bladeComponent('button-delete', [
-                'model' => $row,
-                'route' => '#' //route('users.delete', ['user' => $row->id]),
+                'modal' => 'users.delete-modal',
+                'data' => "{user: $row->id}",
             ]),
         ];
     }
