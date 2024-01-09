@@ -79,7 +79,7 @@
                                 @endif
                                 @if ($button['modal'] ?? false)
                                     @php
-                                        $button['attributes']['onclick'] = "Livewire.modal.open('{$button['modal']}', {user: 1})";
+                                        $button['attributes']['onclick'] = "Livewire.modal.open('{$button['modal']}')";
                                     @endphp
                                 @endif
                                 @if ($button['dispatch'] ?? false)
