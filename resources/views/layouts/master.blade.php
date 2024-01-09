@@ -21,7 +21,7 @@
             <div class="sidebar-content">
                 <a class="sidebar-brand" href="/">
                     <i class="fas fa-feather-alt align-middle"></i>
-                    <span class="align-middle">{{ env('APP_NAME') }}</span>
+                    <span class="align-middle">{{ config('app.name') }}</span>
                 </a>
                 <x-menu/>
             </div>
