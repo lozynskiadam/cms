@@ -7,22 +7,9 @@ use App\Services\Alert;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\View\View;
 
 class FileController extends Controller
 {
-    public function index(): View
-    {
-        return view('pages.files.index');
-    }
-
-    public function view(File $file): View
-    {
-        return view('pages.files.view', [
-            'model' => $file
-        ]);
-    }
-
     public function delete(File $file): RedirectResponse
     {
         $file->delete();

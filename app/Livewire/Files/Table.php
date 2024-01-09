@@ -14,8 +14,12 @@ use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridColumns;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
-class Listing extends PowerGridComponent
+class Table extends PowerGridComponent
 {
+    protected $listeners = [
+        '$refresh'
+    ];
+
     public function datasource(): Builder
     {
         return File::query();
@@ -106,12 +110,12 @@ class Listing extends PowerGridComponent
         return [
             Button::add()->bladeComponent('button-view', [
                 'model' => $row,
-                'route' => route('files.view', ['file' => $row->id]),
+                'route' => route('files.preview', ['file' => $row->id]),
             ]),
 
             Button::add()->bladeComponent('button-delete', [
-                'model' => $row,
-                'route' => route('files.delete', ['file' => $row->id]),
+                'modal' => 'files.delete-modal',
+                'data' => "{file: $row->id}",
             ]),
         ];
     }

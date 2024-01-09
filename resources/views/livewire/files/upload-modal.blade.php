@@ -1,5 +1,5 @@
-<x-modal title="Wgraj plik" id="file-upload-modal">
-    <form wire:submit="update">
+<x-modal title="Wgraj plik" :id="$this->getModalId()" size="sm">
+    <form wire:submit="submit">
         <input type="file" wire:model="file">
         @error('file') {{ $message }} @enderror
         <div class="modal-buttons">

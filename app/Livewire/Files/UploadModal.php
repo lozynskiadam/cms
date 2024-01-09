@@ -2,13 +2,12 @@
 
 namespace App\Livewire\Files;
 
-use App\Livewire\Users\Table;
 use App\Models\File;
-use Livewire\Component;
+use App\View\Components\ModalComponent;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
 
-class UploadModal extends Component
+class UploadModal extends ModalComponent
 {
     use WithFileUploads;
 
@@ -21,7 +20,7 @@ class UploadModal extends Component
         ];
     }
 
-    public function update(): void
+    public function submit(): void
     {
         $this->validate();
 
@@ -36,24 +35,8 @@ class UploadModal extends Component
         $this->file->storeAs('uploads', $file->id);
         $this->file = null;
 
-        $this->closeModal();
+        $this->close();
         $this->toast(message: "Pomyślnie wgrano plik \"{$file->name}\".", type: 'success');
-
-        $this->dispatch('pg:eventRefresh-default')->to(Table::class);
-    }
-
-    protected function closeModal(): void
-    {
-        $this->js("bootstrap.Modal.getInstance(document.querySelector('#file-upload-modal')).hide();");
-    }
-
-    protected function toast(string $message, string $type): void
-    {
-        $this->js("
-            toastr['{$type}']('{$message}', null, {
-                positionClass: 'toast-bottom-right',
-                progressBar: true,
-            });
-        ");
+        $this->dispatch('$refresh');
     }
 }

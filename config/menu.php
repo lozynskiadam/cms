@@ -19,6 +19,6 @@ return fn() => [
         label: 'Pliki',
         icon: 'ti ti-files',
         url: route('files.index'),
-        active: Menu::isCurrentRoute(['files.index', 'files.view']),
+        active: Menu::isCurrentRoute(['files.index', 'files.preview']),
     ),
 ];
