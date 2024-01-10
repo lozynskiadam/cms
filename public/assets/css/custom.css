@@ -39,9 +39,6 @@
 .nav-pills .nav-link:hover:not(.active) {
     background-color: rgba(50, 71, 92, 0.1);
 }
-.header-title {
-    color: rgba(50, 71, 92, 0.87);
-}
 
 .modal-buttons {
     text-align: end;

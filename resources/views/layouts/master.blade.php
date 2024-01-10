@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ (isset($title) ? "$title - " : '') . config('app.name') }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}" id="theme">
     <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/timeline.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
@@ -33,6 +33,11 @@
                     <i class="hamburger align-self-center"></i>
                 </a>
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item ms-1">
+                        <a href="#" class="nav-icon nav-link toggle-theme">
+                            <i class="ti ti-moon-stars"></i>
+                        </a>
+                    </li>
                     <li class="nav-item ms-1">
                         <a class="nav-icon nav-link" href="http://champ.dev.alterpage.pl" target="_blank">
                             <i class="ti ti-world"></i>

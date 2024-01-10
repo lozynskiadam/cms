@@ -1,28 +1,15 @@
-// Theme colors
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #e9ecef;
-$gray-300: #dee2e6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #6c757d;
-$gray-700: #495057;
-$gray-800: #343a40;
-$gray-900: #212529;
-$black: #000;
+// Sidebar
+$sidebar-brand-color: #acb0cc;
+$sidebar-nav-background: #2f3349;
+$sidebar-content-bg: #2f3349;
 
-$primary: #687ae8;
-$secondary: #95aac9;
-$success: #0c9;
-$info: #19b5fe;
-$warning: #f7bc06;
-$danger: #f2545b;
+// Navbar
+$navbar-theme-background: #2f3349;
+$navbar-theme-color:                 rgba(#acb0cc, .5);
+$navbar-theme-hover-color:           rgba(208, 212, 241, 0.78);
+$navbar-theme-active-color:          rgba(208, 212, 241, 0.78);
+$hamburger-color:                    rgba(208, 212, 241, 0.78);
 
-$light:         $gray-200;
-$dark:          #28304e;
-
-// Splash
-$splash-bg: $dark;
-
-// Wrapper
-$wrapper-bg: $dark;
+$body-bg: #25293c;
+$header-color: #acb0cc;
+$breadcrumb-active-color: #acb0cc;

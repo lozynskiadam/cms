@@ -165,14 +165,15 @@ $border-radius-lg: .4rem !default;
 // Navbar
 $navbar-padding-y: 0 !default;
 $navbar-padding-x: $spacer !default;
-$navbar-theme-color:                 rgba($white, .75) !default;
-$navbar-theme-hover-color:           $white !default;
-$navbar-theme-active-color:          $white !default;
-$navbar-theme-disabled-color:        rgba($white, .5) !default;
+$navbar-theme-background:            $white !default;
+$navbar-theme-color:                 rgba($black, .5) !default;
+$navbar-theme-hover-color:           rgba($black, .7) !default;
+$navbar-theme-active-color:          rgba($black, .9) !default;
+$navbar-theme-disabled-color:        rgba($black, .3) !default;
 $navbar-theme-toggler-icon-bg:       str-replace(url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='#{$navbar-theme-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"), "#", "%23") !default;
-$navbar-theme-toggler-border-color:  rgba($white, .1) !default;
+$navbar-theme-toggler-border-color:  rgba($black, .1) !default;
 $navbar-theme-brand-color:           $navbar-theme-active-color !default;
-$navbar-theme-brand-hover-color: 		 $navbar-theme-active-color !default;
+$navbar-theme-brand-hover-color: 	 $navbar-theme-active-color !default;
 
 // Alerts
 $alert-padding-y: .95rem !default;
@@ -209,10 +210,10 @@ $input-height-inner-lg: ($font-size-lg * $input-btn-line-height-lg) + ($input-bt
 $input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border}) !default;
 
 // Form control lite
-$form-control-lite-color: $white !default;
+$form-control-lite-color: $black !default;
 
 // Hamburger
-$hamburger-color: $white !default;
+$hamburger-color: $black !default;
 
 // Dropdowns
 $dropdown-link-color: $gray-700 !default;
@@ -285,10 +286,10 @@ $breadcrumb-item-padding:           .5rem !default;
 $breadcrumb-margin-bottom:          1rem !default;
 $breadcrumb-bg:                     transparent !default;
 $breadcrumb-divider-color:          $gray-400 !default;
-$breadcrumb-active-color:           $white !default;
+$breadcrumb-active-color:           rgba(50, 71, 92, 0.87) !default;
 $breadcrumb-divider:                quote("/") !default;
 $breadcrumb-border-radius:          null !default;
-$breadcrumb-color:                  $gray-300 !default;
+$breadcrumb-color:                  $primary !default;
 
 // Datetimepicker
 $bs-datetimepicker-active-bg: $primary !default;
@@ -360,14 +361,14 @@ $sidebar-bottom-color: $gray-200 !default;
 $sidebar-bottom-bg: darken($sidebar-bg, 2) !default;
 
 // Splash
-$splash-bg: $dark !default;
-$splash-color: $white !default;
+$splash-bg: #f4f7fc !default;
+$splash-color: $gray-300 !default;
 
 // Wrapper
-$wrapper-bg: $dark !default;
+$wrapper-bg: transparent !default;
 
 // Header
-$header-color: $white !default;
+$header-color: rgba(50, 71, 92, 0.87) !default;
 
 // Font Awesome
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts" !default;
