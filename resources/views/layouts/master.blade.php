@@ -12,7 +12,6 @@
     @vite(["resources/js/app.js", "resources/css/app.css"])
     @livewireStyles
     <script src="{{ asset('/assets/js/spark.js') }}" defer></script>
-    <script src="{{ asset('/assets/js/livewire-modal.js') }}" defer></script>
     <script src="{{ asset('/assets/js/custom.js') }}" defer></script>
 </head>
 <body>
