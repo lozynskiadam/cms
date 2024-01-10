@@ -12,7 +12,7 @@ class Preview extends PageComponent
 
     public function getView(): View
     {
-        return view('livewire.users.preview');
+        return view('livewire.files.preview');
     }
 
     public function getTitle(): string

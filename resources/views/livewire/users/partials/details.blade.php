@@ -24,6 +24,10 @@
             <td>{!! $user->status->render() !!}</td>
         </tr>
         <tr>
+            <th>Data utworzenia</th>
+            <td>{{ $user->created_at }}</td>
+        </tr>
+        <tr>
             <th>Data ostatniej aktywności</th>
             <td>{{ $user->last_active_at }}</td>
         </tr>
