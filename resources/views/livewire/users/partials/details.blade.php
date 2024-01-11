@@ -39,8 +39,8 @@
     </table>
 
     <div class="text-center p-4">
-        <button type="button" class="btn btn-primary" onclick="Livewire.modal.open('users.edit-modal', {user: {{ $user->id }} })">Edytuj</button>
-        <button type="button" class="btn btn-danger" onclick="Livewire.modal.open('users.delete-modal', {user: {{ $user->id }} })">Usuń</button>
+        <button class="btn btn-primary" onclick="Livewire.modal.open('users.edit-modal', {user: {{ $user->id }} })">Edytuj</button>
+        <button class="btn btn-danger" onclick="Livewire.modal.open('users.delete-modal', {user: {{ $user->id }} })">Usuń</button>
     </div>
 
     <livewire:users.edit-modal/>
