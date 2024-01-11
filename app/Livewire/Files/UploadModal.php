@@ -13,6 +13,11 @@ class UploadModal extends ModalComponent
 
     public ?TemporaryUploadedFile $file = null;
 
+    public function title(): string
+    {
+        return 'Wgraj plik';
+    }
+
     public function rules(): array
     {
         return [

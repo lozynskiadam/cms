@@ -12,6 +12,11 @@ class DeleteModal extends ModalComponent
 {
     public User $user;
 
+    public function title(): string
+    {
+        return 'Usuń';
+    }
+
     public function setup(User $user): void
     {
         $this->user = $user;

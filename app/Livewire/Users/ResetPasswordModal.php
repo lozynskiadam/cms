@@ -13,6 +13,11 @@ class ResetPasswordModal extends ModalComponent
 
     public ?string $newPassword = null;
 
+    public function title(): string
+    {
+        return 'Reset hasła';
+    }
+
     public function setup(User $user): void
     {
         $this->user = $user;

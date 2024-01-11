@@ -13,6 +13,17 @@ class EditModal extends ModalComponent
 
     public array $roles;
 
+    public function title(): string
+    {
+        return 'Edytuj';
+    }
+
+    public function setup(User $user): void
+    {
+        $this->user = $user;
+        $this->roles = $this->user->getRoleNames()->toArray();
+    }
+
     public function rules(): array
     {
         return [
@@ -20,12 +31,6 @@ class EditModal extends ModalComponent
             'user.email' => 'required|email',
             'user.status' => [new Enum(UserStatus::class)],
         ];
-    }
-
-    public function setup(User $user): void
-    {
-        $this->user = $user;
-        $this->roles = $this->user->getRoleNames()->toArray();
     }
 
     public function submit(): void

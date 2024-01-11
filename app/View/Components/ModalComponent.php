@@ -2,6 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Enums\ModalSize;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Model;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -11,7 +13,19 @@ abstract class ModalComponent extends Component
 {
     public bool $initialized = false;
 
-    public function getModalId(): string
+    abstract public function title(): string;
+
+    public function size(): ModalSize
+    {
+        return ModalSize::MEDIUM;
+    }
+
+    public function render(): View
+    {
+        return view('livewire.livewire-modal');
+    }
+
+    public function modalId(): string
     {
         return str_replace('.', '--', $this->getName());
     }
@@ -19,13 +33,13 @@ abstract class ModalComponent extends Component
     #[On('open')]
     public function open(array $data = []): void
     {
-        $this->js("Livewire.modal.open('{$this->getModalId()}', " . json_encode($data) . ")");
+        $this->js("Livewire.modal.open('{$this->modalId()}', " . json_encode($data) . ")");
     }
 
     #[On('close')]
     public function close(): void
     {
-        $this->js("Livewire.modal.close('{$this->getModalId()}')");
+        $this->js("Livewire.modal.close('{$this->modalId()}')");
     }
 
     #[On('initialize')]

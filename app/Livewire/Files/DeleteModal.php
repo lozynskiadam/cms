@@ -11,6 +11,11 @@ class DeleteModal extends ModalComponent
 {
     public File $file;
 
+    public function title(): string
+    {
+        return 'Usuń';
+    }
+
     public function setup(File $file): void
     {
         $this->file = $file;
