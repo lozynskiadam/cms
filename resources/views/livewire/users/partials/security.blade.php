@@ -4,7 +4,7 @@
 </x-card>
 
 <x-card size="12" title="2FA" subtitle="Włącz lub wyłącz podwójne uwierzytelnienie">
-    <button class="btn btn-primary">Włącz</button>
+    Ta usługa nie została jeszcze zaimplementowana.
 </x-card>
 
 <livewire:users.reset-password-modal/>
