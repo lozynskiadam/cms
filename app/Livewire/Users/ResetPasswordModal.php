@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Users;
 
+use App\Enums\ModalSize;
 use App\Models\User;
 use App\View\Components\ModalComponent;
 use Illuminate\Support\Facades\Hash;
@@ -18,6 +19,11 @@ class ResetPasswordModal extends ModalComponent
         return 'Reset hasła';
     }
 
+    public function size(): ModalSize
+    {
+        return ModalSize::SMALL;
+    }
+
     public function setup(User $user): void
     {
         $this->user = $user;
@@ -29,5 +35,6 @@ class ResetPasswordModal extends ModalComponent
         $this->newPassword = Str::random();
         $this->user->password = Hash::make($this->newPassword);
         $this->user->save();
+        $this->toast('Hasło zostało zmienione', 'success');
     }
 }
