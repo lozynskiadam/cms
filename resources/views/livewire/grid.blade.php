@@ -3,27 +3,25 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Data</th>
-                <th>IP</th>
-                <th>Efekt</th>
+                @foreach($this->columns() as $column)
+                    <th>{{ $column['label'] }}</th>
+                @endforeach
             </tr>
             </thead>
+            @if($entries->isEmpty())
+                <tr>
+                    <td colspan="{{ count($this->columns()) }}">Brak wyników.</td>
+                </tr>
+            @endif
             @foreach($entries as $entry)
                 <tr>
-                    <td>{{ $entry->created_at }}</td>
-                    <td>{{ $entry->ip }}</td>
-                    <td>
-                        @if ($entry->success)
-                            <i class="fa fa-check text-success"></i>
-                        @else
-                            <i class="fa fa-ban text-danger"></i>
-                        @endif
-                    </td>
+                    @foreach($this->columns() as $column)
+                        <td>{!! $column['value']($entry) !!}</td>
+                    @endforeach
                 </tr>
             @endforeach
         </table>
     </x-card>
-
     @if ($lastPage > 1)
         <nav class="float-end">
             <ul class="pagination">
@@ -33,10 +31,14 @@
                     </a>
                 </li>
                 @foreach(range(1, $lastPage) as $i)
-                    @if($i === $currentPage)
-                        <li class="page-item active"><span class="page-link">{{ $currentPage }}</span></li>
+                    @if ($i === $currentPage)
+                        <li class="page-item active">
+                            <span class="page-link">{{ $currentPage }}</span>
+                        </li>
                     @else
-                        <li class="page-item" wire:click="setPage({{ $i }})"><a class="page-link" href="#">{{ $i }}</a></li>
+                        <li class="page-item" wire:click="setPage({{ $i }})">
+                            <a class="page-link" href="#">{{ $i }}</a>
+                        </li>
                     @endif
                 @endforeach
                 <li class="page-item">

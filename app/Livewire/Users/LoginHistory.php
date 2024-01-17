@@ -3,57 +3,40 @@
 namespace App\Livewire\Users;
 
 use App\Models\User;
-use Illuminate\Database\Eloquent\Collection;
-use Livewire\Component;
+use App\Models\UserLoginEntry;
+use App\View\Components\GridComponent;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
-class LoginHistory extends Component
+class LoginHistory extends GridComponent
 {
     public User $user;
 
-    public int $currentPage = 1;
-
-    public int $lastPage;
-
-    public int $perPage = 10;
-
-    public Collection $entries;
-
-    public function mount(): void
+    public function dataSource(): Relation
     {
-        $this->fetch();
+        return $this->user->loginEntries();
     }
 
-    public function fetch(): void
+    public function columns(): array
     {
-        $this->entries = $this->user->loginEntries()->offset($this->perPage * ($this->currentPage - 1))->limit($this->perPage)->get();
-        $this->lastPage = ceil($this->user->loginEntries()->count() / $this->perPage);
-    }
+        return [
+            [
+                'label' => 'Data',
+                'value' => fn(UserLoginEntry $entry) => $entry->created_at
+            ],
+            [
+                'label' => 'IP',
+                'value' => fn(UserLoginEntry $entry) => $entry->ip
+            ],
+            [
+                'label' => 'Efekt',
+                'value' => function (UserLoginEntry $entry) {
+                    if ($entry->success) {
+                        return '<i class="fa fa-check text-success"></i>';
+                    }
 
-    public function previousPage(): void
-    {
-        if ($this->currentPage <= 1) {
-            $this->currentPage = 1;
-            return;
-        }
-
-        $this->currentPage--;
-        $this->fetch();
-    }
-
-    public function nextPage(): void
-    {
-        if ($this->currentPage >= $this->lastPage) {
-            $this->currentPage = $this->lastPage;
-            return;
-        }
-
-        $this->currentPage++;
-        $this->fetch();
-    }
-
-    public function setPage(int $page): void
-    {
-        $this->currentPage = $page;
-        $this->fetch();
+                    return '<i class="fa fa-ban text-danger"></i>';
+                }
+            ]
+        ];
     }
 }
