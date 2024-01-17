@@ -12,9 +12,9 @@ class LoginHistory extends Component
 
     public int $currentPage = 1;
 
-    public int $lastPage = 1;
+    public int $lastPage;
 
-    public int $perPage = 2;
+    public int $perPage = 10;
 
     public Collection $entries;
 
@@ -48,6 +48,12 @@ class LoginHistory extends Component
         }
 
         $this->currentPage++;
+        $this->fetch();
+    }
+
+    public function setPage(int $page): void
+    {
+        $this->currentPage = $page;
         $this->fetch();
     }
 }
