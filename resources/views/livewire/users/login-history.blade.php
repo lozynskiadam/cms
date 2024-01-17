@@ -7,12 +7,12 @@
             <th>Efekt</th>
         </tr>
         </thead>
-        @foreach($user->loginEntries()->get() as $loginEntry)
+        @foreach($entries as $entry)
             <tr>
-                <td>{{ $loginEntry->created_at }}</td>
-                <td>{{ $loginEntry->ip }}</td>
+                <td>{{ $entry->created_at }}</td>
+                <td>{{ $entry->ip }}</td>
                 <td>
-                    @if ($loginEntry->success)
+                    @if ($entry->success)
                         <i class="fa fa-check text-success"></i>
                     @else
                         <i class="fa fa-ban text-danger"></i>
@@ -21,4 +21,9 @@
             </tr>
         @endforeach
     </table>
+    <div>
+        <button type="button" class="btn btn-primary" wire:click="previousPage()"><</button>
+        Strona {{ $currentPage }} / {{ $lastPage }}
+        <button type="button" class="btn btn-primary" wire:click="nextPage()">></button>
+    </div>
 </x-card>
