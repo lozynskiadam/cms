@@ -2,14 +2,13 @@
 
 namespace App\View\Components;
 
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 
 class Menu extends Component
 {
-    public function render(): View|Closure|string
+    public function render(): View
     {
         return view('components.menu-items', [
             'items' => [
