@@ -3,7 +3,6 @@
         {!! $file->getPreview(width: 100, height: 100) !!}
     </div>
     <table class="table detail-view">
-        <tbody>
         <tr>
             <th>ID</th>
             <td>{{ $file->id }}</td>
@@ -28,7 +27,6 @@
             <th>Data utworzenia</th>
             <td>{{ $file->created_at }}</td>
         </tr>
-        </tbody>
     </table>
 
     <div class="text-center p-4">

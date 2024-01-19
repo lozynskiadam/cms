@@ -4,10 +4,7 @@
     </x-card>
 
     <x-tabs size="8">
-        <x-tab title="Aktywność" icon="fa fa-calendar" active="true">
-            @include('livewire.users.partials.activity')
-        </x-tab>
-        <x-tab title="Bezpieczeństwo" icon="fa fa-key">
+        <x-tab title="Bezpieczeństwo" icon="fa fa-key" active="true">
             @include('livewire.users.partials.security')
         </x-tab>
         <x-tab title="Historia logowań" icon="fa fa-history">

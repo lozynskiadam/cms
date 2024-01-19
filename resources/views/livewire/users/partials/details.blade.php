@@ -1,9 +1,6 @@
 <div>
     <div class="text-center p-4">
-        <h3 class="mb-0">
-            {{ $user->name }} <small class="badge badge-info rounded-pill text-muted">#{{ $user->id }}</small>
-        </h3>
-
+        <h3 class="mb-0">{{ $user->name }}</h3>
         @unless($user->getRoleNames()->isEmpty())
             <div class="mt-2">
                 @foreach($user->getRoleNames() as $role)
@@ -14,7 +11,10 @@
     </div>
 
     <table class="table detail-view">
-        <tbody>
+        <tr>
+            <th>ID</th>
+            <td>{{ $user->id }}</td>
+        </tr>
         <tr>
             <th>Email</th>
             <td>{{ $user->email }}</td>
@@ -35,7 +35,6 @@
             <th>Data ostatniej modyfikacji</th>
             <td>{{ $user->updated_at }}</td>
         </tr>
-        </tbody>
     </table>
 
     <div class="text-center p-4">
