@@ -3,7 +3,7 @@
 namespace App\Livewire\Users;
 
 use App\Models\User;
-use App\Models\UserLoginEntry;
+use App\Models\UserLoginAttempt;
 use App\View\Components\GridComponent;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
@@ -13,7 +13,7 @@ class LoginHistory extends GridComponent
 
     public function dataSource(): Relation
     {
-        return $this->user->loginEntries();
+        return $this->user->loginAttempts()->orderBy('created_at', 'desc');
     }
 
     public function columns(): array
@@ -21,16 +21,16 @@ class LoginHistory extends GridComponent
         return [
             [
                 'label' => 'Data',
-                'value' => fn(UserLoginEntry $entry) => $entry->created_at
+                'value' => fn(UserLoginAttempt $attempt) => $attempt->created_at
             ],
             [
                 'label' => 'IP',
-                'value' => fn(UserLoginEntry $entry) => $entry->ip
+                'value' => fn(UserLoginAttempt $attempt) => $attempt->ip
             ],
             [
                 'label' => 'Efekt',
-                'value' => function (UserLoginEntry $entry) {
-                    if ($entry->success) {
+                'value' => function (UserLoginAttempt $attempt) {
+                    if ($attempt->success) {
                         return '<i class="fa fa-check text-success"></i>';
                     }
 

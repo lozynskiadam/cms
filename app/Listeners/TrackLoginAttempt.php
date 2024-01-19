@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Models\User;
-use App\Models\UserLoginEntry;
+use App\Models\UserLoginAttempt;
 use Illuminate\Auth\Events\Attempting;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,10 +16,10 @@ class TrackLoginAttempt
             return;
         }
 
-        $userLoginEntry = new UserLoginEntry;
-        $userLoginEntry->ip = request()->ip();
-        $userLoginEntry->user_id = $user->id;
-        $userLoginEntry->success = (int) Hash::check($event->credentials['password'], $user->password);
-        $userLoginEntry->save();
+        $userLoginAttempt = new UserLoginAttempt;
+        $userLoginAttempt->ip = request()->ip();
+        $userLoginAttempt->user_id = $user->id;
+        $userLoginAttempt->success = (int) Hash::check($event->credentials['password'], $user->password);
+        $userLoginAttempt->save();
     }
 }

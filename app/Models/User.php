@@ -49,8 +49,8 @@ class User extends Authenticatable implements InteractsWithFiles
         'status' => UserStatus::class
     ];
 
-    public function loginEntries(): HasMany
+    public function loginAttempts(): HasMany
     {
-        return $this->hasMany(UserLoginEntry::class);
+        return $this->hasMany(UserLoginAttempt::class);
     }
 }

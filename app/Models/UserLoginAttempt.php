@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property boolean $success
  * @property Carbon|null $created_at
  */
-class UserLoginEntry extends Model
+class UserLoginAttempt extends Model
 {
     const UPDATED_AT = null;
 
