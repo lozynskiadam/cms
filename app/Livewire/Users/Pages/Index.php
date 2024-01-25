@@ -1,37 +1,37 @@
 <?php
 
-namespace App\Livewire\Files;
+namespace App\Livewire\Users\Pages;
 
-use App\Models\File;
+use App\Models\User;
 use App\View\Components\PageComponent;
 use Illuminate\View\View;
 
 class Index extends PageComponent
 {
-    public File $user;
+    public User $user;
 
     public function getView(): View
     {
-        return view('livewire.files.index');
+        return view('livewire.users.index');
     }
 
     public function getTitle(): string
     {
-        return 'Pliki';
+        return 'Użytkownicy';
     }
 
     public function getBreadcrumbs(): array
     {
         return [
             ['label' => 'Strona domowa', 'url' => route('dashboard')],
-            ['label' => 'Pliki'],
+            ['label' => 'Użytkownicy'],
         ];
     }
 
     public function getButtons(): array
     {
         return [
-            ['label' => 'Wgraj', 'modal' => 'files.upload-modal'],
+            ['label' => 'Dodaj', 'modal' => 'users.components.edit-modal'],
             ['label' => 'Generuj', 'dispatch' => 'factory'],
         ];
     }

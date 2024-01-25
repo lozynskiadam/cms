@@ -31,8 +31,8 @@
 
     <div class="text-center p-4">
         <a href="{{ $file->getDownloadUrl() }}" type="button" class="btn btn-primary">Pobierz</a>
-        <button class="btn btn-danger" onclick="Livewire.modal.open('files.delete-modal', {file: {{ $file->id }} })">Usuń</button>
+        <button class="btn btn-danger" onclick="Livewire.modal.open('files.components.delete-modal', {file: {{ $file->id }} })">Usuń</button>
     </div>
 
-    <livewire:files.delete-modal/>
+    <livewire:files.components.delete-modal/>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Users;
+namespace App\Livewire\Users\Components;
 
 use App\Enums\UserStatus;
 use App\Models\User;
@@ -123,7 +123,7 @@ class Table extends PowerGridComponent
             ]),
 
             Button::add()->bladeComponent('button-delete', [
-                'modal' => 'users.delete-modal',
+                'modal' => 'users.components.delete-modal',
                 'data' => "{user: $row->id}",
             ]),
         ];

@@ -21,11 +21,11 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::any('/logout', [AuthController::class, 'logout']);
 
 Route::group(['middleware' => ['auth', 'role:admin']], function () {
-    Route::get('/dashboard', fn() => view('pages.dashboard'))->name('dashboard');
+    Route::get('/dashboard', \App\Livewire\Dashboard\Pages\Index::class)->name('dashboard');
 
-    Route::get('/users', \App\Livewire\Users\Index::class)->name('users.index');
-    Route::get('/users/{user}', \App\Livewire\Users\Preview::class)->name('users.preview');
+    Route::get('/users', \App\Livewire\Users\Pages\Index::class)->name('users.index');
+    Route::get('/users/{user}', \App\Livewire\Users\Pages\Preview::class)->name('users.preview');
 
-    Route::get('/files', \App\Livewire\Files\Index::class)->name('files.index');
-    Route::get('/files/{file}', \App\Livewire\Files\Preview::class)->name('files.preview');
+    Route::get('/files', \App\Livewire\Files\Pages\Index::class)->name('files.index');
+    Route::get('/files/{file}', \App\Livewire\Files\Pages\Preview::class)->name('files.preview');
 });

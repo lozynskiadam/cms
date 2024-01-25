@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Files;
+namespace App\Livewire\Files\Components;
 
 use App\Models\File;
 use Illuminate\Database\Eloquent\Builder;
@@ -114,7 +114,7 @@ class Table extends PowerGridComponent
             ]),
 
             Button::add()->bladeComponent('button-delete', [
-                'modal' => 'files.delete-modal',
+                'modal' => 'files.components.delete-modal',
                 'data' => "{file: $row->id}",
             ]),
         ];

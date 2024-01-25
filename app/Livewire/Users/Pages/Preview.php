@@ -1,31 +1,31 @@
 <?php
 
-namespace App\Livewire\Files;
+namespace App\Livewire\Users\Pages;
 
-use App\Models\File;
+use App\Models\User;
 use App\View\Components\PageComponent;
 use Illuminate\View\View;
 
 class Preview extends PageComponent
 {
-    public File $file;
+    public User $user;
 
     public function getView(): View
     {
-        return view('livewire.files.preview');
+        return view('livewire.users.preview');
     }
 
     public function getTitle(): string
     {
-        return $this->file->name;
+        return $this->user->name;
     }
 
     public function getBreadcrumbs(): array
     {
         return [
             ['label' => 'Strona domowa', 'url' => route('dashboard')],
-            ['label' => 'Pliki', 'url' => route('files.index')],
-            ['label' => $this->file->name],
+            ['label' => 'Użytkownicy', 'url' => route('users.index')],
+            ['label' => $this->user->name],
         ];
     }
 }

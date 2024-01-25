@@ -8,7 +8,7 @@
             @include('livewire.users.partials.security')
         </x-tab>
         <x-tab title="Historia logowań" icon="fa fa-history">
-            <livewire:users.login-history :user="$user"/>
+            <livewire:users.components.login-history :user="$user"/>
         </x-tab>
     </x-tabs>
 </x-row>

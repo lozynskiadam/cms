@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Files;
+namespace App\Livewire\Files\Components;
 
 use App\Models\File;
 use App\Services\Alert;

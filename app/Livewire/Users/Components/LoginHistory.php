@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Users;
+namespace App\Livewire\Users\Components;
 
 use App\Models\User;
 use App\Models\UserLoginAttempt;

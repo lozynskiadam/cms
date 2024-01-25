@@ -1,5 +1,5 @@
 <x-column size="12">
-    <livewire:files.table/>
-    <livewire:files.upload-modal/>
-    <livewire:files.delete-modal/>
+    <livewire:files.components.table/>
+    <livewire:files.components.upload-modal/>
+    <livewire:files.components.delete-modal/>
 </x-column>
