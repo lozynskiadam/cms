@@ -11,10 +11,12 @@ abstract class PageComponent extends Component
         '$refresh'
     ];
 
+    protected string $layout = 'layouts.master';
+
     public function render()
     {
         return $this->getView()
-            ->extends('layouts.master', [
+            ->extends($this->layout, [
                 'title' => $this->getTitle(),
                 'breadcrumbs' => $this->getBreadcrumbs(),
                 'buttons' => $this->getButtons()
