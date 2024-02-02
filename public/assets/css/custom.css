@@ -35,6 +35,10 @@
     letter-spacing: 0.03rem;
     color: rgba(50, 71, 92, 0.6);
     margin-right: 5px;
+    border-radius: 0.4rem;
+}
+.nav-pills .nav-link.active {
+    box-shadow: 0 2px 4px 0 rgba(105,108,255,.4);
 }
 .nav-pills .nav-link:hover:not(.active) {
     background-color: rgba(50, 71, 92, 0.1);
