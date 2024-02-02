@@ -2,14 +2,11 @@
 
 namespace App\Livewire\Users\Pages;
 
-use App\Models\User;
 use App\View\Components\PageComponent;
 use Illuminate\View\View;
 
 class Index extends PageComponent
 {
-    public User $user;
-
     public function getView(): View
     {
         return view('livewire.users.index');

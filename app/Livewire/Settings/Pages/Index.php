@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Files\Pages;
+namespace App\Livewire\Settings\Pages;
 
 use App\View\Components\PageComponent;
 use Illuminate\View\View;
@@ -9,27 +9,19 @@ class Index extends PageComponent
 {
     public function getView(): View
     {
-        return view('livewire.files.index');
+        return view('livewire.settings.index');
     }
 
     public function getTitle(): string
     {
-        return 'Pliki';
+        return 'Ustawienia';
     }
 
     public function getBreadcrumbs(): array
     {
         return [
             ['label' => 'Strona domowa', 'url' => route('dashboard')],
-            ['label' => 'Pliki'],
-        ];
-    }
-
-    public function getButtons(): array
-    {
-        return [
-            ['label' => 'Wgraj', 'modal' => 'files.components.upload-modal'],
-            ['label' => 'Generuj', 'dispatch' => 'factory'],
+            ['label' => 'Ustawienia'],
         ];
     }
 }

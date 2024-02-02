@@ -54,3 +54,16 @@
 .sidebar-link {
     transition: background 0.2s !important;
 }
+
+.sidebar-link, a.sidebar-link {
+    border-radius: .4rem;
+    padding: .6rem .85rem;
+}
+
+.modal-content {
+    box-shadow: 0 2px 20px 0 rgba(67,89,113,.45);
+    border-radius: 0.5rem;
+}
+.modal-backdrop {
+    background-color: #435971;
+}

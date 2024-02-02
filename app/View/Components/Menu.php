@@ -30,6 +30,12 @@ class Menu extends Component
                     url: route('files.index'),
                     active: Menu::isCurrentRoute(['files.index', 'files.preview']),
                 ),
+                Menu::item(
+                    label: 'Ustawienia',
+                    icon: 'ti ti-settings',
+                    url: route('settings.index'),
+                    active: Menu::isCurrentRoute(['settings.index']),
+                ),
             ],
             'root' => true,
         ]);
