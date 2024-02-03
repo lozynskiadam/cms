@@ -1,4 +1,5 @@
 .card {
+  background-color: $card-bg;
   box-shadow: $card-shadow;
   margin-bottom: ($spacer *	1.5);
 }
@@ -68,7 +69,7 @@ a.card {
 
 .card-img-hover {
   transition: all .1s ease-in-out;
-  
+
   &:hover {
     transform: scale(1.035);
   }

@@ -1,9 +1,11 @@
-import './bootstrap';
+import axios from 'axios';
+window.axios = axios;
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import Alpine from "alpinejs";
-import flatpickr from "flatpickr";
-
 window.Alpine = Alpine;
+
+import flatpickr from "flatpickr";
 window.flatpickr = flatpickr;
 
 import "./../../node_modules/flatpickr/dist/flatpickr.css";

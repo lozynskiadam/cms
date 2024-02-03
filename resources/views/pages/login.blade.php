@@ -6,7 +6,6 @@
     <title>{{ env('APP_NAME') }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/css/badges.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/login.css') }}">
     @vite(["resources/js/app.js", "resources/css/app.css"])
