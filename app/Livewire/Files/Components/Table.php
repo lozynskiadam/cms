@@ -39,7 +39,7 @@ class Table extends PowerGridComponent
                 ? '<i class="fa fa-lock"></i> Prywatny'
                 : '<i class="fa fa-earth"></i> Publiczny'
             )
-            ->addColumn('preview', fn(File $model) => $model->getPreview())
+            ->addColumn('preview', fn(File $model) => $model->getPreview(width: 50, height: 50))
             ->addColumn('size', fn(File $model) => $model->getFormattedSize())
             ->addColumn('created_at_formatted', fn(File $model) => Carbon::parse($model->created_at)->format('d.m.Y H:i'));
     }

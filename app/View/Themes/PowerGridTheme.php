@@ -26,8 +26,8 @@ class PowerGridTheme extends ThemeBase
 
     public function table(): Table
     {
-        return Theme::table('table table-bordered table-hover table-striped table-checkable table-highlight-head mb-2')
-            ->div('table-responsive col-md-12')
+        return Theme::table('table table-checkable table-highlight-head mb-0')
+            ->div('card table-responsive col-md-12')
             ->thead('')
             ->thAction('')
             ->tdAction('')

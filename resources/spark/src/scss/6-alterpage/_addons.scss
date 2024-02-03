@@ -19,6 +19,10 @@
   }
 }
 
+.text-muted {
+    color: $text-muted !important;
+}
+
 // Custom styles for pickr - https://github.com/Simonwep/pickr
 
 .pcr-app .pcr-selection .pcr-color-preview .pcr-current-color::before,

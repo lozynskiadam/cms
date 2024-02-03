@@ -32,7 +32,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item ms-1">
                         <a href="#" class="nav-icon nav-link toggle-theme">
-                            <i class="ti ti-moon-stars"></i>
+                            <i class="fas fa-moon"></i>
                         </a>
                     </li>
                     <li class="nav-item ms-1">
