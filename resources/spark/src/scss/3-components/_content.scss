@@ -1,9 +1,9 @@
 .content {
   flex: 1;
-  margin-top: ($spacer * 2);
-  padding: 0 ($spacer * 0.5);
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
 
   @include media-breakpoint-up(lg) {
-    padding: 0 ($spacer * 1.5);
+    padding: 0 1.5rem;
   }
 }

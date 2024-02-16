@@ -329,9 +329,9 @@ $sidebar-header-font-size: $font-size-sm !default;
 $sidebar-header-font-weight: $font-weight-bold !default;
 
 // Sidebar link
-$sidebar-link-padding: .65rem .75rem !default;
+$sidebar-link-padding: .6rem .85rem !default;
 $sidebar-link-margin: 0 1rem !default;
-$sidebar-link-border-radius: $border-radius !default;
+$sidebar-link-border-radius: .4rem !default;
 $sidebar-link-font-weight: 400 !default;
 $sidebar-link-color: $gray-600 !default;
 $sidebar-link-icon-color: $gray-600 !default;
@@ -346,7 +346,7 @@ $sidebar-link-active-bg: rgba(105, 108, 255, 0.16) !default;
 $sidebar-link-active-font-weight: $font-weight-normal !default;
 
 // Sidebar child link
-$sidebar-link-child-padding: 0.65rem 0.75rem 0.65rem 2.74rem !default;
+$sidebar-link-child-padding: 0.6rem 0.85rem 0.6rem 2.74rem !default;
 $sidebar-link-child-margin: 0 1rem !default;
 $sidebar-link-child-font-weight: 400 !default;
 $sidebar-link-child-color: $gray-600 !default;

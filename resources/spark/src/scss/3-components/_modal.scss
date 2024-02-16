@@ -10,3 +10,22 @@
     border-color: rgba(255, 255, 255, 0.33)
   }
 }
+
+.modal-content {
+    box-shadow: 0 2px 20px 0 rgba(67,89,113,.45);
+    border-radius: 0.5rem;
+}
+.modal-backdrop {
+    background-color: #435971;
+}
+
+.modal-buttons {
+    text-align: end;
+    margin: 1rem -1rem -1rem -1rem;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.modal-buttons .btn {
+    margin-left: 0.5rem;
+}

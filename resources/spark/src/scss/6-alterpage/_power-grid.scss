@@ -1,0 +1,7 @@
+.power-grid-table .pg-actions {
+    gap: 0 !important;
+    justify-content: center;
+}
+.power-grid-table > :not(caption) > * > * {
+    padding: 0.5rem 0.75rem !important;
+}

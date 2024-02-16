@@ -5,3 +5,24 @@
 .nav-link-lg {
   padding: .75rem 1.5rem;
 }
+
+.nav-pills {
+
+    .nav-link {
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        letter-spacing: 0.03rem;
+        color: rgba(50, 71, 92, 0.6);
+        margin-right: 5px;
+        border-radius: 0.4rem;
+
+        &.active {
+            box-shadow: 0 2px 4px 0 rgba(105,108,255,.4);
+        }
+
+        &:hover:not(.active) {
+            background-color: rgba(50, 71, 92, 0.1);
+        }
+    }
+}
