@@ -1,39 +1,43 @@
 // Sidebar
-$sidebar-brand-color: #acb0cc;
+$sidebar-brand-color: #b6bee3;
 $sidebar-nav-background: #2f3349;
 $sidebar-content-bg: #2f3349;
 $sidebar-shadow: 0 .125rem .375rem rgba(0,0,0,.25);
-$sidebar-link-color: #acb0cc;
-$sidebar-link-icon-color: #acb0cc;
+$sidebar-link-color: #b6bee3;
+$sidebar-link-icon-color: #b6bee3;
 $sidebar-link-hover-bg: #353a50;
-$sidebar-link-hover-color: #acb0cc;
-$sidebar-link-icon-hover-color: #acb0cc;
+$sidebar-link-hover-color: #b6bee3;
+$sidebar-link-icon-hover-color: #b6bee3;
 $sidebar-link-active-bg: var(--bs-primary);
 $sidebar-link-active-color: #e0e2f1;
 $sidebar-link-icon-active-color: #e0e2f1;
 $sidebar-link-child-bg: transparent;
-$sidebar-link-child-color: #acb0cc;
+$sidebar-link-child-color: #b6bee3;
 $sidebar-link-child-icon-color: #414559;
 $sidebar-link-child-hover-bg: #353a50;
-$sidebar-link-child-hover-color: #acb0cc;
+$sidebar-link-child-hover-color: #b6bee3;
 $sidebar-link-child-active-bg: transparent;
 $sidebar-link-child-active-color: #e0e2f1;
 
 // Navbar
 $navbar-theme-background: #2f3349;
 $navbar-theme-shadow: 0 .125rem .5rem 0 rgba(0,0,0,.16);
-$navbar-theme-color: rgba(#acb0cc, .5);
-$navbar-theme-hover-color: rgba(208, 212, 241, 0.78);
-$navbar-theme-active-color: rgba(208, 212, 241, 0.78);
-$hamburger-color: rgba(208, 212, 241, 0.78);
+$navbar-theme-color: #b6bee3;
+$navbar-theme-hover-color: #cfd3ec;
+$navbar-theme-active-color: #cfd3ec;
+$hamburger-color: #cfd3ec;
 
 // Card
+$card-title-color: #cfd3ec;
 $card-shadow: 0 .125rem .5rem 0 rgba(0,0,0,.16);
 $card-bg: #2f3349;
 
 // Main
 $body-bg: #25293c;
-$header-color: #acb0cc;
-$breadcrumb-active-color: #acb0cc;
+$header-color: #b6bee3;
+$breadcrumb-active-color: #b6bee3;
 $body-color: #cbcbe2;
 $text-muted: rgba(208, 212, 241, 0.42);
+
+// Modal
+$modal-backdrop-bg: #000000;

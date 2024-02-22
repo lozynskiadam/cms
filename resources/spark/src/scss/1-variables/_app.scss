@@ -118,8 +118,8 @@ $enable-rfs: false !default;
 $enable-negative-margins: true !default;
 
 // Body
-$body-bg: #f4f7fc !default;
-$body-color: #3e4676 !default;
+$body-bg: #f8f7fa !default;
+$body-color: #6F6B7D !default;
 
 // Links
 $link-decoration: none !default;
@@ -141,7 +141,6 @@ $h3-font-size: $font-size-base * 1.5 !default;
 $h4-font-size: $font-size-base * 1.25 !default;
 $h5-font-size: $font-size-base !default;
 $h6-font-size: $font-size-base !default;
-$headings-color: #203A45 !default;
 
 // Displays
 $display-font-sizes: (
@@ -224,6 +223,7 @@ $dropdown-item-padding-y: .35rem !default;
 $dropdown-item-padding-x: 1.2rem !default;
 
 // Cards
+$card-title-color: #5d596c !default;
 $card-border-width: 0px !default;
 $card-border-radius: $border-radius-lg !default;
 $card-shadow: rgba(50, 71, 92, 0.06) 0px 2px 9px -2px, rgba(50, 71, 92, 0.04) 0px 4px 9px 1px, rgba(50, 71, 92, 0.02) 0px 2px 6px 4px !default;
@@ -255,6 +255,7 @@ $modal-lg: 900px !default;
 $modal-md: 600px !default;
 $modal-sm: 400px !default;
 $modal-transition: transform .25s ease-out !default;
+$modal-backdrop-bg: #435971 !default;
 
 // Tabs
 $tab-content-padding: $spacer * 1.25 !default;
@@ -329,7 +330,7 @@ $sidebar-header-font-size: $font-size-sm !default;
 $sidebar-header-font-weight: $font-weight-bold !default;
 
 // Sidebar link
-$sidebar-link-padding: .6rem .85rem !default;
+$sidebar-link-padding: .55rem .75rem !default;
 $sidebar-link-margin: 0 1rem !default;
 $sidebar-link-border-radius: .4rem !default;
 $sidebar-link-font-weight: 400 !default;
@@ -370,7 +371,7 @@ $splash-color: $gray-300 !default;
 $wrapper-bg: transparent !default;
 
 // Header
-$header-color: rgba(50, 71, 92, 0.87) !default;
+$header-color: #5d596c !default;
 
 // Font Awesome
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts" !default;
