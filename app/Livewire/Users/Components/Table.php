@@ -78,7 +78,7 @@ class Table extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-            Column::action('Akcje')
+            Column::action('')
                 ->headerAttribute(styleAttr: 'width: 0;')
         ];
     }

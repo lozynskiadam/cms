@@ -338,7 +338,7 @@ $s2bs-form-control-transition: border-color ease-in-out .15s, box-shadow ease-in
     .select2-selection__choice {
       color: $s2bs-input-color;
       background: $gray-200;
-      border: $s2bs-input-border-width solid $gray-300;
+      border: $s2bs-input-border-width solid $table-border-color;
       @include border-radius($s2bs-selection-choice-border-radius);
       cursor: default;
       float: left;

@@ -37,14 +37,12 @@
                     </li>
                     <li class="nav-item ms-1">
                         <a class="nav-icon nav-link" href="http://champ.dev.alterpage.pl" target="_blank">
-                            <i class="ti ti-world"></i>
-                            <span class="d-none d-md-inline-block">WebSite</span>
+                            <i class="fas fa-globe"></i>
                         </a>
                     </li>
                     <li class="nav-item ms-1 dropdown">
                         <a class="nav-link dropdown-toggle position-relative" href="#" id="user-dropdown" data-bs-toggle="dropdown">
-                            <i class="ti ti-user-circle"></i>
-                            <span class="d-none d-md-inline-block">{{ auth()->user()->email }}</span>
+                            <i class="fas fa-user"></i>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">

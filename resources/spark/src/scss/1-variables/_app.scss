@@ -127,7 +127,7 @@ $link-hover-decoration: underline !default;
 
 // Common
 $border-width: 1px !default;
-$text-muted: rgba(47, 43, 61, 0.42) !default;
+$text-muted: rgba(47, 43, 61, 0.5) !default;
 
 // Fonts
 $line-height-base: 1.5 !default;
@@ -240,6 +240,7 @@ $table-cell-padding-x: .75rem !default;
 $table-cell-padding-y-sm: .3rem !default;
 $table-cell-padding-x-sm: .3rem !default;
 $table-striped-bg: $gray-100 !default;
+$table-border-color: $gray-300 !default;
 
 // Transitions
 $transition-appearance: background .4s ease-in-out, color .4s ease-in-out !default;
