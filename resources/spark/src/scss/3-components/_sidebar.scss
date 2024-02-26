@@ -26,6 +26,13 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
   }
+
+  svg {
+      height: 32px;
+      width: 32px;
+      margin-right: .25rem;
+      fill: var(--bs-primary);
+  }
 }
 
 .sidebar-user {

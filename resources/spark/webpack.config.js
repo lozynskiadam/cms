@@ -15,7 +15,6 @@ const opts = {
 module.exports = {
   entry: {
     app: "./src/js/app",
-    settings: "./src/js/settings",
     dark: "./src/scss/dark.scss",
     light: "./src/scss/light.scss"
   },
@@ -51,12 +50,6 @@ module.exports = {
     new Webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    }),
-    // Copy fonts and images to dist
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: "src/img", to: "img" }
-      ]
     }),
     // Copy dist folder to docs/dist
     new FileManagerPlugin({
