@@ -10,9 +10,9 @@
                     class="sidebar-link"
                 @else
                     class="sidebar-link @unless($item['active']) collapsed @endunless"
-                    data-bs-target="#{{ $item['id'] }}"
-                    data-bs-toggle="collapse"
-                    aria-expanded="@if($item['active']) true @else false @endif"
+                data-bs-target="#{{ $item['id'] }}"
+                data-bs-toggle="collapse"
+                aria-expanded="@if($item['active']) true @else false @endif"
                 @endif
             >
                 @if($item['icon'])
