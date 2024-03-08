@@ -2,7 +2,7 @@
     <ul class="sidebar-nav">
 @endif
 @foreach($items as $item)
-    @if($item['url'])
+    @if($item['url'] || $item['items'])
         <li class="sidebar-item @if($item['active']) active @endif ">
             <a
                 href="{{ $item['url']}}"

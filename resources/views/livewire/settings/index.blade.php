@@ -25,6 +25,7 @@
                 <h4>Aplikacja</h4>
 
                 <ul>
+                    <li>Ustawienia motywu</li>
                     <li>Ciasteczka</li>
                 </ul>
             </div>
@@ -40,6 +41,8 @@
                     <li>Fakturowanie</li>
                     <li>Stawki VAT</li>
                     <li>Jednostki miary</li>
+                    <li>PayU</li>
+                    <li>Apaczka</li>
                 </ul>
             </div>
 
@@ -56,6 +59,7 @@
                 <h4>Mailing</h4>
 
                 <ul>
+                    <li>Dane smtp</li>
                     <li>Szablony Maili</li>
                 </ul>
             </div>

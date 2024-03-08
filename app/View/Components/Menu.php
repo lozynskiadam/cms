@@ -12,41 +12,37 @@ class Menu extends Component
     {
         return view('components.menu-items', [
             'items' => [
-                Menu::item(label: 'Strona WWW'),
+                Menu::item(label: 'Aplikacja'),
 
                 Menu::item(
-                    label: 'Edytor stron',
-                    icon: 'ti ti-table-row',
+                    label: 'Strona WWW',
+                    icon: 'ti ti-globe',
                     url: '#',
                     active: false,
+                    items: [
+                        Menu::item(
+                            label: 'Edytor stron',
+                            url: '#',
+                            active: false,
+                        ),
+
+                        Menu::item(
+                            label: 'Udostępnione pliki',
+                            url: '#',
+                            active: false,
+                        ),
+
+                        Menu::item(
+                            label: 'Przekierowania',
+                            url: '#',
+                            active: false,
+                        ),
+                    ]
                 ),
 
                 Menu::item(
-                    label: 'Udostępnione pliki',
-                    icon: 'ti ti-share',
-                    url: '#',
-                    active: false,
-                ),
-
-                Menu::item(
-                    label: 'Przekierowania',
-                    icon: 'ti ti-arrow-bounce',
-                    url: '#',
-                    active: false,
-                ),
-
-                Menu::item(label: 'Blog'),
-
-                Menu::item(
-                    label: 'Posty',
+                    label: 'Blog',
                     icon: 'ti ti-license',
-                    url: '#',
-                    active: false,
-                ),
-
-                Menu::item(
-                    label: 'Autorzy',
-                    icon: 'ti ti-user-edit',
                     url: '#',
                     active: false,
                 ),
@@ -67,7 +63,14 @@ class Menu extends Component
                     active: false,
                 ),
 
-                Menu::item(label: 'Dane w aplikacji'),
+                Menu::item(
+                    label: 'Promocje',
+                    icon: 'ti ti-tag',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(label: 'Administracja'),
 
                 Menu::item(
                     label: 'Użytkownicy',
@@ -77,16 +80,58 @@ class Menu extends Component
                 ),
 
                 Menu::item(
+                    label: 'Subskrybenci',
+                    icon: 'ti ti-users',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(
+                    label: 'Kontakty',
+                    icon: 'ti ti-address-book',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(
                     label: 'Pliki',
                     icon: 'ti ti-files',
                     url: route('files.index'),
                     active: Menu::isCurrentRoute(['files.index', 'files.preview']),
                 ),
+
                 Menu::item(
                     label: 'Ustawienia',
                     icon: 'ti ti-settings',
                     url: route('settings.index'),
                     active: Menu::isCurrentRoute(['settings.index']),
+                ),
+
+                Menu::item(
+                    label: 'Serwer',
+                    icon: 'ti ti-server',
+                    items: [
+                        Menu::item(
+                            label: 'Kolejka',
+                            url: '#',
+                            active: false
+                        ),
+                        Menu::item(
+                            label: 'Wysłane maile',
+                            url: '#',
+                            active: false
+                        ),
+                        Menu::item(
+                            label: 'Cache',
+                            url: '#',
+                            active: false
+                        ),
+                        Menu::item(
+                            label: 'Logi',
+                            url: '#',
+                            active: false
+                        ),
+                    ]
                 ),
             ],
             'root' => true,
