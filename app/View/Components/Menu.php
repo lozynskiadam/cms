@@ -12,18 +12,70 @@ class Menu extends Component
     {
         return view('components.menu-items', [
             'items' => [
+                Menu::item(label: 'Strona WWW'),
+
                 Menu::item(
-                    label: 'Dashboard',
-                    icon: 'ti ti-home',
-                    url: route('dashboard'),
-                    active: Menu::isCurrentRoute('dashboard')
+                    label: 'Edytor stron',
+                    icon: 'ti ti-table-row',
+                    url: '#',
+                    active: false,
                 ),
+
+                Menu::item(
+                    label: 'Udostępnione pliki',
+                    icon: 'ti ti-share',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(
+                    label: 'Przekierowania',
+                    icon: 'ti ti-arrow-bounce',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(label: 'Blog'),
+
+                Menu::item(
+                    label: 'Posty',
+                    icon: 'ti ti-license',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(
+                    label: 'Autorzy',
+                    icon: 'ti ti-user-edit',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(label: 'Sklep'),
+
+                Menu::item(
+                    label: 'Produkty',
+                    icon: 'ti ti-cube',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(
+                    label: 'Zamówienia',
+                    icon: 'ti ti-shopping-cart',
+                    url: '#',
+                    active: false,
+                ),
+
+                Menu::item(label: 'Dane w aplikacji'),
+
                 Menu::item(
                     label: 'Użytkownicy',
                     icon: 'ti ti-users',
                     url: route('users.index'),
                     active: Menu::isCurrentRoute(['users.index', 'users.preview']),
                 ),
+
                 Menu::item(
                     label: 'Pliki',
                     icon: 'ti ti-files',
