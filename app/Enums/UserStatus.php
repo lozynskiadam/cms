@@ -30,9 +30,9 @@ enum UserStatus: int
     public function render(): string
     {
         return match ($this) {
-            UserStatus::ACTIVE => "<span class='badge badge-success'>" . $this->label() . "</span>",
-            UserStatus::INACTIVE => "<span class='badge badge-danger'>" . $this->label() . "</span>",
-            UserStatus::BLOCKED => "<span class='badge badge-black'>" . $this->label() . "</span>",
+            UserStatus::ACTIVE => "<span class='badge bg-label-success'>" . $this->label() . "</span>",
+            UserStatus::INACTIVE => "<span class='badge bg-label-danger'>" . $this->label() . "</span>",
+            UserStatus::BLOCKED => "<span class='badge bg-label-black'>" . $this->label() . "</span>",
         };
     }
 }

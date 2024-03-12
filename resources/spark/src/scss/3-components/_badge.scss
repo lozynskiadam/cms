@@ -4,34 +4,6 @@
     padding: 0.3rem 0.4rem;
     color: $white;
 }
-.badge.badge-primary {
-    background-color: rgba(var(--bs-primary-rgb), 0.15);
-    color: var(--bs-primary);
-}
-.badge.badge-secondary {
-    background-color: rgba(var(--bs-secondary-rgb), 0.15);
-    color: var(--bs-secondary);
-}
-.badge.badge-info {
-    background-color: rgba(var(--bs-info-rgb), 0.15);
-    color: var(--bs-info);
-}
-.badge.badge-success {
-    background-color: rgba(var(--bs-success-rgb), 0.15);
-    color: var(--bs-success);
-}
-.badge.badge-warning {
-    background-color: rgba(var(--bs-warning-rgb), 0.15);
-    color: var(--bs-warning);
-}
-.badge.badge-danger {
-    background-color: rgba(var(--bs-danger-rgb), 0.15);
-    color: var(--bs-danger);
-}
-.badge.badge-black {
-    background-color: rgba(var(--bs-black-rgb), 0.15);
-    color: var(--bs-gray-700);
-}
 .badge.rounded-pill {
   padding-right: .65em;
   padding-left: .65em;

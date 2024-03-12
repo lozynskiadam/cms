@@ -116,6 +116,11 @@ class Menu extends Component
                     icon: 'ti ti-lock',
                     items: [
                         Menu::item(
+                            label: 'Moduły',
+                            url: '#',
+                            active: false
+                        ),
+                        Menu::item(
                             label: 'Domyślni użytkownicy',
                             url: '#',
                             active: false

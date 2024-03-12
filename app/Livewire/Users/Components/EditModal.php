@@ -15,7 +15,9 @@ class EditModal extends ModalComponent
 
     public function title(): string
     {
-        return 'Edytuj';
+        return isset($this->user) && $this->user->id
+            ? 'Edytuj użytkownika'
+            : 'Dodaj użytkownika';
     }
 
     public function setup(User $user): void

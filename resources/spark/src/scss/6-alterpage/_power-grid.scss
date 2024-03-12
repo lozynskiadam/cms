@@ -5,7 +5,7 @@
 .power-grid-table > :not(caption) > * > * {
     padding: 0.5rem 0.75rem !important;
 }
-.btn-power-grid {
+.btn.btn-power-grid {
     width: 35px;
     height: 35px;
     line-height: 36px;
@@ -14,10 +14,12 @@
     background: transparent;
     border: 0;
     border-radius: 100%;
-}
-.btn-power-grid:hover {
-    background: rgba(93, 89, 108, 0.08);
-}
-.btn-power-grid.text-danger:hover {
-    background: rgba(220, 53, 69, 0.08);
+
+    &:hover {
+        background: rgba(93, 89, 108, 0.08);
+    }
+
+    &.text-danger:hover {
+        background: rgba(220, 53, 69, 0.08);
+    }
 }

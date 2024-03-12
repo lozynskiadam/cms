@@ -26,7 +26,7 @@
         </nav>
         <div class="main">
             <nav class="navbar navbar-expand navbar-theme">
-                <a class="sidebar-toggle d-flex me-2">
+                <a class="sidebar-toggle me-2">
                     <i class="hamburger align-self-center"></i>
                 </a>
                 <ul class="navbar-nav ms-auto">
@@ -39,69 +39,6 @@
                         <a class="nav-icon nav-link" href="http://champ.dev.alterpage.pl" target="_blank">
                             <i class="fas fa-globe"></i>
                         </a>
-                    </li>
-                    <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                        <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                            <div class="avatar avatar-online">
-                                <img src="../../assets/img/avatars/1.png" alt="" class="h-auto rounded-circle">
-                            </div>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" href="pages-account-settings-account.html">
-                                    <div class="d-flex">
-                                        <div class="flex-shrink-0 me-3">
-                                            <div class="avatar avatar-online">
-                                                <img src="../../assets/img/avatars/1.png" alt="" class="h-auto rounded-circle">
-                                            </div>
-                                        </div>
-                                        <div class="flex-grow-1">
-                                            <span class="fw-medium d-block">John Doe</span>
-                                            <small class="text-muted">Admin</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="pages-profile-user.html">
-                                    <i class="ti ti-user-check me-2 ti-sm"></i>
-                                    <span class="align-middle">My Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="pages-account-settings-account.html">
-                                    <i class="ti ti-settings me-2 ti-sm"></i>
-                                    <span class="align-middle">Settings</span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="ti ti-help me-2 ti-sm"></i>
-                                    <span class="align-middle">FAQ</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="ti ti-currency-dollar me-2 ti-sm"></i>
-                                    <span class="align-middle">Pricing</span>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="dropdown-divider"></div>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#" target="_blank">
-                                    <i class="ti ti-logout me-2 ti-sm"></i>
-                                    <span class="align-middle">Log Out</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="nav-item ms-1 dropdown">
                         <a class="nav-link dropdown-toggle position-relative" href="#" id="user-dropdown" data-bs-toggle="dropdown">

@@ -206,20 +206,27 @@ a.sidebar-link {
 
 // Toggle states
 .sidebar-toggle {
+  display: none;
   cursor: pointer;
   width: 26px;
   height: 26px;
   margin-left: $spacer*0.5;
+
+  @media (min-width: 1px) and (max-width: #{map-get($grid-breakpoints, 'lg') - .02px}) {
+      display: flex;
+  }
 }
 
 .sidebar {
-  &.toggled {
-    margin-left: -$sidebar-width;
 
-    .sidebar-content {
-      left: -$sidebar-width;
-    }
-  }
+  // toggling on desktops
+  // &.toggled {
+  //   margin-left: -$sidebar-width;
+  //
+  //   .sidebar-content {
+  //     left: -$sidebar-width;
+  //   }
+  // }
 
   // Workaround for IE bug, more info:
   // https://stackoverflow.com/a/25850649
