@@ -156,6 +156,7 @@ class Menu extends Component
         string $label = null,
         string $icon = null,
         string $url = null,
+        string $badge = null,
         bool   $active = null,
         array  $items = null,
     ): array
@@ -171,6 +172,7 @@ class Menu extends Component
             'label' => $label ?? false,
             'icon' => $icon ?? false,
             'url' => $url ?? false,
+            'badge' => $badge ?? false,
             'active' => $active ?? false,
             'items' => $items ?? [],
         ];

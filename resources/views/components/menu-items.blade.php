@@ -19,6 +19,9 @@
                     <i class="align-middle {{ $item['icon'] }}"></i>
                 @endif
                 <span class="align-middle">{{ $item['label'] }}</span>
+                @if($item['badge'])
+                    <span class="sidebar-badge badge rounded-pill bg-primary">{{ $item['badge'] }}</span>
+                @endif
             </a>
             @if(!empty($item['items'] ?? []))
                 <ul id="{{ $item['id'] }}" class="sidebar-dropdown list-unstyled collapse @if($item['active']) show @endif" data-bs-parent="#sidebar">
