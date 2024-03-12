@@ -2,7 +2,7 @@
     <ul class="sidebar-nav">
 @endif
 @foreach($items as $item)
-    @if($item['url'])
+    @if($item['url'] || $item['items'])
         <li class="sidebar-item @if($item['active']) active @endif ">
             <a
                 href="{{ $item['url']}}"
@@ -10,15 +10,18 @@
                     class="sidebar-link"
                 @else
                     class="sidebar-link @unless($item['active']) collapsed @endunless"
-                data-bs-target="#{{ $item['id'] }}"
-                data-bs-toggle="collapse"
-                aria-expanded="@if($item['active']) true @else false @endif"
+                    data-bs-target="#{{ $item['id'] }}"
+                    data-bs-toggle="collapse"
+                    aria-expanded="@if($item['active']) true @else false @endif"
                 @endif
             >
                 @if($item['icon'])
                     <i class="align-middle {{ $item['icon'] }}"></i>
                 @endif
                 <span class="align-middle">{{ $item['label'] }}</span>
+                @if($item['badge'])
+                    <span class="sidebar-badge badge rounded-pill bg-primary">{{ $item['badge'] }}</span>
+                @endif
             </a>
             @if(!empty($item['items'] ?? []))
                 <ul id="{{ $item['id'] }}" class="sidebar-dropdown list-unstyled collapse @if($item['active']) show @endif" data-bs-parent="#sidebar">

@@ -39,7 +39,7 @@ class Table extends PowerGridComponent
         return PowerGrid::columns()
             ->addColumn('full_name', function (User $model) {
                 $html[] = "<div class='d-flex flex-column'>";
-                $html[] = "<div style='font-weight: 500;'>" .$model->name . "</div>";
+                $html[] = "<div style='font-weight: 500; margin-bottom: 2px;'>" .$model->name . "</div>";
                 $html[] = "<small class='text-muted'>$model->email</small>";
                 $html[] = "</div>";
 

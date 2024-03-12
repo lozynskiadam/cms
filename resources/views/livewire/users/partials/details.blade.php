@@ -4,7 +4,7 @@
         @unless($user->getRoleNames()->isEmpty())
             <div class="mt-2">
                 @foreach($user->getRoleNames() as $role)
-                    <span class='badge badge-primary'>{{ $role }}</span>
+                    <span class='badge bg-label-primary'>{{ $role }}</span>
                 @endforeach
             </div>
         @endunless

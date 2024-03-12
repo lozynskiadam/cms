@@ -26,7 +26,7 @@
         </nav>
         <div class="main">
             <nav class="navbar navbar-expand navbar-theme">
-                <a class="sidebar-toggle d-flex me-2">
+                <a class="sidebar-toggle me-2">
                     <i class="hamburger align-self-center"></i>
                 </a>
                 <ul class="navbar-nav ms-auto">
