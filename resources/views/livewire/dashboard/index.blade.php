@@ -16,33 +16,33 @@
             <div class="col-md-3 col-6">
                 <div class="d-flex align-items-center">
                     <div class="badge rounded-pill bg-label-primary me-3 p-2">
-                        <i class="ti ti-chart-pie-2" style="font-size: 1.35rem"></i>
+                        <i class="ti ti-shopping-cart" style="font-size: 1.35rem"></i>
                     </div>
                     <div class="card-info">
-                        <h4 class="mb-0">230k</h4>
-                        <small class="text-muted">Sales</small>
+                        <h4 class="mb-0">0</h4>
+                        <small class="text-muted">Zamówienia</small>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-6">
                 <div class="d-flex align-items-center">
-                    <div class="badge rounded-pill bg-label-info me-3 p-2">
+                    <div class="badge rounded-pill bg-label-secondary me-3 p-2">
                         <i class="ti ti-users" style="font-size: 1.35rem"></i>
                     </div>
                     <div class="card-info">
-                        <h4 class="mb-0">8.549k</h4>
-                        <small class="text-muted">Customers</small>
+                        <h4 class="mb-0">0</h4>
+                        <small class="text-muted">Klienci</small>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 col-6">
                 <div class="d-flex align-items-center">
                     <div class="badge rounded-pill bg-label-danger me-3 p-2">
-                        <i class="ti ti-shopping-cart" style="font-size: 1.35rem"></i>
+                        <i class="ti ti-cube" style="font-size: 1.35rem"></i>
                     </div>
                     <div class="card-info">
-                        <h4 class="mb-0">1.423k</h4>
-                        <small class="text-muted">Products</small>
+                        <h4 class="mb-0">0</h4>
+                        <small class="text-muted">Produkty</small>
                     </div>
                 </div>
             </div>
@@ -52,8 +52,8 @@
                         <i class="ti ti-currency-dollar" style="font-size: 1.35rem"></i>
                     </div>
                     <div class="card-info">
-                        <h4 class="mb-0">$9745</h4>
-                        <small class="text-muted">Revenue</small>
+                        <h4 class="mb-0">0 PLN</h4>
+                        <small class="text-muted">Obrót</small>
                     </div>
                 </div>
             </div>
