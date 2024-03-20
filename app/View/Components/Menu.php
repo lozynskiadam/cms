@@ -117,13 +117,8 @@ class Menu extends Component
                     items: [
                         Menu::item(
                             label: 'Moduły',
-                            url: '#',
-                            active: false
-                        ),
-                        Menu::item(
-                            label: 'Domyślni użytkownicy',
-                            url: '#',
-                            active: false
+                            url: route('modules.index'),
+                            active: Menu::isCurrentRoute('modules.index'),
                         ),
                         Menu::item(
                             label: 'Role',

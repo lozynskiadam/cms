@@ -30,4 +30,5 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/files/{file}', \App\Livewire\Files\Pages\Preview::class)->name('files.preview');
 
     Route::get('/settings', \App\Livewire\Settings\Pages\Index::class)->name('settings.index');
+    Route::get('/modules', \App\Livewire\Modules\Pages\Index::class)->name('modules.index');
 });
