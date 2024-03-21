@@ -8,11 +8,26 @@ $modules = [
         'available' => true,
     ],
     [
-        'name' => 'shop',
-        'label' => 'Sklep',
-        'description' => 'Włącza podstawowe funkcje sklepu internetowego',
+        'name' => 'newsletter',
+        'label' => 'Newsletter',
+        'description' => 'Odblokowuje możliwość zapisu użytkowników do newslettera',
         'enabled' => false,
         'available' => true,
+    ],
+    [
+        'name' => 'products',
+        'label' => 'Produkty',
+        'description' => 'Włącza pełne zarządzanie produktami',
+        'enabled' => false,
+        'available' => true,
+    ],
+    [
+        'name' => 'sales',
+        'label' => 'Sprzedaż',
+        'description' => 'Włącza możliwość sprzedaży produktów',
+        'enabled' => false,
+        'available' => false,
+        'tooltip' => 'Wymaga: Produkty',
     ],
     [
         'name' => 'promotions',
@@ -20,6 +35,7 @@ $modules = [
         'description' => 'Włącza możliwość zarządzania promocjami',
         'enabled' => false,
         'available' => false,
+        'tooltip' => 'Wymaga: Sprzedaż',
     ],
     [
         'name' => 'apaczka',
@@ -27,6 +43,7 @@ $modules = [
         'description' => 'Włącza integracje z serwisem Apaczka',
         'enabled' => false,
         'available' => false,
+        'tooltip' => 'Wymaga: Sprzedaż',
     ],
     [
         'name' => 'payu',
@@ -34,6 +51,7 @@ $modules = [
         'description' => 'Włącza integracje z dostawcą płatności PayU',
         'enabled' => false,
         'available' => false,
+        'tooltip' => 'Wymaga: Sprzedaż',
     ],
     [
         'name' => 'przelewy24',
@@ -41,6 +59,7 @@ $modules = [
         'description' => 'Włącza integracje z dostawcą płatności Przelewy24',
         'enabled' => false,
         'available' => false,
+        'tooltip' => 'Wymaga: Sprzedaż',
     ]
 ]
 @endphp
@@ -116,7 +135,7 @@ $modules = [
             @continue
         @endif
         <div class="col-md-2">
-            <div class="card option-card option-card-disabled" data-bs-toggle="tooltip" title="Wymaga: Sklep">
+            <div class="card option-card option-card-disabled" data-bs-toggle="tooltip" title="{{ $module['tooltip'] }}">
                 <div class="card-header">
                     <h5 class="card-title mb-0">
                         {{ $module['label'] }}

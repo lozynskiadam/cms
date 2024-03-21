@@ -131,11 +131,6 @@ class Menu extends Component
                             active: false
                         ),
                         Menu::item(
-                            label: 'Newslettery',
-                            url: '#',
-                            active: false
-                        ),
-                        Menu::item(
                             label: 'Cache',
                             url: '#',
                             active: false
