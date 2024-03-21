@@ -23,4 +23,27 @@ class Module extends Model
     protected $casts = [
         'is_enabled' => 'boolean'
     ];
+
+    public static function isEnabled(string $name): bool
+    {
+        return Module::where(['name' => $name, 'is_enabled' => true])->exists();
+    }
+
+    public function isAvailable(): bool
+    {
+        if (!$this->depends_on) {
+            return true;
+        }
+
+        foreach (explode(',', $this->depends_on) as $name) {
+            if (!$module = Module::where(['name' => $name])->first()) {
+                return false;
+            }
+            if (!$module->is_enabled) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

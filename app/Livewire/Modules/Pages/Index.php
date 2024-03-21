@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Modules\Pages;
 
+use App\Models\Module;
 use App\View\Components\PageComponent;
 use Illuminate\View\View;
 
@@ -9,7 +10,9 @@ class Index extends PageComponent
 {
     public function getView(): View
     {
-        return view('livewire.modules.index');
+        return view('livewire.modules.index', [
+            'modules' => Module::all()
+        ]);
     }
 
     public function getTitle(): string

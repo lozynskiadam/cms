@@ -2,6 +2,7 @@
     <ul class="sidebar-nav">
 @endif
 @foreach($items as $item)
+    @if(!$item['visible']) @continue @endif
     @if($item['url'] || $item['items'])
         <li class="sidebar-item @if($item['active']) active @endif ">
             <a

@@ -1,68 +1,3 @@
-@php
-$modules = [
-    [
-        'name' => 'blog',
-        'label' => 'Blog',
-        'description' => 'Włącza podstawowe funkcje bloga',
-        'enabled' => true,
-        'available' => true,
-    ],
-    [
-        'name' => 'newsletter',
-        'label' => 'Newsletter',
-        'description' => 'Odblokowuje możliwość zapisu użytkowników do newslettera',
-        'enabled' => false,
-        'available' => true,
-    ],
-    [
-        'name' => 'products',
-        'label' => 'Produkty',
-        'description' => 'Włącza pełne zarządzanie produktami',
-        'enabled' => false,
-        'available' => true,
-    ],
-    [
-        'name' => 'sales',
-        'label' => 'Sprzedaż',
-        'description' => 'Włącza możliwość sprzedaży produktów',
-        'enabled' => false,
-        'available' => false,
-        'tooltip' => 'Wymaga: Produkty',
-    ],
-    [
-        'name' => 'promotions',
-        'label' => 'Promocje',
-        'description' => 'Włącza możliwość zarządzania promocjami',
-        'enabled' => false,
-        'available' => false,
-        'tooltip' => 'Wymaga: Sprzedaż',
-    ],
-    [
-        'name' => 'apaczka',
-        'label' => 'Apaczka',
-        'description' => 'Włącza integracje z serwisem Apaczka',
-        'enabled' => false,
-        'available' => false,
-        'tooltip' => 'Wymaga: Sprzedaż',
-    ],
-    [
-        'name' => 'payu',
-        'label' => 'PayU',
-        'description' => 'Włącza integracje z dostawcą płatności PayU',
-        'enabled' => false,
-        'available' => false,
-        'tooltip' => 'Wymaga: Sprzedaż',
-    ],
-    [
-        'name' => 'przelewy24',
-        'label' => 'Przelewy24',
-        'description' => 'Włącza integracje z dostawcą płatności Przelewy24',
-        'enabled' => false,
-        'available' => false,
-        'tooltip' => 'Wymaga: Sprzedaż',
-    ]
-]
-@endphp
 <style>
     .option-card {
         border: 1px solid #ccc;
@@ -103,24 +38,11 @@ $modules = [
     </div>
 
     @foreach($modules as $module)
-        @unless ($module['available'])
+        @unless ($module->isAvailable())
             @continue
         @endif
         <div class="col-md-2">
-            <div class="card option-card @if($module['enabled']) active @endif" onclick="module_{{ $module['name'] }}.click()">
-                <div class="card-header">
-                    <h5 class="card-title mb-0">
-                        {{ $module['label'] }}
-                    </h5>
-                    <div class="form-switch">
-                        <input type="hidden" name="status" value="0">
-                        <input type="checkbox" id="module_{{ $module['name'] }}" class="form-check-input" name="status" value="1" role="button" @if($module['enabled']) checked @endif>
-                    </div>
-                </div>
-                <div class="card-body small">
-                    {{ $module['description'] }}
-                </div>
-            </div>
+            <livewire:modules.components.switch-card :module="$module"/>
         </div>
     @endforeach
 
@@ -129,20 +51,19 @@ $modules = [
         <hr/>
     </div>
 
-
     @foreach($modules as $module)
-        @if ($module['available'])
+        @if ($module->isAvailable())
             @continue
         @endif
         <div class="col-md-2">
-            <div class="card option-card option-card-disabled" data-bs-toggle="tooltip" title="{{ $module['tooltip'] }}">
+            <div class="card option-card option-card-disabled" data-bs-toggle="tooltip" title="Wymaga: {{ $module->depends_on }}">
                 <div class="card-header">
                     <h5 class="card-title mb-0">
-                        {{ $module['label'] }}
+                        {{ $module->label }}
                     </h5>
                 </div>
                 <div class="card-body small">
-                    {{ $module['description'] }}
+                    {{ $module->description }}
                 </div>
             </div>
         </div>

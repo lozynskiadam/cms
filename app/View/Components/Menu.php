@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Module;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
@@ -37,32 +38,48 @@ class Menu extends Component
                         ),
                     ]
                 ),
+
                 Menu::item(
                     label: 'Blog',
                     icon: 'ti ti-license',
                     url: '#',
                     active: false,
+                    visible: Module::isEnabled('blog'),
                 ),
 
-                Menu::item(label: 'Sklep'),
+                Menu::item(
+                    label: 'Newsletter',
+                    icon: 'ti ti-speakerphone',
+                    url: '#',
+                    active: false,
+                    visible: Module::isEnabled('newsletter'),
+                ),
+
+                Menu::item(
+                    label: 'Sklep',
+                    visible: Module::isEnabled('sales'),
+                ),
 
                 Menu::item(
                     label: 'Produkty',
                     icon: 'ti ti-cube',
                     url: '#',
                     active: false,
+                    visible: Module::isEnabled('products'),
                 ),
                 Menu::item(
                     label: 'Zamówienia',
                     icon: 'ti ti-shopping-cart',
                     url: '#',
                     active: false,
+                    visible: Module::isEnabled('sales'),
                 ),
                 Menu::item(
                     label: 'Promocje',
                     icon: 'ti ti-tag',
                     url: '#',
                     active: false,
+                    visible: Module::isEnabled('promotions'),
                 ),
 
                 Menu::item(label: 'Administracja'),
@@ -93,11 +110,6 @@ class Menu extends Component
                             label: 'Pliki',
                             url: route('files.index'),
                             active: Menu::isCurrentRoute(['files.index', 'files.preview']),
-                        ),
-                        Menu::item(
-                            label: 'Subskrybenci',
-                            url: '#',
-                            active: false,
                         ),
                         Menu::item(
                             label: 'Wysłane maile',
@@ -148,6 +160,7 @@ class Menu extends Component
         string $url = null,
         string $badge = null,
         bool   $active = null,
+        bool   $visible = null,
         array  $items = null,
     ): array
     {
@@ -164,6 +177,7 @@ class Menu extends Component
             'url' => $url ?? false,
             'badge' => $badge ?? false,
             'active' => $active ?? false,
+            'visible' => $visible ?? true,
             'items' => $items ?? [],
         ];
     }
