@@ -29,6 +29,12 @@
                 <a class="sidebar-toggle me-2">
                     <i class="hamburger align-self-center"></i>
                 </a>
+                <div class="d-none d-md-inline-block">
+                    <i class="ti ti-search"></i>
+                </div>
+                <div class="d-none d-md-inline-block">
+                    <input class="form-control form-control-lite" type="text" placeholder="Wyszukaj">
+                </div>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item ms-1">
                         <a href="#" class="nav-icon nav-link toggle-theme">
