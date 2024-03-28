@@ -4,10 +4,10 @@ window.addEventListener('load', function() {
         _currentTheme = _currentTheme === 'light' ? 'dark' : 'light';
         if (_currentTheme === 'dark') {
             $('#theme').attr('href', '/assets/css/dark.css')
-            $('.toggle-theme i').removeClass('fa-moon').addClass('fa-sun');
+            $('.toggle-theme i').removeClass('ti-moon').addClass('ti-sun');
         } else {
             $('#theme').attr('href', '/assets/css/light.css')
-            $('.toggle-theme i').removeClass('fa-sun').addClass('fa-moon');
+            $('.toggle-theme i').removeClass('ti-sun').addClass('ti-moon');
         }
     });
 });

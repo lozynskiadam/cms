@@ -29,27 +29,31 @@
                 <a class="sidebar-toggle me-2">
                     <i class="hamburger align-self-center"></i>
                 </a>
-                <div class="d-none d-md-inline-block">
+                <div class="d-none d-md-flex nav-search-bar">
                     <i class="ti ti-search"></i>
+                    <span>Przeszukaj aplikację...</span>
                 </div>
                 <div class="d-none d-md-inline-block">
-                    <input class="form-control form-control-lite" type="text" placeholder="Wyszukaj">
                 </div>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item ms-1">
-                        <a href="#" class="nav-icon nav-link toggle-theme">
-                            <i class="fas fa-moon"></i>
+                    <li class="nav-item">
+                        <a href="#" class="nav-icon nav-link toggle-theme d-flex ps-2 pe-1">
+                            <i class="ti ti-moon" style="line-height: 2.5rem; font-size: 1.4rem"></i>
                         </a>
                     </li>
-                    <li class="nav-item ms-1">
-                        <a class="nav-icon nav-link" href="http://champ.dev.alterpage.pl" target="_blank">
-                            <i class="fas fa-globe"></i>
+                    <li class="nav-item">
+                        <a href="#" class="nav-icon nav-link d-flex ps-2 pe-1">
+                            <i class="ti ti-shield-checkered" style="line-height: 2.5rem; font-size: 1.4rem"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://champ.dev.alterpage.pl" target="_blank" class="nav-icon nav-link d-flex ps-2 pe-1">
+                            <i class="ti ti-world" style="line-height: 2.5rem; font-size: 1.4rem"></i>
                         </a>
                     </li>
                     <li class="nav-item ms-1 dropdown">
-                        <a class="nav-link dropdown-toggle position-relative" href="#" id="user-dropdown" data-bs-toggle="dropdown">
-                            <i class="fas fa-user"></i>
-                            <i class="fa fa-angle-down"></i>
+                        <a class="nav-link dropdown-toggle position-relative d-flex" href="#" id="user-dropdown" data-bs-toggle="dropdown">
+                            <img src="https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png" class="rounded-circle" style="height: 2.5rem; padding: 0.2rem;">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
                             <a class="dropdown-item" href="/user/password/change">
