@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ (isset($title) ? "$title - " : '') . config('app.name') }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.1.0/dist/tabler-icons.min.css">
     <link rel="stylesheet" href="{{ asset('/assets/css/light.css') }}" id="theme">
     <link rel="stylesheet" href="{{ asset('/assets/css/custom.css') }}">
     @vite(["resources/js/app.js", "resources/css/app.css"])
@@ -54,22 +54,22 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-icon nav-link toggle-theme d-flex ps-2 pe-1">
-                            <i class="ti ti-moon" style="line-height: 2.5rem; font-size: 1.4rem"></i>
+                            <i class="ti ti-moon" style="line-height: 2.5rem; font-size: 1.5rem"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-icon nav-link d-flex ps-2 pe-1">
-                            <i class="ti ti-shield-checkered" style="line-height: 2.5rem; font-size: 1.4rem"></i>
+                            <i class="ti ti-shield-chevron" style="line-height: 2.5rem; font-size: 1.5rem"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="http://champ.dev.alterpage.pl" target="_blank" class="nav-icon nav-link d-flex ps-2 pe-1">
-                            <i class="ti ti-world" style="line-height: 2.5rem; font-size: 1.4rem"></i>
+                            <i class="ti ti-world-www" style="line-height: 2.5rem; font-size: 1.5rem"></i>
                         </a>
                     </li>
                     <li class="nav-item ms-1 dropdown">
                         <a class="nav-link dropdown-toggle position-relative d-flex" href="#" id="user-dropdown" data-bs-toggle="dropdown">
-                            <img src="https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/avatars/1.png" class="rounded-circle" style="height: 2.5rem; padding: 0.2rem;">
+                            <img src="{{ asset('/assets/images/no-avatar.png') }}" class="rounded-circle" style="height: 2.5rem; padding: 0.2rem;">
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
                             <a class="dropdown-item" href="/user/password/change">
