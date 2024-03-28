@@ -37,6 +37,22 @@
                 </div>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a href="#" class="nav-icon nav-link d-flex px-1 pe-0">
+                            <span class="badge bg-label-danger" style="align-items: center; display: flex; margin: 0.25rem; padding: 0 0.5rem; font-size: 0.85rem;">
+                                <i class="ti ti-alert-triangle" style="font-size: 1.25rem; line-height: 2rem; margin-right: 5px;"></i>
+                                <span>31</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-icon nav-link d-flex ps-0 px-1">
+                            <span class="badge bg-label-success" style="align-items: center; display: flex; margin: 0.25rem; padding: 0 0.5rem; font-size: 0.85rem;">
+                                <i class="ti ti-crane" style="font-size: 1.25rem; line-height: 2rem; margin-right: 5px;"></i>
+                                <span>28.03.2024</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#" class="nav-icon nav-link toggle-theme d-flex ps-2 pe-1">
                             <i class="ti ti-moon" style="line-height: 2.5rem; font-size: 1.4rem"></i>
                         </a>
